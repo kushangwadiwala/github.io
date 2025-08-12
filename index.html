@@ -1,0 +1,252 @@
+<!--
+Bootstrap Portfolio Template
+Instructions:
+1. Replace occurrences of YOUR NAME, tagline, project placeholders, and links.
+2. To enable contact form: sign up at https://formspree.io/ and replace the form `action` with your form endpoint.
+3. To publish on GitHub Pages:
+   - Create a public repo named: your-username.github.io
+   - Add this file as `index.html` at the repo root (and any images in an `assets/` folder)
+   - Commit and push. Go to Settings → Pages → Branch: main (root) → Save.
+   - Visit https://your-username.github.io
+-->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Your Name — Portfolio</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+    <style>
+      :root{--brand:#0d6efd}
+      html,body{height:100%}
+      body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;scroll-behavior:smooth}
+      .hero{min-height:60vh;display:flex;align-items:center}
+      .project-card{transition:transform .18s ease,box-shadow .18s ease}
+      .project-card:hover{transform:translateY(-6px);box-shadow:0 8px 24px rgba(13,110,253,0.12)}
+      .nav-scrolled{backdrop-filter: blur(6px);background-color:rgba(255,255,255,0.7)!important}
+      .bg-accent{background:linear-gradient(90deg,var(--brand),#6f42c1)}
+      footer{font-size:.9rem}
+      @media (max-width:767px){.hero{min-height:50vh}}
+    </style>
+  </head>
+  <body>
+
+    <!-- Navbar -->
+    <nav id="siteNavbar" class="navbar navbar-expand-lg navbar-light fixed-top py-3">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="#">Your Name</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navCollapse" aria-controls="navCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navCollapse">
+          <ul class="navbar-nav ms-auto align-items-lg-center">
+            <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+            <li class="nav-item ms-lg-3 mt-2 mt-lg-0"><a class="btn btn-outline-primary" href="#projects">See Work</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="hero bg-light d-flex align-items-center" id="home">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6">
+            <h1 class="display-5 fw-bold">Hi, I'm <span class="text-primary">Your Name</span></h1>
+            <p class="lead text-muted">Designer &amp; front-end developer who crafts clean and modern web experiences.</p>
+
+            <div class="d-flex gap-2 mt-4">
+              <a class="btn btn-primary btn-lg" href="#projects">View Projects</a>
+              <a class="btn btn-outline-secondary btn-lg" href="#contact">Contact Me</a>
+            </div>
+
+            <div class="mt-4 d-flex gap-3">
+              <a href="#" aria-label="github" class="text-dark fs-4"><i class="bi bi-github"></i></a>
+              <a href="#" aria-label="linkedin" class="text-primary fs-4"><i class="bi bi-linkedin"></i></a>
+              <a href="#" aria-label="dribbble" class="text-danger fs-4"><i class="bi bi-dribbble"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-6 d-none d-lg-block">
+            <div class="card border-0 shadow-sm">
+              <img src="https://images.unsplash.com/photo-1542744095-291d1f67b221?auto=format&fit=crop&w=1200&q=60" class="card-img-top" alt="hero image">
+              <div class="card-body">
+                <p class="mb-0 text-muted">A peek at my latest UI exploration — responsive layouts with subtle motion.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- About -->
+    <section id="about" class="py-5">
+      <div class="container">
+        <div class="row g-4 align-items-center">
+          <div class="col-md-5">
+            <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=800&q=60" class="img-fluid rounded shadow-sm" alt="portrait">
+          </div>
+          <div class="col-md-7">
+            <h2>About Me</h2>
+            <p class="text-muted">I’m a creative problem solver with a background in building interfaces and visual identities. I focus on clear communication, purposeful design, and performance-minded front-end engineering.</p>
+            <ul class="list-unstyled mb-0">
+              <li><strong>Location:</strong> Your City, Country</li>
+              <li><strong>Available for:</strong> Freelance, part-time, contract</li>
+              <li><strong>Skills:</strong> HTML, CSS, Bootstrap, JavaScript, Figma</li>
+            </ul>
+
+            <div class="mt-4">
+              <a href="#projects" class="btn btn-outline-primary me-2">See my work</a>
+              <a href="#contact" class="btn btn-primary">Get in touch</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="py-5 bg-light">
+      <div class="container">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+          <h2 class="mb-0">Selected Projects</h2>
+          <p class="mb-0 text-muted">A few highlights from my recent work</p>
+        </div>
+
+        <div class="row g-4">
+          <!-- Project Card 1 -->
+          <div class="col-md-6 col-lg-4">
+            <div class="card project-card h-100">
+              <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=60" class="card-img-top" alt="project 1">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">Project One</h5>
+                <p class="card-text text-muted">Short description — what problem it solved and technologies used.</p>
+                <div class="mt-auto d-flex justify-content-between align-items-center">
+                  <a href="#" class="stretched-link">View project</a>
+                  <small class="text-muted">Web • UI</small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project Card 2 -->
+          <div class="col-md-6 col-lg-4">
+            <div class="card project-card h-100">
+              <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=60" class="card-img-top" alt="project 2">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">Project Two</h5>
+                <p class="card-text text-muted">Short description — outcomes and technologies used.</p>
+                <div class="mt-auto d-flex justify-content-between align-items-center">
+                  <a href="#" class="stretched-link">View project</a>
+                  <small class="text-muted">Brand • UX</small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project Card 3 -->
+          <div class="col-md-6 col-lg-4">
+            <div class="card project-card h-100">
+              <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=60" class="card-img-top" alt="project 3">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">Project Three</h5>
+                <p class="card-text text-muted">Short description — metrics, impact, role.</p>
+                <div class="mt-auto d-flex justify-content-between align-items-center">
+                  <a href="#" class="stretched-link">View project</a>
+                  <small class="text-muted">App • Front-end</small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-5">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <h2 class="mb-3">Get in touch</h2>
+            <p class="text-muted">Interested in working together? Fill the form and I'll get back to you.</p>
+
+            <!-- Replace action with your Formspree endpoint -->
+            <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="row g-3">
+              <div class="col-md-6">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" id="name" name="name" required>
+              </div>
+              <div class="col-md-6">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+              </div>
+              <div class="col-12">
+                <label for="message" class="form-label">Message</label>
+                <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+              </div>
+              <div class="col-12">
+                <button type="submit" class="btn btn-primary">Send Message</button>
+                <small class="text-muted ms-3">Or email me at <a href="mailto:your.email@example.com">your.email@example.com</a></small>
+              </div>
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-4 bg-dark text-light">
+      <div class="container d-flex justify-content-between align-items-center">
+        <div>© <span id="year"></span> Your Name</div>
+        <div class="d-flex gap-3">
+          <a href="#" class="text-light"><i class="bi bi-twitter"></i></a>
+          <a href="#" class="text-light"><i class="bi bi-github"></i></a>
+          <a href="#" class="text-light"><i class="bi bi-instagram"></i></a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+      // Set year
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      // Add subtle navbar background when scrolled
+      const nav = document.getElementById('siteNavbar');
+      function handleNav(){
+        if(window.scrollY > 10) nav.classList.add('nav-scrolled'); else nav.classList.remove('nav-scrolled');
+      }
+      document.addEventListener('scroll', handleNav);
+
+      // Smooth offset for anchor links (because fixed navbar)
+      const OFFSET = 80;
+      document.querySelectorAll('a[href^="#"]').forEach(link=>{
+        link.addEventListener('click', e=>{
+          const target = document.querySelector(link.getAttribute('href'));
+          if(target){
+            e.preventDefault();
+            const top = target.getBoundingClientRect().top + window.scrollY - OFFSET;
+            window.scrollTo({top,behavior:'smooth'});
+            // collapse navbar on mobile
+            const bsCollapse = document.querySelector('.navbar-collapse');
+            if(bsCollapse && bsCollapse.classList.contains('show')){
+              new bootstrap.Collapse(bsCollapse).toggle();
+            }
+          }
+        })
+      });
+    </script>
+  </body>
+</html>
