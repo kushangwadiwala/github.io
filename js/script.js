@@ -51,21 +51,6 @@
     if (startLink) startLink.classList.add("active");
   }
 
-  // --- Hide/show navbar when Bootstrap modals open ---
-  const modals = document.querySelectorAll(".project-modal");
-  modals.forEach((modal) => {
-    modal.addEventListener("show.bs.modal", () => (nav.style.display = "none"));
-    modal.addEventListener("hidden.bs.modal", () => (nav.style.display = "flex"));
-  });
-  document.body.addEventListener("show.bs.modal", (event) => {
-    if (event.target.classList.contains("project-modal"))
-      nav.style.display = "none";
-  });
-  document.body.addEventListener("hidden.bs.modal", (event) => {
-    if (event.target.classList.contains("project-modal"))
-      nav.style.display = "flex";
-  });
-
   // --- Cross-page smooth scrolling ---
   const currentPage = window.location.pathname.split("/").pop();
 
