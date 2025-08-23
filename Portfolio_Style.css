@@ -1,5 +1,5 @@
 /*------------------------------------------
-        ROOT & BODY
+  ROOT & BODY
 ------------------------------------------*/
 :root {
   --brand: #0d6efd;
@@ -13,6 +13,7 @@ html, body {
 }
 
 body {
+  /* space for fixed navbar + base layout */
   padding-top: calc(60px + 0.5rem);
   display: flex;
   flex-direction: column;
@@ -20,12 +21,12 @@ body {
   scroll-behavior: smooth;
 }
 
-main {
-  flex: 1;
-}
+main { flex: 1; }
+
 
 /*------------------------------------------
-        NAVBAR
+  NAVBAR
+  - fixed top; scrolled state; nav links
 ------------------------------------------*/
 #siteNavbar {
   background: transparent;
@@ -90,7 +91,6 @@ main {
   border-radius: 2px;
   transition: transform .25s ease, opacity .2s ease;
 }
-
 .toggler-icon span:nth-child(1) { top: 0; }
 .toggler-icon span:nth-child(2) { top: 8px; }
 .toggler-icon span:nth-child(3) { bottom: 0; }
@@ -98,7 +98,7 @@ main {
 #siteNavbar .nav-link {
   color: #222;
   margin: 0 .25rem;
-  padding: .4rem .6rem;
+  padding: .4rem .6rem; /* vertical | horizontal */
   font-weight: 500;
   transition: color .18s ease, transform .18s ease;
 }
@@ -109,8 +109,30 @@ main {
   transform: translateY(-2px);
 }
 
+/* NAVBAR — MEDIA PLACEHOLDERS
+   Add section-specific responsive overrides here */
+@media (max-width: 992px) {
+  /* Example: reduce logo, adjust nav spacing for tablet */
+  #siteNavbar { padding: .5rem 0; }
+  #siteNavbar .navbar-brand img { height: 40px; }
+}
+
+@media (max-width: 768px) {
+  /* Example: collapsed nav panel styles can go here */
+  /* #siteNavbar .navbar-collapse { background: #fff; padding: .75rem; } */
+}
+
+@media (max-width: 576px) {
+  /* Very small screens nav tweaks */
+  #siteNavbar { padding: .4rem 0; }
+  #siteNavbar .navbar-brand img { height: 36px; }
+  #siteNavbar .nav-link { font-size: 0.9rem; padding: .35rem .5rem; }
+}
+
+
 /*------------------------------------------
-        HERO
+  HERO
+  - responsive typographic sizing
 ------------------------------------------*/
 .hero {
   min-height: 90vh;
@@ -121,16 +143,20 @@ main {
   padding: 0 1rem;
 }
 
-.hero h1 {
-  font-size: clamp(2rem, 5vw, 3rem);
-}
+.hero h1 { font-size: clamp(2rem, 5vw, 3rem); }
+.hero p  { font-size: clamp(1rem, 3vw, 1.5rem); }
 
-.hero p {
-  font-size: clamp(1rem, 3vw, 1.5rem);
+/* HERO — MEDIA PLACEHOLDERS */
+@media (max-width: 992px) {
+  /* e.g. reduce hero padding, font sizes for tablet */
+}
+@media (max-width: 576px) {
+  /* e.g. tighter hero spacing for phones */
 }
 
 /*------------------------------------------
-        PROJECT CARDS
+  PROJECT CARDS
+  - hover border, shadow, gentle zoom
 ------------------------------------------*/
 .project-card {
   position: relative;
@@ -160,59 +186,45 @@ main {
   transform: scale(1.02); /* gentle zoom-in on hover */
 }
 
-/*------------------------------------------
-        RESPONSIVE IMPROVEMENTS
-------------------------------------------*/
+/* PROJECT CARDS — MEDIA PLACEHOLDERS */
 @media (max-width: 991px) {
-  .project-card {
-    border: 2px solid transparent; /* thinner border for smaller screens */
-  }
-
-  .project-card:hover {
-    border: 3px solid #FF7A30; /* slightly thinner on tablet/mobile */
-    box-shadow: 0 6px 16px rgba(13, 110, 253, 0.12);
-    transform: none; /* remove lift to prevent layout shift */
-  }
-
-  .project-card:hover img {
-    transform: scale(1.01); /* gentler zoom */
-  }
+  /* tablet: gentler effects to avoid layout shift */
+  .project-card { border: 2px solid transparent; }
+  .project-card:hover { border: 3px solid #FF7A30; box-shadow: 0 6px 16px rgba(13,110,253,0.12); transform: none; }
+  .project-card:hover img { transform: scale(1.01); }
 }
 
 @media (max-width: 576px) {
-  .project-card:hover {
-    border: 2px solid #FF7A30; /* even thinner for small mobiles */
-    box-shadow: 0 4px 12px rgba(13, 110, 253, 0.1);
-  }
+  /* phone: smaller shadows, thinner border */
+  .project-card:hover { border: 2px solid #FF7A30; box-shadow: 0 4px 12px rgba(13,110,253,0.1); }
 }
 
+
 /*------------------------------------------
-        MODALS
+  MODALS
+  - rounded content + z-index fixes
 ------------------------------------------*/
-.modal-content {
-  border-radius: 1rem;
+.modal-content { border-radius: 1rem; }
+
+.custom-modal-width { max-width: 95%; }
+
+.project-modal { z-index: 1150 !important; }
+.modal-backdrop { z-index: 1140 !important; }
+
+.modal-body img { width: 100%; height: auto; object-fit: cover; }
+
+/* MODALS — MEDIA PLACEHOLDERS */
+@media (max-width: 992px) {
+  /* e.g. stack modal content vertically or reduce paddings */
+}
+@media (max-width: 576px) {
+  /* e.g. increase close button tap size on phones */
 }
 
-.custom-modal-width {
-  max-width: 95%;
-}
-
-.project-modal {
-  z-index: 1150 !important;
-}
-
-.modal-backdrop {
-  z-index: 1140 !important;
-}
-
-.modal-body img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-}
 
 /*------------------------------------------
-        BUTTONS
+  BUTTONS
+  - gradient, primary, small-pop
 ------------------------------------------*/
 .btn-gradient {
   background: linear-gradient(90deg, #FF7A30, #465C88);
@@ -224,7 +236,6 @@ main {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   font-size: clamp(0.8rem, 2vw, 1rem);
 }
-
 .btn-gradient:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(0,0,0,0.15);
@@ -240,23 +251,10 @@ main {
   border-radius: 4px;
   transition: 0.2s;
 }
+.btn-outline-black:hover { background-color: #000; color: #fff; }
 
-.btn-outline-black:hover {
-  background-color: #000;
-  color: #fff;
-}
-
-.btn-orange {
-  background-color: var(--orange);
-  border-color: var(--orange);
-  color: #fff;
-  transition: background-color .2s ease, border-color .2s ease;
-}
-
-.btn-orange:hover {
-  background-color: #e36b1f;
-  border-color: #e36b1f;
-}
+.btn-orange { background-color: var(--orange); border-color: var(--orange); color: #fff; }
+.btn-orange:hover { background-color: #e36b1f; border-color: #e36b1f; }
 
 .btn-pop {
   background-color: var(--orange);
@@ -268,31 +266,36 @@ main {
   transition: transform 0.2s, box-shadow 0.2s;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
+.btn-pop:hover { transform: scale(1.05); box-shadow: 0 4px 8px rgba(0,0,0,0.15); }
 
-.btn-pop:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+/* BUTTONS — MEDIA PLACEHOLDERS */
+@media (max-width: 768px) {
+  /* e.g. reduce button paddings or font-size on medium screens */
+}
+@media (max-width: 576px) {
+  /* e.g. enlarge tap targets for mobile */
 }
 
+
 /*------------------------------------------
-        SOCIAL ICONS
+  SOCIAL ICONS (About)
 ------------------------------------------*/
 #about .social-icon {
   opacity: 1;
   transition: .18s ease;
 }
+#about .social-icon:hover { transform: translateY(-2px); }
 
-#about .social-icon:hover {
-  transform: translateY(-2px);
+/* SOCIAL — MEDIA PLACEHOLDERS */
+@media (max-width: 576px) {
+  /* e.g. center social icons or increase spacing */
 }
+
 
 /*------------------------------------------
-        FOOTER
+  FOOTER
 ------------------------------------------*/
-footer {
-  position: relative;
-  margin-top: 0 !important;
-}
+footer { position: relative; margin-top: 0 !important; }
 
 .footer-figurine {
   position: absolute;
@@ -300,11 +303,7 @@ footer {
   top: -80px;
   z-index: 10;
 }
-
-.footer-figurine img {
-  width: 100px;
-  transition: transform 0.3s ease;
-}
+.footer-figurine img { width: 100px; transition: transform 0.3s ease; }
 
 .site-footer {
   background: #000;
@@ -314,60 +313,41 @@ footer {
   border-top: 1px solid rgba(255,255,255,0.04);
   text-align: center;
 }
-
-.site-footer .small {
-  font-size: .95rem;
-  color: rgba(255,255,255,0.9);
-}
-
+.site-footer .small { font-size: .95rem; color: rgba(255,255,255,0.9); }
 .site-footer .footer-link {
-  color: #fff;
-  font-size: 1.1rem;
-  text-decoration: none;
-  opacity: .92;
+  color: #fff; font-size: 1.1rem; text-decoration: none; opacity: .92;
   transition: opacity .18s ease, transform .18s ease;
 }
+.site-footer .footer-link:hover { opacity: 1; transform: translateY(-2px); }
 
-.site-footer .footer-link:hover {
-  opacity: 1;
-  transform: translateY(-2px);
+/* FOOTER — MEDIA PLACEHOLDERS */
+@media (max-width: 768px) {
+  /* adjust footer figurine size/position or footer padding on tablets */
+}
+@media (max-width: 576px) {
+  .footer-figurine { width: 70px; top: -50px; }
+  /* for very small screens, reduce footer padding and font-size if needed */
 }
 
+
 /*------------------------------------------
-        UTILITY
+  UTILITY
 ------------------------------------------*/
 .border-orange { border-color: var(--orange) !important; }
 .bg-accent { background: linear-gradient(90deg, var(--brand), #6f42c1); }
 
+/* UTILITY — MEDIA PLACEHOLDERS */
+@media (max-width: 576px) {
+  /* small helpers for phones */
+}
+
 /*------------------------------------------
-        MEDIA QUERIES
+  GLOBAL MEDIA QUERY FALLBACKS (if needed)
+  - Use these for site-wide overrides that affect multiple sections
 ------------------------------------------*/
 @media (max-width: 992px) {
-  #siteNavbar {
-    padding: .5rem 0;
-  }
-  #siteNavbar .navbar-brand img {
-    height: 40px;
-  }
+  /* global tablet adjustments */
 }
-
-@media (max-width: 768px) {
-  #siteNavbar .logo-fixed { left: 10px; }
-  #siteNavbar .logo-fixed img { height: 48px; }
-  #siteNavbar .container { padding-left: calc(48px + 24px); }
-  body { padding-top: calc(48px + 0.5rem); }
-}
-
 @media (max-width: 576px) {
-  #siteNavbar {
-    padding: .4rem 0;
-  }
-  #siteNavbar .navbar-brand img {
-    height: 36px;
-  }
-  #siteNavbar .nav-link {
-    font-size: 0.9rem;
-    padding: .35rem .5rem;
-  }
-  .footer-figurine { width: 70px; top: -50px; }
+  /* global mobile adjustments */
 }
