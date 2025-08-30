@@ -6,6 +6,7 @@
   // --- Navbar scrolled state ---
   const nav = document.getElementById("siteNavbar");
   function handleNav() {
+    if (!nav) return;
     if (window.scrollY > 10) nav.classList.add("nav-scrolled");
     else nav.classList.remove("nav-scrolled");
   }
@@ -26,18 +27,16 @@
 
       // collapse mobile menu if open
       const collapseEl = document.querySelector(".navbar-collapse");
-      if (collapseEl && collapseEl.classList.contains("show")) {
-        new bootstrap.Collapse(collapseEl).hide();
+      if (collapseEl && collapseEl.classList.contains("show") && window.bootstrap?.Collapse) {
+        new window.bootstrap.Collapse(collapseEl).hide();
       }
     });
   });
 
-  // --- Mobile nav: collapse + active-link toggle ---
+  // --- Mobile nav: active-link toggle ---
   document.querySelectorAll("#navCollapse .nav-link").forEach((link) => {
     link.addEventListener("click", () => {
-      document
-        .querySelectorAll("#navCollapse .nav-link")
-        .forEach((n) => n.classList.remove("active"));
+      document.querySelectorAll("#navCollapse .nav-link").forEach((n) => n.classList.remove("active"));
       link.classList.add("active");
     });
   });
@@ -45,36 +44,35 @@
   // --- Set initial active link if hash exists ---
   const hash = window.location.hash;
   if (hash) {
-    const startLink = document.querySelector(
-      `#navCollapse .nav-link[href="${hash}"]`
-    );
+    const startLink = document.querySelector(`#navCollapse .nav-link[href="${hash}"]`);
     if (startLink) startLink.classList.add("active");
   }
 
   // --- Cross-page smooth scrolling ---
   const currentPage = window.location.pathname.split("/").pop();
-
-  // Fix navbar links if already on Portfolio.html
   if (currentPage === "Portfolio.html" || currentPage === "") {
     document.querySelectorAll("nav a").forEach((link) => {
-      if (link.getAttribute("href")?.startsWith("Portfolio.html#")) {
-        link.setAttribute(
-          "href",
-          link.getAttribute("href").replace("Portfolio.html", "")
-        );
+      const href = link.getAttribute("href") || "";
+      if (href.startsWith("Portfolio.html#")) {
+        link.setAttribute("href", href.replace("Portfolio.html", ""));
       }
     });
-  }
 
-  // Smooth scroll when arriving from another page
-  if (hash) {
-    window.scrollTo({ top: 0, behavior: "instant" });
-    setTimeout(() => {
-      const target = document.querySelector(hash);
-      if (target) {
+    if (hash) {
+      window.scrollTo({ top: 0, behavior: "instant" });
+      setTimeout(() => {
+        const target = document.querySelector(hash);
+        if (!target) return;
         const top = target.getBoundingClientRect().top + window.scrollY - OFFSET;
         window.scrollTo({ top, behavior: "smooth" });
-      }
-    }, 300);
+      }, 300);
+    }
+  }
+
+  // --- Body scroll lock + dim when collapse is open (pairs with CSS) ---
+  const collapseEl = document.getElementById("navCollapse");
+  if (collapseEl && window.bootstrap?.Collapse) {
+    collapseEl.addEventListener("shown.bs.collapse", () => document.body.classList.add("nav-open"));
+    collapseEl.addEventListener("hidden.bs.collapse", () => document.body.classList.remove("nav-open"));
   }
 })();
