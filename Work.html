@@ -31,12 +31,13 @@ html, body {
 }
 
 body {
+  /* space for fixed navbar + base layout */
   padding-top: calc(60px + 0.5rem);
   display: flex;
   flex-direction: column;
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
   scroll-behavior: smooth;
-}}
+}
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
@@ -113,7 +114,6 @@ main {
   border-radius: 2px;
   transition: transform .25s ease, opacity .2s ease;
 }
-
 .toggler-icon span:nth-child(1) { top: 0; }
 .toggler-icon span:nth-child(2) { top: 8px; }
 .toggler-icon span:nth-child(3) { bottom: 0; }
@@ -121,7 +121,7 @@ main {
 #siteNavbar .nav-link {
   color: #222;
   margin: 0 .25rem;
-  padding: .4rem .6rem;
+  padding: .4rem .6rem; /* vertical | horizontal */
   font-weight: 500;
   transition: color .18s ease, transform .18s ease;
 }
@@ -130,6 +130,108 @@ main {
 #siteNavbar .nav-link.active {
   color: var(--orange);
   transform: translateY(-2px);
+}
+
+/* NAVBAR — MEDIA PLACEHOLDERS
+   Add section-specific responsive overrides here */
+@media (max-width: 992px) {
+  /* Navbar padding and logo size */
+  #siteNavbar { 
+    padding: .5rem 0;                 /* reduce vertical padding */
+  }
+  #siteNavbar .navbar-brand img { 
+    height: 40px;                     /* slightly smaller logo */
+  }
+
+  /* Nav links spacing */
+  #siteNavbar .nav-link {
+    padding: .4rem .5rem;             /* reduce horizontal padding */
+    font-size: 0.95rem;               /* make text a bit smaller */
+  }
+
+  /* Optional: shrink brand name text */
+  .brand-name {
+    font-size: 0.95rem;
+  }
+
+  /* Toggler adjustments (just in case) */
+  .navbar-toggler {
+    width: 42px;
+    height: 42px;
+  }
+}
+
+
+
+@media (max-width: 768px) {
+  /* Collapsed nav panel */
+  #siteNavbar .navbar-collapse {
+    background: #fff;             /* solid background for dropdown */
+    padding: 1rem;                /* spacing inside dropdown */
+    border-radius: 12px;          /* rounded corners for a modern look */
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1); /* soft shadow */
+  }
+
+  /* Nav links inside collapsed menu */
+  #siteNavbar .nav-link {
+    display: block;               /* stack links vertically */
+    margin: .5rem 0;              /* space between links */
+    font-size: 1rem;              /* readable on mobile */
+    text-align: center;           /* center align for better look */
+  }
+
+  /* Optional: make toggle button more comfortable */
+  .navbar-toggler {
+    border: none;
+    background: transparent;
+    outline: none;
+  }
+
+  /* When expanded, push navbar content full width */
+  .navbar-collapse.show {
+    margin-top: .5rem;            /* a little space below navbar bar */
+  }
+}
+
+@media (max-width: 576px) {
+  /* Navbar height and spacing */
+  #siteNavbar { 
+    padding: .4rem 0;                  /* compact padding */
+  }
+
+  /* Logo */
+  #siteNavbar .navbar-brand img { 
+    height: 36px;                      /* shrink logo further */
+  }
+
+  /* Brand text */
+  .brand-name {
+    font-size: 0.85rem;                /* smaller text to fit next to logo */
+    letter-spacing: 0.1px;             /* tighter spacing */
+  }
+
+  /* Nav links */
+  #siteNavbar .nav-link { 
+    font-size: 0.9rem;                 /* slightly smaller text */
+    padding: .35rem .5rem;             /* reduce link padding */
+  }
+
+  /* Collapsed menu (hamburger dropdown) */
+  #siteNavbar .navbar-collapse {
+    background: #fff;                  /* dropdown gets white background */
+    padding: .5rem 1rem;               /* breathing room for touch */
+    border-radius: 8px;                /* optional: modern rounded look */
+  }
+
+  /* Make toggler (hamburger) touch-friendly */
+  .navbar-toggler {
+    width: 40px;
+    height: 40px;
+  }
+
+  .toggler-icon span {
+    background: #000;                  /* ensure visible on light bg */
+  }
 }
 
 /*------------------------------------------
@@ -411,19 +513,35 @@ footer {
 </head>
 <body>
 
-<!-- Navbar -->
-<nav id="siteNavbar" class="navbar navbar-expand-lg fixed-top py-2">
-        <a class="navbar-brand  logo-fixed ps-5" href="#home" aria-label="OpticMorph home">
+    <nav id="siteNavbar" class="navbar navbar-expand-lg fixed-top py-2">
+      <div class="container">
+        <!-- Brand / Logo -->
+        <a
+          class="navbar-brand logo-fixed ps-5"
+          href="#home"
+          aria-label="OpticMorph home"
+        >
           <img src="Images/logo.png" alt="OpticMorph logo" height="40">
-        </a>  
-     <div class="container">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navCollapse"
-                aria-controls="navCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        </a>
+
+        <!-- Hamburger Toggle (for mobile) -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navCollapse"
+          aria-controls="navCollapse"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
           <span class="toggler-icon">
-            <span></span><span></span><span></span>
+            <span></span>
+            <span></span>
+            <span></span>
           </span>
         </button>
 
+        <!-- Navbar Links -->
         <div class="collapse navbar-collapse" id="navCollapse">
           <ul class="navbar-nav ms-auto align-items-center gap-3">
             <li class="nav-item">
@@ -440,7 +558,6 @@ footer {
             </li>
           </ul>
         </div>
-
       </div>
     </nav>
 
@@ -606,4 +723,3 @@ footer {
 
 </body>
 </html>
-
