@@ -4,405 +4,586 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Home</title>
+
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    >
     <!-- Bootstrap Icons -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+      rel="stylesheet"
+    >
+
     <!-- Custom CSS -->
     <link rel="stylesheet" href="Portfolio_Style.css">
   </head>
-  <body>
 
-    <!-- Navbar -->
+  <body>
+    <!-- NAVBAR -->
     <nav id="siteNavbar" class="navbar navbar-expand-lg fixed-top py-2">
-        <a class="navbar-brand  logo-fixed ps-5" href="#home" aria-label="OpticMorph home">
+      <div class="container">
+        <!-- Brand / Logo -->
+        <a
+          class="navbar-brand logo-fixed ps-5"
+          href="#home"
+          aria-label="OpticMorph home"
+        >
           <img src="Images/logo.png" alt="OpticMorph logo" height="40">
-        </a>  
-     <div class="container">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navCollapse"
-                aria-controls="navCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        </a>
+
+        <!-- Hamburger Toggle (for mobile) -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navCollapse"
+          aria-controls="navCollapse"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
           <span class="toggler-icon">
-            <span></span><span></span><span></span>
+            <span></span>
+            <span></span>
+            <span></span>
           </span>
         </button>
 
+        <!-- Navbar Links -->
         <div class="collapse navbar-collapse" id="navCollapse">
           <ul class="navbar-nav ms-auto align-items-center gap-3">
             <li class="nav-item">
-              <a class="nav-link px-3 py-2" href="Portfolio.html#hero">Home</a>
+              <a class="nav-link px-3 py-2" href="#hero">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link px-3 py-2" href="Portfolio.html#about">About</a>
+              <a class="nav-link px-3 py-2" href="#about">About</a>
             </li>
             <li class="nav-item">
               <a class="nav-link px-3 py-2" href="Work.html#MyProjects">Projects</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link px-3 py-2" href="Portfolio.html#contact">Contact</a>
+              <a class="nav-link px-3 py-2" href="#contact">Contact</a>
             </li>
           </ul>
         </div>
-
       </div>
     </nav>
-<main>
-    <!-- Hero -->
-     <section id="hero">
-    <header class="hero bg-light d-flex align-items-center justify-content-center text-center position-relative" id="home" style="overflow:hidden;">
-      <div class="container-fluid position-relative z-2 px-0">
-        <div class="row justify-content-center gx-0">
-          <div class="col-lg-10 col-xl-9">
-            <h1 class="display-4 fw-bold mb-3" style="letter-spacing:-1px; font-family:'Space Mono', monospace;">
-              Design is the first conversation your brand has with the world — 
-              <span class="text-primary" style="background:linear-gradient(90deg,#FF7A30,#FF7A30,#465C88);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Make it Meaningful.</span>
-            </h1>
-            <p class="lead text-muted mb-4" style="font-size:1.35rem; font-family:'Space Mono', monospace;">
-              I design brand identities that inspire confidence and create lasting connections.
-            </p>
-          </div>
-        </div>
-      </div>
-    </header>
-    </section>
 
-    <!-- About -->
-    <section id="about" class="py-5 bg-white position-relative">
-      <div class="container">
-        <div class="row g-5 align-items-center">
-         <div class="col-md-5 text-center">
-            <div class="position-relative d-inline-block">
-              <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=800&q=60" 
-                  class="img-fluid rounded-4 shadow-lg border border-3 border-orange" 
-                  alt="portrait" 
-                  style="max-width: 320px;">
-              <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill shadow" 
-                    style="background-color: #FF7A30; color: #fff; font-size:1.1rem; padding:.7em 1.2em; left:90%; top:10%;">
-                Designer
-              </span>
+    <main>
+      <!-- HERO SECTION -->
+      <section id="hero">
+        <header
+          class="hero bg-light d-flex align-items-center justify-content-center text-center position-relative"
+          id="home"
+          style="overflow:hidden;"
+        >
+          <div class="container-fluid position-relative z-2 px-0">
+            <div class="row justify-content-center gx-0">
+              <div class="col-lg-10 col-xl-9">
+                <h1
+                  class="display-4 fw-bold mb-3"
+                  style="letter-spacing:-1px; font-family:'Space Mono', monospace;"
+                >
+                  Design is the first conversation your brand has with the world —
+                  <span
+                    class="text-primary"
+                    style="background:linear-gradient(90deg,#FF7A30,#FF7A30,#465C88);
+                           -webkit-background-clip:text;
+                           -webkit-text-fill-color:transparent;"
+                  >
+                    Make it Meaningful.
+                  </span>
+                </h1>
+                <p
+                  class="lead text-muted mb-4"
+                  style="font-size:1.35rem; font-family:'Space Mono', monospace;"
+                >
+                  I design brand identities that inspire confidence and create
+                  lasting connections.
+                </p>
+              </div>
             </div>
           </div>
-          <div class="col-md-7">
+        </header>
+      </section>
+
+      <!-- ABOUT SECTION -->
+      <section class="about-section">
+  <div class="decorative-element decorative-element-1"></div>
+  <div class="decorative-element decorative-element-2"></div>
+  
+  <div class="about-container">
+    <div class="about-content">
+
+            <!-- About Text -->
+            <div class="col-md-7">
               <h2 class="fw-bold mb-3">
                 <span style="color:#FF7A30;">About</span> Kushang Wadiwala
-                <br><em style="font-weight: 400; color: #000;" class="fs-5">The designer who makes ideas speak</em>
+                <br>
+                <em class="fs-5" style="font-weight:400; color:#000;">
+                  The designer who makes ideas speak
+                </em>
               </h2>
-            <p class="text-muted fs-5 mb-3">
-              I’m a <span class="fw-semibold" style="color:#FF7A30;">graphic designer</span> passionate about transforming ideas into visuals that truly communicate. From sleek logos to attention-grabbing social content and complete brand identities, I combine creativity with clarity to craft designs that leave an impact.
+              <p class="text-muted fs-5 mb-3 text-start">
+                I’m a <strong style="color:#FF7A30;">graphic designer</strong>
+                Based in Surat, Gujarat, creating clear logos, brand identities, and social visuals.
+                <strong>With 3.5 years of freelance and personal project work</strong>, focused on useful, memorable design.
+              </p>
+              
+              <p class="text-muted mb-1 social-heading text-start">
+  <strong class="text-accent">Connect with me, here are my socials</strong>
+</p>
+
+<div class="social-links btn-row d-flex justify-content-start gap-2">
+
+  <!-- Email
+  <a href="mailto:hello@example.com?subject=Portfolio%20inquiry"
+     class="btn btn-outline-dark btn-sm rounded-2 d-inline-flex align-items-center gap-2 social-btn"
+     aria-label="Email">
+    <i class="bi bi-envelope"></i><span>Email</span>
+  </a> -->
+
+  <!-- Resume -->
+  <a href="assets/Kushang_Wadiwala_Resume.pdf"
+     class="btn btn-outline-dark btn-sm rounded-2 d-inline-flex align-items-center gap-2 social-btn"
+     download="Kushang_Wadiwala_Resume.pdf"
+     aria-label="Resume">
+    <i class="bi bi-file-earmark-arrow-down"></i><span>Resume</span>
+  </a>
+
+  <!-- LinkedIn -->
+  <a href="https://www.linkedin.com/in/kushangwadiwala"
+     class="btn btn-outline-dark btn-sm rounded-2 d-inline-flex align-items-center gap-2 social-btn"
+     target="_blank" rel="noopener" aria-label="LinkedIn">
+    <i class="bi bi-linkedin"></i><span>LinkedIn</span>
+  </a>
+
+  <!-- Dribbble -->
+  <a href="https://dribbble.com/Kush0806"
+     class="btn btn-outline-dark btn-sm rounded-2 d-inline-flex align-items-center gap-2 social-btn"
+     target="_blank" rel="noopener" aria-label="Dribbble">
+    <i class="bi bi-dribbble"></i><span>Dribbble</span>
+  </a>
+
+</div>
+
+
+      </section>
+
+      <!-- PROJECTS SECTION -->
+      <section id="projects" class="py-5 bg-light">
+        <div class="container px-3">
+          <!-- Section Header -->
+          <div class="text-center mb-5" data-aos="fade-up">
+            <h2 class="fw-bold mb-2" style="font-size:2.5rem;">
+              <span style="color:#FF7A30;">My</span> Projects
+            </h2>
+            <p class="text-muted fs-5 mx-auto" style="max-width:600px; line-height:1.6;">
+              Some of the work I’ve created & loved building
             </p>
-            <p class="text-muted mb-4">
-              Design, for me, goes beyond aesthetics—it’s about <span class="fw-semibold text-accent">telling stories, connecting with people, and creating memorable experiences</span>. Based in Surat, Gujarat, and holding a B.Tech in Electrical Engineering, I’ve spent the last 3.5 years honing my skills through freelance projects and personal experiments that push the boundaries of my creativity.
-            </p>
-            <p class="text-muted mb-4">
-               Every project is an opportunity to <span class="fw-semibold text-accent">explore, learn, and bring ideas to life in meaningful ways</span>.
-            </p>
-            <ul class="list-unstyled mb-4">
-              <li class="d-flex align-items-center mb-3 pb-2" style="border-bottom:1px solid #ddd;">
-                <i class="bi bi-geo-alt-fill me-3" style="color:#FF7A30; font-size:1.2rem;"></i>
-                <span><strong>Location:</strong> Surat, Gujarat, India</span>
-              </li>
-              <li class="d-flex align-items-center mb-3 pb-2" style="border-bottom:1px solid #ddd;">
-                <i class="bi bi-briefcase-fill me-3" style="color:#FF7A30; font-size:1.2rem;"></i>
-                <span><strong>Available for:</strong> Freelance, part-time, contract</span>
-              </li>
-              <li class="d-flex align-items-center mb-3">
-                <i class="bi bi-tools me-3" style="color:#FF7A30; font-size:1.2rem;"></i>
-                <span><strong>Skills:</strong> Adobe Illustrator, Canva, Figma</span>
-              </li>
-            </ul>
-            <div class="mt-4 d-flex justify-content-left gap-4">
-              <a href="https://www.linkedin.com/in/kushangwadiwala" aria-label="LinkedIn" class="text-primary fs-3 social-icon" target="_blank" rel="noopener">
-                <i class="bi bi-linkedin"></i>
-              </a>
-             <a href="https://dribbble.com/Kush0806" aria-label="Dribbble" class="text-pink fs-3 social-icon" style="color:#ea4c89!important;" target="_blank" rel="noopener">
-                 <i class="bi bi-dribbble"></i>
-             </a>
+            <div
+              class="mt-3"
+              style="height:3px; width:80px; margin:auto;
+                     background:linear-gradient(90deg,#FF7A30,#FF7A30,#465C88);
+                     border-radius:2px;"
+            ></div>
+          </div>
+
+          <!-- Project Cards -->
+          <div class="row g-3 justify-content-center">
+            <!-- Project 1 -->
+            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+              <div
+                class="card project-card h-100"
+                role="button"
+                tabindex="0"
+                data-bs-toggle="modal"
+                data-bs-target="#projectModal1"
+              >
+                <img
+                  src="Images/Luxe_Luster_Logo.png"
+                  class="card-img-top"
+                  alt="Logo Design preview"
+                >
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title">Luxe Lustre — Logo</h5>
+                  <p class="card-text text-muted">
+                    Minimal luxury logo designed for a premium makeup studio.
+                  </p>
+                  <div class="mt-auto d-flex justify-content-between align-items-center">
+                    <small class="text-muted">Branding • Logo</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+              <div
+                class="card project-card h-100"
+                role="button"
+                tabindex="0"
+                data-bs-toggle="modal"
+                data-bs-target="#projectModal2"
+              >
+                <img
+                  src="Images/Suvanya_Logo.png"
+                  class="card-img-top"
+                  alt="Social campaign preview"
+                >
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title">Social Campaign — "Glow"</h5>
+                  <p class="card-text text-muted">
+                    A series of Instagram posts made to boost engagement and CTA.
+                  </p>
+                  <div class="mt-auto d-flex justify-content-between align-items-center">
+                    <small class="text-muted">Social • Graphics</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+              <div
+                class="card project-card h-100"
+                role="button"
+                tabindex="0"
+                data-bs-toggle="modal"
+                data-bs-target="#projectModal3"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=60"
+                  class="card-img-top"
+                  alt="Brand identity preview"
+                >
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title">Startup Brand Kit</h5>
+                  <p class="card-text text-muted">
+                    Logo, color system, and typography for a modern startup.
+                  </p>
+                  <div class="mt-auto d-flex justify-content-between align-items-center">
+                    <small class="text-muted">Identity • Toolkit</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- See More Button -->
+          <div class="text-center mt-4">
+            <a href="Work.html" class="btn btn-outline-black btn-sm">
+              + see more
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJECT MODALS -->
+      <!-- Modal 1 -->
+      <div
+        class="modal fade project-modal"
+        id="projectModal1"
+        tabindex="-1"
+        aria-labelledby="projectModal1Label"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered custom-modal-width">
+          <div class="modal-content border-0 rounded-4 shadow-lg overflow-hidden position-relative">
+            <!-- Close Button -->
+            <button
+              type="button"
+              class="btn-close position-absolute top-0 end-0 m-3"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+              style="opacity:0.8; transition:0.2s; z-index:1055;"
+            ></button>
+            <!-- Modal Body -->
+            <div class="modal-body p-0 d-flex flex-column flex-lg-row">
+              <!-- Image Column -->
+              <div class="col-lg-8 p-0">
+                <img
+                  src="Images/Luxe_Luster_Logo.png"
+                  alt="Luxe Lustre Logo"
+                  class="w-100 h-100 object-fit-cover"
+                  style="object-fit:cover; height:100%; transition:transform 0.4s; cursor:pointer;"
+                  onmouseover="this.style.transform='scale(1.05)';"
+                  onmouseout="this.style.transform='scale(1)';"
+                >
+              </div>
+              <!-- Text Column -->
+              <div class="col-lg-4 p-5 d-flex flex-column justify-content-center">
+                <h3 id="projectModal1Label" class="fw-bold mb-3 text-dark" style="font-size:2rem;">
+                  Luxe Lustre — Logo
+                </h3>
+                <p class="text-muted-50 mb-4" style="line-height:1.6; font-size:1rem;">
+                  Minimal luxury wordmark and emblem designed to read well across social,
+                  packaging, and signage.
+                </p>
+                <div class="mb-3">
+                  <h6 class="fw-semibold text-dark mb-1">Role</h6>
+                  <p class="text-muted-50 mb-0">Concept, Logo Design, Color System</p>
+                </div>
+                <div class="mb-4">
+                  <h6 class="fw-semibold text-dark mb-1">Tools</h6>
+                  <p class="text-muted-50 mb-0">Adobe Illustrator • Photoshop</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
 
-    <!-- Projects -->
-      <section id="projects" class="py-5 bg-light">
-        <div class="container px-3">
-          <div class="text-center mb-5" data-aos="fade-up">
-            <h2 class="fw-bold mb-2" style="font-size: 2.5rem;">
-              <span style="color:#FF7A30;">My</span> Projects
-            </h2>
-            <p class="text-muted fs-5 mx-auto" style="max-width: 600px; line-height:1.6;">
-              Some of the work I’ve created & loved building
-            </p>
-            <div class="mt-3" style="height:3px; width:80px; margin:auto; background: linear-gradient(90deg, #FF7A30, #FF7A30, #465C88); border-radius:2px;"></div>
-          </div>
-            <!-- Project 1 -->
-<div class="row g-3 justify-content-center">
-  <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
-    <div class="card project-card h-100">
-      <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=60" class="card-img-top" alt="Logo Design preview">
-      <div class="card-body d-flex flex-column">
-        <h5 class="card-title">Luxe Lustre — Logo</h5>
-        <p class="card-text text-muted">Minimal luxury logo designed for a premium makeup studio.</p>
-        <div class="mt-auto d-flex justify-content-between align-items-center">
-          <small class="text-muted">Branding • Logo</small>
-          <button class="btn btn-orange btn-sm" data-bs-toggle="modal" data-bs-target="#projectModal1">View Project</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Project 2 -->
-  <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
-    <div class="card project-card h-100">
-      <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=60" class="card-img-top" alt="Social campaign preview">
-      <div class="card-body d-flex flex-column">
-        <h5 class="card-title">Social Campaign — "Glow"</h5>
-        <p class="card-text text-muted">A series of Instagram posts made to boost engagement and CTA.</p>
-        <div class="mt-auto d-flex justify-content-between align-items-center">
-          <small class="text-muted">Social • Graphics</small>
-          <button class="btn btn-orange btn-sm" data-bs-toggle="modal"  data-bs-target="#projectModal2">View Project</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Project 3 -->
-  <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
-    <div class="card project-card h-100">
-      <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=60" class="card-img-top" alt="Brand identity preview">
-      <div class="card-body d-flex flex-column">
-        <h5 class="card-title">Startup Brand Kit</h5>
-        <p class="card-text text-muted">Logo, color system, and typography for a modern startup.</p>
-        <div class="mt-auto d-flex justify-content-between align-items-center">
-          <small class="text-muted">Identity • Toolkit</small>
-          <button class="btn btn-orange btn-sm" style="border-radius: 12px;" data-bs-toggle="modal" data-bs-target="#projectModal3">
-          View Project
-        </button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-    </div>
-    <!-- See More Button -->
-     <div class="text-center mt-4">
-  <div class="text-center mt-4">
-            <a href="Work.html" class="btn btn-outline-black btn-sm">+ see more</a>
-          </div>
-</div>
-
-    </div>
-  </div>
-</section>
-
-<!-- Project Modals Template -->
-<!-- Add more by copying the structure and updating IDs, content, and images -->
-<div class="modal fade project-modal" id="projectModal1" tabindex="-1" aria-labelledby="projectModal1Label" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered custom-modal-width">
-    <div class="modal-content border-0 rounded-4 shadow-lg overflow-hidden position-relative">
-
-      <button type="button" class="btn-close position-absolute top-0 end-0 m-3" 
-              data-bs-dismiss="modal" aria-label="Close" 
-              style="opacity:0.8; transition:0.2s; z-index:1055;"></button>
-
-      <div class="modal-body p-0 d-flex flex-column flex-lg-row">
-        <div class="col-lg-8 p-0">
-          <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=60" 
-               alt="Luxe Lustre Logo" class="w-100 h-100 object-fit-cover" 
-               style="object-fit: cover; height: 100%; transition: transform 0.4s; cursor: pointer;"
-               onmouseover="this.style.transform='scale(1.05)';" 
-               onmouseout="this.style.transform='scale(1)';">
-        </div>
-        <div class="col-lg-4 p-5 d-flex flex-column justify-content-center">
-          <h3 id="projectModal1Label" class="fw-bold mb-3 text-dark" style="font-size:2rem;">Luxe Lustre — Logo</h3>
-          <p class="text-muted-50 mb-4" style="line-height:1.6; font-size:1rem;">
-            Minimal luxury wordmark and emblem designed to read well across social, packaging, and signage.
-          </p>
-          <div class="mb-3">
-            <h6 class="fw-semibold text-dark mb-1">Role</h6>
-            <p class="text-muted-50 mb-0">Concept, Logo Design, Color System</p>
-          </div>
-          <div class="mb-4">
-            <h6 class="fw-semibold text-dark mb-1">Tools</h6>
-            <p class="text-muted-50 mb-0">Adobe Illustrator • Photoshop</p>
+      <!-- Modal 2 (copy structure and update IDs/content for further projects) -->
+      <div
+        class="modal fade project-modal"
+        id="projectModal2"
+        tabindex="-1"
+        aria-labelledby="projectModal2Label"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered custom-modal-width">
+          <div class="modal-content border-0 rounded-4 shadow-lg overflow-hidden position-relative">
+            <button
+              type="button"
+              class="btn-close position-absolute top-0 end-0 m-3"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+              style="opacity:0.8; transition:0.2s; z-index:1055;"
+            ></button>
+            <div class="modal-body p-0 d-flex flex-column flex-lg-row">
+              <div class="col-lg-8 p-0">
+                <img
+                  src="Images/Suvanya_Logo.png"
+                  alt="Social Campaign Glow"
+                  class="w-100 h-100 object-fit-cover"
+                  style="object-fit:cover; height:100%; transition:transform 0.4s; cursor:pointer;"
+                  onmouseover="this.style.transform='scale(1.05)';"
+                  onmouseout="this.style.transform='scale(1)';"
+                >
+              </div>
+              <div class="col-lg-4 p-5 d-flex flex-column justify-content-center">
+                <h3 id="projectModal2Label" class="fw-bold mb-3 text-dark" style="font-size:2rem;">
+                  Social Campaign — "Glow"
+                </h3>
+                <p class="text-muted-50 mb-4" style="line-height:1.6; font-size:1rem;">
+                  A series of Instagram posts made to boost engagement and CTA.
+                </p>
+                <div class="mb-3">
+                  <h6 class="fw-semibold text-dark mb-1">Role</h6>
+                  <p class="text-muted-50 mb-0">Art Direction, Graphic Design</p>
+                </div>
+                <div class="mb-4">
+                  <h6 class="fw-semibold text-dark mb-1">Tools</h6>
+                  <p class="text-muted-50 mb-0">Figma • After Effects</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</div>
 
-<div class="modal fade project-modal" id="projectModal2" tabindex="-1" aria-labelledby="projectModal2Label" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered custom-modal-width">
-    <div class="modal-content border-0 rounded-4 shadow-lg overflow-hidden position-relative">
-
-      <button type="button" class="btn-close position-absolute top-0 end-0 m-3" 
-              data-bs-dismiss="modal" aria-label="Close" 
-              style="opacity:0.8; transition:0.2s; z-index:1055;"></button>
-
-      <div class="modal-body p-0 d-flex flex-column flex-lg-row">
-        <div class="col-lg-8 p-0">
-          <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=60" 
-               alt="Social Campaign Glow" class="w-100 h-100 object-fit-cover" 
-               style="object-fit: cover; height: 100%; transition: transform 0.4s; cursor: pointer;"
-               onmouseover="this.style.transform='scale(1.05)';" 
-               onmouseout="this.style.transform='scale(1)';">
-        </div>
-        <div class="col-lg-4 p-5 d-flex flex-column justify-content-center">
-          <h3 id="projectModal2Label" class="fw-bold mb-3 text-dark" style="font-size:2rem;">Social Campaign — "Glow"</h3>
-          <p class="text-muted-50 mb-4" style="line-height:1.6; font-size:1rem;">
-            A series of Instagram posts made to boost engagement and CTA.
-          </p>
-          <div class="mb-3">
-            <h6 class="fw-semibold text-dark mb-1">Role</h6>
-            <p class="text-muted-50 mb-0">Art Direction, Graphic Design</p>
-          </div>
-          <div class="mb-4">
-            <h6 class="fw-semibold text-dark mb-1">Tools</h6>
-            <p class="text-muted-50 mb-0">Figma • After Effects</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal fade project-modal" id="projectModal3" tabindex="-1" aria-labelledby="projectModal3Label" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered custom-modal-width">
-    <div class="modal-content border-0 rounded-4 shadow-lg overflow-hidden position-relative">
-
-      <button type="button" class="btn-close position-absolute top-0 end-0 m-3" 
-              data-bs-dismiss="modal" aria-label="Close" 
-              style="opacity:0.8; transition:0.2s; z-index:1055;"></button>
-
-      <div class="modal-body p-0 d-flex flex-column flex-lg-row">
-        <div class="col-lg-8 p-0">
-          <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=60" 
-               alt="Startup Brand Kit" class="w-100 h-100 object-fit-cover" 
-               style="object-fit: cover; height: 100%; transition: transform 0.4s; cursor: pointer;"
-               onmouseover="this.style.transform='scale(1.05)';" 
-               onmouseout="this.style.transform='scale(1)';">
-        </div>
-        <div class="col-lg-4 p-5 d-flex flex-column justify-content-center">
-          <h3 id="projectModal3Label" class="fw-bold mb-3 text-dark" style="font-size:2rem;">Startup Brand Kit</h3>
-          <p class="text-muted-50 mb-4" style="line-height:1.6; font-size:1rem;">
-            Complete identity system including <span style="color:#FF7A30;">logo variations</span>, <span style="color:#FF7A30;">color palette</span>, and <span style="color:#FF7A30;">typography</span>.
-          </p>
-          <div class="mb-3">
-            <h6 class="fw-semibold text-dark mb-1">Role</h6>
-            <p class="text-muted-50 mb-0">Brand Designer</p>
-          </div>
-          <div class="mb-4">
-            <h6 class="fw-semibold text-dark mb-1">Tools</h6>
-            <p class="text-muted-50 mb-0">Adobe Illustrator • Figma</p>
+      <!-- Modal 3 -->
+      <div
+        class="modal fade project-modal"
+        id="projectModal3"
+        tabindex="-1"
+        aria-labelledby="projectModal3Label"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered custom-modal-width">
+          <div class="modal-content border-0 rounded-4 shadow-lg overflow-hidden position-relative">
+            <button
+              type="button"
+              class="btn-close position-absolute top-0 end-0 m-3"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+              style="opacity:0.8; transition:0.2s; z-index:1055;"
+            ></button>
+            <div class="modal-body p-0 d-flex flex-column flex-lg-row">
+              <div class="col-lg-8 p-0">
+                <img
+                  src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=60"
+                  alt="Startup Brand Kit"
+                  class="w-100 h-100 object-fit-cover"
+                  style="object-fit:cover; height:100%; transition:transform 0.4s; cursor:pointer;"
+                  onmouseover="this.style.transform='scale(1.05)';"
+                  onmouseout="this.style.transform='scale(1)';"
+                >
+              </div>
+              <div class="col-lg-4 p-5 d-flex flex-column justify-content-center">
+                <h3 id="projectModal3Label" class="fw-bold mb-3 text-dark" style="font-size:2rem;">
+                  Startup Brand Kit
+                </h3>
+                <p class="text-muted-50 mb-4" style="line-height:1.6; font-size:1rem;">
+                  Complete identity system including
+                  <span style="color:#FF7A30;">logo variations</span>,
+                  <span style="color:#FF7A30;">color palette</span>,
+                  and <span style="color:#FF7A30;">typography</span>.
+                </p>
+                <div class="mb-3">
+                  <h6 class="fw-semibold text-dark mb-1">Role</h6>
+                  <p class="text-muted-50 mb-0">Brand Designer</p>
+                </div>
+                <div class="mb-4">
+                  <h6 class="fw-semibold text-dark mb-1">Tools</h6>
+                  <p class="text-muted-50 mb-0">Adobe Illustrator • Figma</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</div>
 
-
-
-  
-      <!-- Contact -->
+      <!-- CONTACT SECTION -->
       <section id="contact" class="py-5 bg-light">
         <div class="container">
           <div class="row g-5 align-items-center">
-
-            <!-- Left Info -->
+            <!-- Contact Info -->
             <div class="col-lg-5">
               <h2 class="fw-bold mb-3">Let’s Work Together</h2>
               <p class="text-muted mb-4">
-                Got an idea or a project in mind? I’d love to hear about it....  
+                Got an idea or a project in mind? I’d love to hear about it....
               </p>
-
               <ul class="list-unstyled mb-4">
                 <li class="mb-3 d-flex align-items-center">
-                  <i class="bi bi-envelope-fill me-3" style="color: #FF7A30;"></i>
-                  <a href="mailto:kushangwadiwala@gmail.com" class="text-dark text-decoration-none">kushangwadiwala@gmail.com</a>
+                  <i class="bi bi-envelope-fill me-3" style="color:#FF7A30;"></i>
+                  <a
+                    href="mailto:kushangwadiwala@gmail.com"
+                    class="text-dark text-decoration-none"
+                  >
+                    kushangwadiwala@gmail.com
+                  </a>
                 </li>
                 <li class="mb-3 d-flex align-items-center">
-                  <i class="bi bi-geo-alt-fill me-3" style="color: #FF7A30;"></i>
+                  <i class="bi bi-geo-alt-fill me-3" style="color:#FF7A30;"></i>
                   Surat, Gujarat, India
                 </li>
               </ul>
-
               <div class="d-flex gap-3">
-                <a href="https://www.linkedin.com/in/kushangwadiwala" target="_blank" class="btn btn-outline-dark btn-sm">
+                <a
+                  href="https://www.linkedin.com/in/kushangwadiwala"
+                  target="_blank"
+                  class="btn btn-outline-dark btn-sm"
+                >
                   <i class="bi bi-linkedin me-1"></i> LinkedIn
                 </a>
-                <a href="https://dribbble.com/Kush0806" target="_blank" class="btn btn-outline-dark btn-sm">
+                <a
+                  href="https://dribbble.com/Kush0806"
+                  target="_blank"
+                  class="btn btn-outline-dark btn-sm"
+                >
                   <i class="bi bi-dribbble me-1"></i> Dribbble
                 </a>
               </div>
             </div>
 
-            <!-- Right Form -->
+            <!-- Contact Form -->
             <div class="col-lg-7">
               <div class="card shadow-lg border-0 rounded-4">
                 <div class="card-body p-4">
                   <h4 class="mb-3">Send me a message</h4>
-                  <form action="https://formspree.io/f/mnnzkzlv" method="POST" class="row g-3">
+                  <form
+                    action="https://formspree.io/f/mnnzkzlv"
+                    method="POST"
+                    class="row g-3"
+                  >
                     <div class="col-md-6">
                       <label for="name" class="form-label">Name</label>
-                      <input type="text" class="form-control" id="name" name="name" required>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="name"
+                        name="name"
+                        required
+                      >
                     </div>
                     <div class="col-md-6">
                       <label for="email" class="form-label">Email</label>
-                      <input type="email" class="form-control" id="email" name="email" required>
+                      <input
+                        type="email"
+                        class="form-control"
+                        id="email"
+                        name="email"
+                        required
+                      >
                     </div>
                     <div class="col-12">
-                      <label for="message" class="form-label">Message</label>
-                      <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                      <label for="message" class="form-label">
+                        Message
+                      </label>
+                      <textarea
+                        class="form-control"
+                        id="message"
+                        name="message"
+                        rows="5"
+                        required
+                      ></textarea>
                     </div>
                     <div class="col-12 d-flex align-items-center">
-                      <button type="submit" class="btn btn-orange px-4">Send Message</button>
+                      <button type="submit" class="btn btn-orange px-4">
+                        Send Message
+                      </button>
                       <span class="mx-2">or</span>
-                      <a href="mailto:kushangwadiwala@gmail.com" class="btn btn-outline-secondary">Email Me</a>
+                      <a
+                        href="mailto:kushangwadiwala@gmail.com"
+                        class="btn btn-outline-secondary"
+                      >
+                        Email Me
+                      </a>
                     </div>
                   </form>
                 </div>
               </div>
             </div>
-
           </div>
         </div>
       </section>
-  
-      <!-- Footer -->
+
+      <!-- FOOTER -->
       <footer class="site-footer py-4">
         <div class="footer-figurine">
-              <img src="Images/lufy.png" alt="goku Figurine">
+          <img src="Images/lufy.png" alt="goku Figurine">
         </div>
         <div class="container text-center text-sm-start">
           <div class="row align-items-center gy-3">
-            
-            <!-- Left side -->
+            <!-- Footer Left -->
             <div class="col-sm-6">
               <h5 class="fw-bold mb-1">OpticMorph</h5>
               <p class="small mb-0">Designs that speak for themselves.</p>
               <p class="small mb-0">© <span id="year"></span> Kushang Wadiwala.</p>
             </div>
-
-            <!-- Right side -->
+            <!-- Footer Right (Social) -->
             <div class="col-sm-6 d-flex justify-content-center justify-content-sm-end gap-3">
-              <a href="https://www.linkedin.com/in/kushangwadiwala" class="footer-link d-inline-flex align-items-center justify-content-center rounded-circle" aria-label="LinkedIn">
+              <a
+                href="https://www.linkedin.com/in/kushangwadiwala"
+                class="footer-link d-inline-flex align-items-center justify-content-center rounded-circle"
+                aria-label="LinkedIn"
+              >
                 <i class="bi bi-linkedin"></i>
               </a>
-              <a href="https://dribbble.com/Kush0806" class="footer-link d-inline-flex align-items-center justify-content-center rounded-circle" aria-label="Dribbble">
+              <a
+                href="https://dribbble.com/Kush0806"
+                class="footer-link d-inline-flex align-items-center justify-content-center rounded-circle"
+                aria-label="Dribbble"
+              >
                 <i class="bi bi-dribbble"></i>
               </a>
-              <a href="mailto:kushangwadiwala@gmail.com" class="footer-link d-inline-flex align-items-center justify-content-center rounded-circle" aria-label="Email">
+              <a
+                href="mailto:kushangwadiwala@gmail.com"
+                class="footer-link d-inline-flex align-items-center justify-content-center rounded-circle"
+                aria-label="Email"
+              >
                 <i class="bi bi-envelope-fill"></i>
               </a>
             </div>
-
           </div>
         </div>
       </footer>
+    </main>
 
-    <!-- Bootstrap JS -->
+    <!-- Bootstrap JS Bundle (includes Popper) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
-
