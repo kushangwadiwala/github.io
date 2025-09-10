@@ -1,0 +1,898 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    >
+    <!-- Bootstrap Icons -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+      rel="stylesheet"
+    >
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="Portfolio_Style.css">
+  </head>
+<style>
+  
+/* Mobile Overlay - Orange background with LIGHT ORANGE text */
+#mobileOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background: var(--orange);
+  color: #FAA655; /* Light orange text */
+  z-index: 1200;
+  display: flex;
+  flex-direction: column;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(-100%);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  padding: 2rem;
+}
+
+#mobileOverlay.show {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Header with brand and close button */
+.mobile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 4rem;
+}
+
+.mobile-brand {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #FAA655; /* Light orange */
+  letter-spacing: 0.1em;
+  transition: color 0.3s ease;
+}
+
+.mobile-brand:hover {
+  color: #000; /* Black on hover */
+}
+
+#overlayClose {
+  color: #FAA655; /* Light orange close button */
+  font-size: 2.5rem;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  transition: all 0.3s ease;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+#overlayClose:hover {
+  color: #000; /* Black on hover */
+  transform: rotate(90deg);
+}
+
+/* Navigation - Light orange text with black hover */
+.mobile-nav {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 4rem;
+}
+
+.mobile-nav a {
+  font-size: clamp(3rem, 12vw, 6rem);
+  font-weight: 900;
+  color: #FAA655; /* Light orange text */
+  text-decoration: none;
+  margin-bottom: 0.5rem;
+  transition: all 0.3s ease;
+  letter-spacing: -0.03em;
+  line-height: 0.9;
+  text-align: left;
+  display: block;
+  text-transform: uppercase;
+}
+
+/* Make first item (HOME) extra bold */
+.mobile-nav a:first-child {
+  font-weight: 900;
+  opacity: 1;
+}
+
+/* Other items slightly less bold */
+.mobile-nav a:not(:first-child) {
+  font-weight: 800;
+  opacity: 0.9;
+}
+
+.mobile-nav a:hover {
+  color: #000; /* Black on hover */
+  transform: translateX(5px);
+  opacity: 1;
+}
+
+/* Bottom footer - Light orange with black hover */
+.mobile-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
+}
+
+.footer-left a,
+.footer-right a {
+  color: #FAA655; /* Light orange text */
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.footer-right {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.footer-left a:hover,
+.footer-right a:hover {
+  color: #000; /* Black on hover */
+}
+
+/* Enhanced Hamburger Animation - Update colors */
+.navbar-toggler {
+  border: none !important;
+  background: transparent !important;
+  width: 44px;
+  height: 44px;
+  position: relative;
+  z-index: 1201;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none !important;
+}
+
+.toggler-icon {
+  width: 28px;
+  height: 20px;
+  position: relative;
+  transform: rotate(0deg);
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.toggler-icon span {
+  display: block;
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  background: #222; /* Dark bars normally */
+  border-radius: 2px;
+  opacity: 1;
+  left: 0;
+  transform: rotate(0deg);
+  transition: 0.3s ease-in-out;
+}
+
+.toggler-icon span:nth-child(1) {
+  top: 0px;
+  transform-origin: left center;
+}
+
+.toggler-icon span:nth-child(2) {
+  top: 8.5px;
+  transform-origin: left center;
+}
+
+.toggler-icon span:nth-child(3) {
+  top: 17px;
+  transform-origin: left center;
+}
+
+/* Hamburger to X animation - Light orange when overlay is open */
+.navbar-toggler.open .toggler-icon span {
+  background: #FAA655; /* Light orange X */
+}
+
+.navbar-toggler.open .toggler-icon span:nth-child(1) {
+  transform: rotate(45deg);
+  top: -1px;
+  left: 4px;
+}
+
+.navbar-toggler.open .toggler-icon span:nth-child(2) {
+  width: 0%;
+  opacity: 0;
+}
+
+.navbar-toggler.open .toggler-icon span:nth-child(3) {
+  transform: rotate(-45deg);
+  top: 18px;
+  left: 4px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+  #mobileOverlay {
+    padding: 1.5rem;
+  }
+  
+  .mobile-header {
+    margin-bottom: 3rem;
+  }
+  
+  .mobile-brand {
+    font-size: 1.2rem;
+  }
+  
+  .mobile-nav {
+    margin-bottom: 3rem;
+  }
+  
+  .mobile-nav a {
+    font-size: clamp(2.5rem, 14vw, 5rem);
+    margin-bottom: 0.3rem;
+  }
+  
+  .footer-left a,
+  .footer-right a {
+    font-size: 1rem;
+  }
+  
+  .footer-right {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .mobile-nav a {
+    font-size: clamp(2rem, 16vw, 4rem);
+  }
+  
+  .footer-left a,
+  .footer-right a {
+    font-size: 0.9rem;
+  }
+}
+
+
+</style>
+  <body>
+    <!-- Mobile Fullscreen Overlay -->
+<div id="mobileOverlay">
+  <div class="mobile-header">
+    <div class="mobile-brand">OPTICMORPH</div>
+    <button id="overlayClose" aria-label="Close menu">&times;</button>
+  </div>
+
+  <nav class="mobile-nav">
+    <a href="Portfolio.html#home">Home</a>
+    <a href="Portfolio.html#about">About</a>
+    <a href="Work.html">Work</a>
+    <a href="Portfolio.html#contact">Contact</a>
+  </nav>
+
+  <div class="mobile-footer">
+    <div class="footer-left">
+      <!-- Empty for now, can add content later -->
+    </div>
+    <div class="footer-right">
+      <a href="https://www.linkedin.com/in/kushangwadiwala" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="mailto:kushangwadiwala@gmail.com">Email</a>
+    </div>
+  </div>
+</div>
+
+<!-- Desktop Navbar -->
+<nav id="siteNavbar" class="navbar navbar-expand-lg fixed-top">
+  <div class="container">
+    <!-- Brand Logo -->
+    <a class="navbar-brand" href="Portfolio.html#home" aria-label="OpticMorph Home">
+      <img src="Images/logo.png" alt="OpticMorph Logo" height="40">
+    </a>
+
+    <!-- Mobile Hamburger Toggle -->
+    <button class="navbar-toggler d-lg-none" type="button" aria-label="Toggle navigation">
+      <div class="toggler-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </button>
+
+    <!-- Desktop Navigation Links -->
+    <div class="navbar-collapse d-none d-lg-flex">
+      <ul class="navbar-nav ms-auto align-items-center gap-3">
+        <li class="nav-item">
+          <a class="nav-link" href="Portfolio.html#home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Portfolio.html#about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Work.html">Work</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Portfolio.html#contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+    <main>
+      <!-- HERO SECTION -->
+      <section id="hero">
+        <header
+          class="hero bg-light d-flex align-items-center justify-content-center text-center position-relative"
+          id="home"
+          style="overflow:hidden;"
+        >
+          <div class="container-fluid position-relative z-2 px-0">
+            <div class="row justify-content-center gx-0">
+              <div class="col-lg-10 col-xl-9">
+                <h1
+                  class="display-4 fw-bold mb-3"
+                  style="letter-spacing:-1px; font-family:'Space Mono', monospace;"
+                >
+                  Design is the first conversation your brand has with the world —
+                  <span
+                    class="text-primary"
+                    style="background:linear-gradient(90deg,#FF7A30,#FF7A30,#465C88);
+                           -webkit-background-clip:text;
+                           -webkit-text-fill-color:transparent;"
+                  >
+                    Make it Meaningful.
+                  </span>
+                </h1>
+                <p
+                  class="lead text-muted mb-4"
+                  style="font-size:1.35rem; font-family:'Space Mono', monospace;"
+                >
+                  I design brand identities that inspire confidence and create
+                  lasting connections.
+                </p>
+              </div>
+            </div>
+          </div>
+        </header>
+      </section>
+
+      <!-- ABOUT SECTION -->
+      <section id="about" class="about-section" aria-label="About Kushang Wadiwala">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-10">
+              <div class="designer-card">
+                <!-- Profile Header -->
+                <div class="profile-header">
+                  <div class="profile-image">K</div>
+                  <div class="profile-title">GRAPHIC DESIGNER</div>
+                  <h1 class="profile-name">Kushang Wadiwala</h1>
+                  <div class="location">
+                    <i class="bi bi-geo-alt-fill me-2" aria-hidden="true"></i>
+                    <span>Surat, Gujarat</span>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <!-- Left Column: About Text & Skills -->
+                  <div class="col-lg-6">
+                    <div class="about-content">
+                      <h3 class="mb-4">
+                        <strong>Hey there!</strong>
+                      </h3>
+                      <p class="about-text mb-3">
+                        <span class="highlight-text">I'm Kushang,</span> and I believe every brand has a story worth telling. Over the past 3.5+ years, I've been helping businesses find their visual voice through thoughtful design and creative storytelling.
+                      </p>
+                      <p class="about-text mb-4">
+                        When I'm not designing, you'll find me exploring new design trends or having way too much coffee! 
+                      </p>
+
+                      <!-- Stats Container -->
+                      <div class="stats-container mb-4">
+                        <div class="stat-item">
+                          <div class="stat-icon">
+                            <i class="bi bi-palette-fill"></i>
+                          </div>
+                          <div class="stat-number"><span class="highlight-text">Logos & Identity</span></div>
+                          <div class="stat-label">Core specialty</div>
+                        </div>
+                        <div class="stat-item">
+                          <div class="stat-icon">
+                            <i class="bi bi-clock-fill"></i>
+                          </div>
+                          <div class="stat-number"><span class="highlight-text">3.5+ Years</span></div>
+                          <div class="stat-label">Freelance & projects</div>
+                        </div>
+                        <div class="stat-item">
+                          <div class="stat-icon">
+                            <i class="bi bi-brush-fill"></i>
+                          </div>
+                          <div class="stat-number"><span class="highlight-text">Creative Design</span></div>
+                          <div class="stat-label">Impactful visuals</div>
+                        </div>
+                      </div>
+
+
+                      <!-- Skills Container -->
+                      <div class="skills-container">
+                        <div class="skill-category mb-4">
+                          <h4 class="skill-category-title mb-3">
+                            <i class="bi bi-heart-fill" aria-hidden="true"></i> What I Love Doing
+                          </h4>
+                          <div class="skill-items">
+                            <div class="skill-item">Logo Design</div>
+                            <div class="skill-item">Brand Identity</div>
+                            <div class="skill-item">Print Design</div>
+                            <div class="skill-item">Social Media Design</div>
+                          </div>
+                        </div>
+
+                        <div class="skill-category">
+                          <h4 class="skill-category-title mb-3">
+                            <i class="bi bi-plus-circle-fill" aria-hidden="true"></i> Always Learning
+                          </h4>
+                          <div class="skill-items">
+                            <div class="skill-item">Typography</div>
+                            <div class="skill-item">Illustration</div>
+                            <div class="skill-item">UI/UX Design</div>
+                            <div class="skill-item">Packaging Design</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Right Column: Tools & Philosophy & Social -->
+                  <div class="col-lg-6">
+                    <!-- Tools Section -->
+                    <div class="tools-container mb-4">
+                      <h4 class="tools-title">My Creative Arsenal</h4>
+                      <div class="tools-grid">
+                        <div class="tool-item">
+                          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma" class="tool-icon">
+                          <div class="tool-name">Figma</div>
+                        </div>
+                        <div class="tool-item">
+                          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/illustrator/illustrator-line.svg" alt="Illustrator" class="tool-icon">
+                          <div class="tool-name">Illustrator</div>
+                        </div>
+                        <div class="tool-item">
+                          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-line.svg" alt="Photoshop" class="tool-icon">
+                          <div class="tool-name">Photoshop</div>
+                        </div>
+                        <div class="tool-item">
+                          <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/canva-icon.svg" alt="Canva" class="tool-icon">
+                          <div class="tool-name">Canva</div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Design Philosophy -->
+                    <div class="approach-section mb-4">
+                      <h4 class="skill-category-title mb-3">
+                        <i class="bi bi-lightbulb-fill" aria-hidden="true"></i> My Design Philosophy
+                      </h4>
+                      <p class="about-text mb-0">
+                        Great design isn't just about making things look pretty—it's about creating connections. I focus on designs that not only catch the eye but also tell your story in a way that resonates with your audience.
+                      </p>
+                    </div>
+
+                    <!-- Current Status -->
+                    <div class="status-section mb-4">
+                      <div class="status-badge">
+                        <i class="bi bi-circle-fill text-success me-2" aria-hidden="true"></i>
+                        <span class="fw-semibold">Available for new projects</span>
+                      </div>
+                    </div>
+
+                    <!-- Social Links -->
+                    <div class="social-links">
+                      <a href="assets/Kushang_Wadiwala_Resume.pdf" class="social-btn" download="Kushang_Wadiwala_Resume.pdf" aria-label="Download Resume">
+                        <i class="bi bi-file-earmark-arrow-down" aria-hidden="true"></i>
+                        <span>Resume</span>
+                      </a>
+                      <a href="https://www.linkedin.com/in/kushangwadiwala" class="social-btn" target="_blank" rel="noopener" aria-label="LinkedIn Profile">
+                        <i class="bi bi-linkedin" aria-hidden="true"></i>
+                        <span>LinkedIn</span>
+                      </a>
+                      <a href="https://dribbble.com/Kush0806" class="social-btn" target="_blank" rel="noopener" aria-label="Dribbble Portfolio">
+                        <i class="bi bi-dribbble" aria-hidden="true"></i>
+                        <span>Dribbble</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJECTS SECTION -->
+      <section id="projects" class="py-5 bg-light">
+        <div class="container px-3">
+          <!-- Section Header -->
+          <div class="text-center mb-5" data-aos="fade-up">
+            <h2 class="fw-bold mb-2" style="font-size:2.5rem;">
+              <span style="color:#FF7A30;">My</span> Projects
+            </h2>
+            <p class="text-muted fs-5 mx-auto" style="max-width:600px; line-height:1.6;">
+              Some of the work I’ve created & loved building
+            </p>
+            <div
+              class="mt-3"
+              style="height:3px; width:80px; margin:auto;
+                     background:linear-gradient(90deg,#FF7A30,#FF7A30,#465C88);
+                     border-radius:2px;"
+            ></div>
+          </div>
+
+          <div class="projects-grid">
+            <!-- Project Card 1 -->
+            <div class="project-card" data-bs-toggle="modal" data-bs-target="#projectModal1">
+                <div class="project-image-container">
+                    <img src="Images/Luxe_Luster_Logo.png" alt="Project 1" class="project-image">
+                    <div class="project-badge">Logo Design</div>
+                    <div class="project-overlay">
+                        <h3 class="project-title">Brand Identity Design</h3>
+                        <div class="project-category">
+                            <i class="fas fa-tag"></i>
+                            <span>Logo Design</span>
+                        </div>
+                        <div class="project-actions">
+                            <button class="btn btn-primary">View Details</button>
+                            <button class="btn btn-outline">Live Preview</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Card 2 -->
+            <div class="project-card" data-bs-toggle="modal" data-bs-target="#projectModal2">
+                <div class="project-image-container">
+                    <img src="Images/Suvanya_Logo.png" alt="Project 2" class="project-image">
+                    <div class="project-badge">Social Media</div>
+                    <div class="project-overlay">
+                        <h3 class="project-title">Social Media Campaign</h3>
+                        <div class="project-category">
+                            <i class="fas fa-tag"></i>
+                            <span>Social Media Design</span>
+                        </div>
+                        <div class="project-actions">
+                            <button class="btn btn-primary">View Details</button>
+                            <button class="btn btn-outline">Live Preview</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Card 3 -->
+            <div class="project-card" data-bs-toggle="modal" data-bs-target="#projectModal3">
+                <div class="project-image-container">
+                    <img src="assets/images/project3.jpg" alt="Project 3" class="project-image">
+                    <div class="project-badge">Print Design</div>
+                    <div class="project-overlay">
+                        <h3 class="project-title">Corporate Brochure</h3>
+                        <div class="project-category">
+                            <i class="fas fa-tag"></i>
+                            <span>Print Design</span>
+                        </div>
+                        <div class="project-actions">
+                            <button class="btn btn-primary">View Details</button>
+                            <button class="btn btn-outline">Live Preview</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Add more project cards as needed -->
+          </div>
+
+          <div class="text-center mt-5">
+            <a href="Work.html" class="btn-see-more" aria-label="Explore all work">
+              Explore All Work <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJECT MODALS -->
+      <!-- Modal 1 -->
+      <div class="modal fade project-modal" id="projectModal1" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen d-flex align-items-center justify-content-center">
+          <div class="modal-content bg-transparent border-0 shadow-none">
+            <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3"
+                    data-bs-dismiss="modal" aria-label="Close" style="z-index:1055;"></button>
+            <div class="modal-body d-flex align-items-center justify-content-center p-0">
+              <img src="Images/Luxe_Luster_Logo.png" alt="Luxe Lustre Logo" 
+                  style="max-width: 95%; max-height: 95vh; width: auto; height: auto; object-fit: contain; border-radius: 8px;">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal 2 -->
+      <div class="modal fade project-modal" id="projectModal2" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen d-flex align-items-center justify-content-center">
+          <div class="modal-content bg-transparent border-0 shadow-none">
+            <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3"
+                    data-bs-dismiss="modal" aria-label="Close" style="z-index:1055;"></button>
+            <div class="modal-body d-flex align-items-center justify-content-center p-0">
+              <img src="Images/Suvanya_Logo.png" alt="Social Campaign Glow" 
+                  style="max-width: 95%; max-height: 95vh; width: auto; height: auto; object-fit: contain; border-radius: 8px;">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal 3 -->
+      <div class="modal fade project-modal" id="projectModal3" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen d-flex align-items-center justify-content-center">
+          <div class="modal-content bg-transparent border-0 shadow-none">
+            <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3"
+                    data-bs-dismiss="modal" aria-label="Close" style="z-index:1055;"></button>
+            <div class="modal-body d-flex align-items-center justify-content-center p-0">
+              <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=60" 
+                  alt="Startup Brand Kit" 
+                  style="max-width: 95%; max-height: 95vh; width: auto; height: auto; object-fit: contain; border-radius: 8px;">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FUTURISTIC ANIME-INSPIRED SERVICES -->
+<section id="services" class="services-section">
+  <div class="container">
+    <!-- Header -->
+    <div class="services-header">
+      <span class="section-badge">Services</span>
+      <h2 class="section-title">Power Levels Unlocked</h2>
+      <p class="section-subtitle">
+        Like a Shonen protagonist leveling up — my designs pack energy, impact, and storytelling magic.
+      </p>
+    </div>
+
+    <!-- Services Grid -->
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="glow-circle"><i class="bi bi-palette"></i></div>
+        <h3>Brand Identity</h3>
+        <p>Logos and brand systems that channel your energy into a recognizable symbol — like your own clan’s crest.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="glow-circle"><i class="bi bi-columns-gap"></i></div>
+        <h3>UI/UX Design</h3>
+        <p>Interfaces that feel like cursed techniques — intuitive, powerful, and built for flow.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="glow-circle"><i class="bi bi-window"></i></div>
+        <h3>Web Design</h3>
+        <p>Websites that look and move like futuristic battle arenas — sleek, fast, and captivating.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="glow-circle"><i class="bi bi-box-seam"></i></div>
+        <h3>Packaging</h3>
+        <p>Packaging that hits like a finishing move — unmissable on shelves and unforgettable in hand.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+      <!-- CONTACT SECTION -->
+      <section id="contact" class="contact-section">
+        <div class="container">
+          <div class="row g-5 align-items-center">
+            
+            <!-- Left Side: Info -->
+            <div class="col-lg-5">
+              <div class="contact-intro">
+                <span class="contact-badge">Get in Touch</span>
+                <h2 class="contact-title">Let’s Create Something <span>Together</span></h2>
+                <p class="contact-subtitle">
+                  Have an idea, project, or just want to say hi? I’m always open to collaborations and new opportunities.
+                </p>
+
+                <!-- Contact Info -->
+                <div class="d-flex align-items-center mb-3">
+                <div class="contact-icon">
+                  <i class="bi bi-envelope-fill"></i>
+                </div>
+                <a href="mailto:kushangwadiwala@gmail.com" class="text-dark text-decoration-none fw-semibold">
+                  kushangwadiwala@gmail.com
+                </a>
+              </div>
+
+              <div class="d-flex align-items-center mb-4">
+                <div class="contact-icon">
+                  <i class="bi bi-geo-alt-fill"></i>
+                </div>
+                <span>Surat, Gujarat, India</span>
+              </div>
+
+                <!-- Social Links -->
+                <div class="social-links mt-4 d-flex gap-3">
+                  <a
+                  href="https://www.linkedin.com/in/kushangwadiwala"
+                  target="_blank"
+                  class="btn btn-outline-dark btn-sm"
+                >
+                  <i class="bi bi-linkedin me-1"></i> LinkedIn
+                </a>
+                  <a
+                  href="https://dribbble.com/Kush0806"
+                  target="_blank"
+                  class="btn btn-outline-dark btn-sm"
+                >
+                  <i class="bi bi-dribbble me-1"></i> Dribbble
+                </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Side: Form -->
+            <div class="col-lg-7">
+              <div class="contact-card shadow-lg">
+                <h4 class="mb-3 fw-bold">Send Me a Message</h4>
+                <form action="https://formspree.io/f/mnnzkzlv" method="POST" class="row g-3">
+                  
+                  <!-- Name -->
+                  <div class="col-md-6">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                  </div>
+
+                  <!-- Email -->
+                  <div class="col-md-6">
+                    <input type="email" name="email" placeholder="Your Email" required>
+                  </div>
+
+                  <!-- Message -->
+                  <div class="col-12">
+                    <textarea name="message" rows="5" placeholder="Write your message..." required></textarea>
+                  </div>
+
+                  <!-- Button -->
+                  <div class="col-12">
+                    <button type="submit" class="btn-submit">
+                      <i class="bi bi-send-fill me-2"></i> Send Message
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FOOTER -->
+      <footer class="site-footer py-4">
+        <div class="footer-figurine">
+          <img src="Images/lufy.png" alt="goku Figurine">
+        </div>
+        <div class="container text-center text-sm-start">
+          <div class="row align-items-center gy-3">
+            <!-- Footer Left -->
+            <div class="col-sm-6">
+              <h5 class="fw-bold mb-1">OpticMorph</h5>
+              <p class="small mb-0">Designs that speak for themselves.</p>
+              <p class="small mb-0">© <span id="year"></span> Kushang Wadiwala.</p>
+            </div>
+            <!-- Footer Right (Social) -->
+            <div class="col-sm-6 d-flex justify-content-center justify-content-sm-end gap-3">
+              <a
+                href="https://www.linkedin.com/in/kushangwadiwala"
+                class="footer-link d-inline-flex align-items-center justify-content-center rounded-circle"
+                aria-label="LinkedIn"
+              >
+                <i class="bi bi-linkedin"></i>
+              </a>
+              <a
+                href="https://dribbble.com/Kush0806"
+                class="footer-link d-inline-flex align-items-center justify-content-center rounded-circle"
+                aria-label="Dribbble"
+              >
+                <i class="bi bi-dribbble"></i>
+              </a>
+              <a
+                href="mailto:kushangwadiwala@gmail.com"
+                class="footer-link d-inline-flex align-items-center justify-content-center rounded-circle"
+                aria-label="Email"
+              >
+                <i class="bi bi-envelope-fill"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </footer>
+      
+    </main>
+    <!-- Bootstrap JS Bundle (includes Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+// Enhanced Fullscreen Mobile Overlay Navigation
+document.addEventListener('DOMContentLoaded', function() {
+  const overlay = document.getElementById('mobileOverlay');
+  const toggler = document.querySelector('.navbar-toggler');
+  const closeBtn = document.getElementById('overlayClose');
+  const body = document.body;
+
+  // Open overlay
+  function openOverlay() {
+    overlay.classList.add('show');
+    toggler.classList.add('open');
+    body.style.overflow = 'hidden';
+    // Focus management
+    setTimeout(() => closeBtn.focus(), 400);
+  }
+
+  // Close overlay
+  function closeOverlay() {
+    overlay.classList.remove('show');
+    toggler.classList.remove('open');
+    body.style.overflow = '';
+    // Return focus to hamburger
+    setTimeout(() => toggler.focus(), 400);
+  }
+
+  // Toggle overlay
+  if (toggler) {
+    toggler.addEventListener('click', function(e) {
+      e.preventDefault();
+      if (overlay.classList.contains('show')) {
+        closeOverlay();
+      } else {
+        openOverlay();
+      }
+    });
+  }
+
+  // Close button
+  if (closeBtn) {
+    closeBtn.addEventListener('click', closeOverlay);
+  }
+
+  // Close on navigation link click
+  const overlayLinks = document.querySelectorAll('.mobile-nav a');
+  overlayLinks.forEach(link => {
+    link.addEventListener('click', function() {
+      setTimeout(closeOverlay, 150);
+    });
+  });
+
+  // Close on escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && overlay.classList.contains('show')) {
+      closeOverlay();
+    }
+  });
+});
+</script>
+
+  </body>
+</html>
