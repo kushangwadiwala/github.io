@@ -1,7 +1,7 @@
 
 /*------------------------------------------
   NAVBAR
-------------------------------------------*/
+
 
 #siteNavbar {
   background: transparent;
@@ -208,7 +208,7 @@
   }
 }
 
-
+------------------------------------------*/
 
 
 
@@ -258,4 +258,5 @@ footer {
 .site-footer .footer-link:hover {
   opacity: 1;
   transform: translateY(-2px);
+
 }
