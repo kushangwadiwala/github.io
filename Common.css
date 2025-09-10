@@ -1,0 +1,261 @@
+
+/*------------------------------------------
+  NAVBAR
+------------------------------------------*/
+
+#siteNavbar {
+  background: transparent;
+  transition: background-color .28s ease, box-shadow .28s ease, padding .2s ease;
+  padding: .6rem 0;
+  z-index: 1100;
+}
+
+#siteNavbar.nav-scrolled {
+  background: rgba(255,255,255,0.95);
+  box-shadow: 0 10px 30px rgba(16,24,40,0.06);
+}
+
+.navbar {
+  background: rgba(255,255,255,0.9);
+  backdrop-filter: blur(6px);
+  transition: background-color .3s ease;
+}
+
+.navbar-brand {
+  font-weight: 600;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+}
+
+#siteNavbar .navbar-brand img {
+  height: 44px;
+  transition: transform .3s ease;
+}
+
+.brand-name {
+  color: var(--orange);
+  font-weight: 600;
+  letter-spacing: .2px;
+  font-size: 1.05rem;
+}
+
+.navbar-toggler {
+  border: none;
+  padding: .25rem;
+  width: 46px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.toggler-icon {
+  display: inline-block;
+  width: 26px;
+  height: 18px;
+  position: relative;
+}
+
+.toggler-icon span {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #222;
+  border-radius: 2px;
+  transition: transform .25s ease, opacity .2s ease;
+}
+.toggler-icon span:nth-child(1) { top: 0; }
+.toggler-icon span:nth-child(2) { top: 8px; }
+.toggler-icon span:nth-child(3) { bottom: 0; }
+
+#siteNavbar .nav-link {
+  color: #222;
+  margin: 0 .25rem;
+  padding: .4rem .6rem; /* vertical | horizontal */
+  font-weight: 500;
+  transition: color .18s ease, transform .18s ease;
+}
+
+#siteNavbar .nav-link:hover,
+#siteNavbar .nav-link.active {
+  color: var(--orange);
+  transform: translateY(-2px);
+}
+
+/* NAVBAR Ã¢â‚¬â€ MEDIA PLACEHOLDERS
+   Add section-specific responsive overrides here */
+@media (max-width: 992px) {
+  /* Navbar padding and logo size */
+  #siteNavbar { 
+    padding: .5rem 0;                 /* reduce vertical padding */
+  }
+  #siteNavbar .navbar-brand img { 
+    height: 40px;                     /* slightly smaller logo */
+  }
+
+  /* Nav links spacing */
+  #siteNavbar .nav-link {
+    padding: .4rem .5rem;             /* reduce horizontal padding */
+    font-size: 0.95rem;               /* make text a bit smaller */
+  }
+
+  /* Optional: shrink brand name text */
+  .brand-name {
+    font-size: 0.95rem;
+  }
+
+  /* Toggler adjustments (just in case) */
+  .navbar-toggler {
+    width: 42px;
+    height: 42px;
+  }
+}
+
+
+
+@media (max-width: 768px) {
+  /* Collapsed nav panel */
+  #siteNavbar .navbar-collapse {
+    background: #fff;             /* solid background for dropdown */
+    padding: 1rem;                /* spacing inside dropdown */
+    border-radius: 12px;          /* rounded corners for a modern look */
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1); /* soft shadow */
+  }
+
+  /* Nav links inside collapsed menu */
+  #siteNavbar .nav-link {
+    display: block;               /* stack links vertically */
+    margin: .5rem 0;              /* space between links */
+    font-size: 1rem;              /* readable on mobile */
+    text-align: center;           /* center align for better look */
+  }
+
+  /* Optional: make toggle button more comfortable */
+  .navbar-toggler {
+    border: none;
+    background: transparent;
+    outline: none;
+  }
+
+  /* When expanded, push navbar content full width */
+  .navbar-collapse.show {
+    margin-top: .5rem;            /* a little space below navbar bar */
+  }
+}
+
+@media (max-width: 576px) {
+  /* Navbar height and spacing */
+  #siteNavbar { 
+    padding: .4rem 0;                  /* compact padding */
+  }
+
+  /* Logo */
+  #siteNavbar .navbar-brand img { 
+    height: 36px;                      /* shrink logo further */
+  }
+
+  /* Brand text */
+  .brand-name {
+    font-size: 0.85rem;                /* smaller text to fit next to logo */
+    letter-spacing: 0.1px;             /* tighter spacing */
+  }
+
+  /* Nav links */
+  #siteNavbar .nav-link { 
+    font-size: 0.9rem;                 /* slightly smaller text */
+    padding: .35rem .5rem;             /* reduce link padding */
+  }
+
+  /* Collapsed menu (hamburger dropdown) */
+  #siteNavbar .navbar-collapse {
+    background: #fff;                  /* dropdown gets white background */
+    padding: .5rem 1rem;               /* breathing room for touch */
+    border-radius: 8px;                /* optional: modern rounded look */
+  }
+
+  /* Make toggler (hamburger) touch-friendly */
+  .navbar-toggler {
+    width: 40px;
+    height: 40px;
+  }
+
+  .toggler-icon span {
+    background: #000;                  /* ensure visible on light bg */
+  }
+}
+@media (max-width: 991.98px) {
+  #siteNavbar .container {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+  
+  #siteNavbar .navbar-brand {
+    margin-left: 12px !important; /* Adds space from the left edge */
+    padding-left: 0 !important;
+  }
+}
+
+@media (max-width: 575.98px) {
+  #siteNavbar .container {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+  
+  #siteNavbar .navbar-brand {
+    margin-left: 8px !important; /* Slightly less space on smaller phones */
+  }
+}
+
+
+
+
+
+
+/*------------------------------------------
+  FOOTER
+------------------------------------------*/
+
+footer {
+  position: relative;
+  margin-top: 0 !important;
+}
+
+.footer-figurine {
+  position: absolute;
+  right: 20px;
+  top: -80px;
+  z-index: 10;
+}
+
+.footer-figurine img {
+  width: 100px;
+  transition: transform .3s ease;
+}
+
+.site-footer {
+  background: #000;
+  color: #fff;
+  width: 100%;
+  padding: .5rem 0;
+  border-top: 1px solid rgba(255,255,255,0.04);
+}
+
+.site-footer .small {
+  font-size: .95rem;
+  color: rgba(255,255,255,0.9);
+}
+
+.site-footer .footer-link {
+  color: #fff;
+  font-size: 1.1rem;
+  text-decoration: none;
+  opacity: .92;
+  transition: opacity .18s ease, transform .18s ease;
+}
+
+.site-footer .footer-link:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+}
