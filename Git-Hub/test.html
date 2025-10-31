@@ -1,0 +1,2522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="About Kushang Wadiwala - Graphic Designer from Surat, India.">
+  <meta name="theme-color" content="#FF4500">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+  <title>About - Kushang Wadiwala</title>
+  
+  <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #1a1a1a;
+    --accent: #FF4500;
+    --orange: #FF4500;
+    --orange-light: #FF6B35;
+    --black: #0a0a0a;
+    --white: #ffffff;
+    --gray: #666;
+    --light-gray: #999;
+    --bg-gray: #F5F5F5;
+    --border: #E5E5E5;
+    --transition-base: 0.3s ease;
+    --shadow-sm: 0 2px 8px rgba(0,0,0,0.08);
+    --shadow-md: 0 4px 20px rgba(0,0,0,0.12);
+    --shadow-lg: 0 8px 30px rgba(0,0,0,0.16);
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    background: var(--white);
+    color: var(--primary);
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+::selection {
+    background: var(--accent);
+    color: var(--white);
+}
+
+/*------------------------------------------
+NAVBAR - PERFECT (UNCHANGED)
+------------------------------------------*/
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border-bottom: 1px solid transparent;
+    z-index: 3000;
+    transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    transform: translateY(0);
+    will-change: transform;
+}
+
+header.scrolled {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+header.hidden {
+    transform: translateY(-100%);
+}
+
+header.menu-open {
+    background: var(--accent);
+    border-bottom: none;
+    transform: translateY(0) !important;
+}
+
+.header-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 1.2rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    text-decoration: none;
+    color: var(--primary);
+    transition: var(--transition-base);
+    position: relative;
+}
+
+header:not(.scrolled):not(.menu-open) .logo {
+    color: var(--primary);
+    mix-blend-mode: difference;
+}
+
+.logo.hide {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.logo::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent);
+    transition: var(--transition-base);
+}
+
+.logo:hover::after,
+.logo:focus::after {
+    width: 100%;
+}
+
+.desktop-nav {
+    display: none;
+    gap: 2.5rem;
+    align-items: center;
+}
+
+.desktop-nav a {
+    text-decoration: none;
+    color: var(--primary);
+    font-weight: 500;
+    font-size: 0.95rem;
+    position: relative;
+    transition: var(--transition-base);
+}
+
+header:not(.scrolled):not(.menu-open) .desktop-nav a {
+    mix-blend-mode: difference;
+}
+
+.desktop-nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: var(--accent);
+    transition: var(--transition-base);
+}
+
+.desktop-nav a:hover,
+.desktop-nav a:focus {
+    color: var(--accent);
+    outline: none;
+}
+
+.desktop-nav a:hover::after,
+.desktop-nav a:focus::after {
+    width: 100%;
+}
+
+.desktop-nav .cta-btn {
+    background: var(--primary);
+    color: white;
+    padding: 0.7rem 1.8rem;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: var(--transition-base);
+}
+
+.desktop-nav .cta-btn::after {
+    display: none;
+}
+
+.desktop-nav .cta-btn:hover,
+.desktop-nav .cta-btn:focus {
+    background: var(--accent);
+    color: #ffffff;
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+}
+
+@media (min-width: 1024px) {
+    .desktop-nav {
+        display: flex;
+    }
+}
+
+.menu-toggle {
+    width: 30px;
+    height: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 3000;
+    position: relative;
+}
+
+.menu-toggle span {
+    display: block;
+    height: 3px;
+    background: var(--primary);
+    border-radius: 3px;
+    transition: var(--transition-base);
+    transform-origin: center;
+}
+
+header:not(.scrolled):not(.menu-open) .menu-toggle span {
+    background: var(--primary);
+    mix-blend-mode: difference;
+}
+
+.menu-toggle.active span {
+    background: var(--primary);
+}
+
+.menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+    transform: translateX(20px);
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(8px, -8px);
+}
+
+@media (min-width: 1024px) {
+    .menu-toggle {
+        display: none;
+    }
+}
+
+#mobileOverlay {
+    position: fixed;
+    inset: 0;
+    background: var(--accent);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--transition-base), visibility var(--transition-base);
+    z-index: 2000;
+    overflow-y: auto;
+}
+
+#mobileOverlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.overlay-content {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 8rem 2rem 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.mobile-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-bottom: 3rem;
+}
+
+.mobile-nav a {
+    font-size: clamp(3rem, 12vw, 5rem);
+    font-weight: 900;
+    text-decoration: none;
+    color: var(--primary);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    line-height: 1;
+    padding: 0.3rem 0;
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(30px);
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: -2px;
+}
+
+#mobileOverlay.active .mobile-nav a {
+    opacity: 0.5;
+    transform: translateY(0);
+}
+
+#mobileOverlay.active .mobile-nav a:nth-child(1) { transition-delay: 0.1s; }
+#mobileOverlay.active .mobile-nav a:nth-child(2) { transition-delay: 0.15s; }
+#mobileOverlay.active .mobile-nav a:nth-child(3) { transition-delay: 0.2s; }
+#mobileOverlay.active .mobile-nav a:nth-child(4) { transition-delay: 0.25s; }
+#mobileOverlay.active .mobile-nav a:nth-child(5) { transition-delay: 0.3s; }
+
+.mobile-nav a:hover,
+.mobile-nav a:focus {
+    opacity: 1 !important;
+    transform: translateX(20px);
+}
+
+.mobile-footer {
+    margin-top: auto;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: var(--transition-base);
+    transition-delay: 0.4s;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#mobileOverlay.active .mobile-footer {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.mobile-footer a {
+    text-decoration: none;
+    color: var(--primary);
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: var(--transition-base);
+    opacity: 0.7;
+}
+
+.mobile-footer a:hover,
+.mobile-footer a:focus {
+    opacity: 1;
+    transform: translateY(-2px);
+}
+
+.mobile-footer .lets-talk-btn {
+    background: var(--primary);
+    color: var(--accent);
+    padding: 0.6rem 1.5rem;
+    border-radius: 50px;
+    opacity: 1;
+    font-weight: 700;
+}
+
+/*------------------------------------------
+1. HERO SECTION - REVOLUTIONARY
+------------------------------------------*/
+.hero-section {
+    min-height: 100vh;
+    position: relative;
+    background: linear-gradient(135deg, var(--white) 0%, #FFF5F0 100%);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    padding: 6rem 2rem;
+}
+
+.hero-bg-elements {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.floating-shape {
+    position: absolute;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(255, 69, 0, 0.1), rgba(255, 107, 53, 0.05));
+    animation: float-random 20s infinite ease-in-out;
+}
+
+.floating-shape:nth-child(1) {
+    width: 300px;
+    height: 300px;
+    top: 10%;
+    left: 10%;
+    animation-duration: 15s;
+}
+
+.floating-shape:nth-child(2) {
+    width: 200px;
+    height: 200px;
+    bottom: 20%;
+    right: 10%;
+    animation-duration: 20s;
+    animation-delay: -5s;
+}
+
+.floating-shape:nth-child(3) {
+    width: 150px;
+    height: 150px;
+    top: 50%;
+    right: 30%;
+    animation-duration: 18s;
+    animation-delay: -10s;
+}
+
+@keyframes float-random {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    33% { transform: translate(30px, -30px) rotate(120deg); }
+    66% { transform: translate(-20px, 20px) rotate(240deg); }
+}
+
+.hero-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+@media (min-width: 1024px) {
+    .hero-content {
+        grid-template-columns: 1.2fr 1fr;
+    }
+}
+
+.hero-text {
+    animation: fadeInUp 1s ease;
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1.5rem;
+    background: rgba(255, 69, 0, 0.1);
+    border: 2px solid var(--accent);
+    border-radius: 50px;
+    margin-bottom: 2rem;
+}
+
+.badge-icon {
+    width: 10px;
+    height: 10px;
+    background: var(--accent);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; transform: scale(1.5); }
+}
+
+.badge-text {
+    font-weight: 700;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.85rem;
+}
+
+.hero-title {
+    font-size: clamp(3.5rem, 10vw, 8rem);
+    font-weight: 900;
+    line-height: 0.9;
+    letter-spacing: -0.04em;
+    margin-bottom: 2rem;
+}
+
+.hero-title-gradient {
+    background: linear-gradient(90deg, var(--accent), var(--orange-light), var(--accent));
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: gradient-shift 3s ease infinite;
+}
+
+@keyframes gradient-shift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+.hero-description {
+    font-size: 1.35rem;
+    line-height: 1.8;
+    color: var(--gray);
+    margin-bottom: 3rem;
+}
+
+.hero-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, var(--accent), var(--orange-light));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    line-height: 1;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: var(--gray);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 0.5rem;
+}
+
+.hero-cta-group {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.hero-btn {
+    padding: 1.25rem 2.5rem;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 12px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.hero-btn-primary {
+    background: var(--accent);
+    color: var(--white);
+    box-shadow: 0 20px 40px rgba(255, 69, 0, 0.3);
+}
+
+.hero-btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 30px 60px rgba(255, 69, 0, 0.4);
+}
+
+.hero-btn-secondary {
+    background: transparent;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+}
+
+.hero-btn-secondary:hover {
+    background: var(--primary);
+    color: var(--white);
+    transform: translateY(-3px);
+}
+
+.hero-visual {
+    position: relative;
+    animation: fadeInUp 1s ease 0.3s both;
+}
+
+.hero-image-wrapper {
+    position: relative;
+    aspect-ratio: 1;
+    background: linear-gradient(135deg, var(--accent), var(--orange-light));
+    border-radius: 30px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 50px 100px rgba(255, 69, 0, 0.2);
+    animation: levitate 6s ease-in-out infinite;
+}
+
+@keyframes levitate {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+.hero-image-text {
+    font-size: 10rem;
+    font-weight: 900;
+    color: rgba(255, 255, 255, 0.2);
+    letter-spacing: -0.05em;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/*------------------------------------------
+2. TOOLS SECTION - TECH STACK
+------------------------------------------*/
+.tools-section {
+    padding: 8rem 2rem;
+    background: var(--white);
+    position: relative;
+}
+
+.tools-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 5rem;
+}
+
+.section-tag {
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.section-title {
+    font-size: clamp(3rem, 6vw, 5rem);
+    font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    color: var(--primary);
+}
+
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 2rem;
+}
+
+.tool-card {
+    background: var(--bg-gray);
+    padding: 2rem;
+    border-radius: 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.tool-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, var(--accent), var(--orange-light));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.tool-card:hover::before {
+    opacity: 0.1;
+}
+
+.tool-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.tool-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    color: var(--accent);
+    transition: transform 0.3s ease;
+}
+
+.tool-card:hover .tool-icon {
+    transform: scale(1.2) rotate(5deg);
+}
+
+.tool-name {
+    font-weight: 700;
+    color: var(--primary);
+    font-size: 1rem;
+}
+
+.tool-category {
+    font-size: 0.85rem;
+    color: var(--gray);
+    margin-top: 0.25rem;
+}
+
+/*------------------------------------------
+3. SKILLS SECTION - EXPERTISE SHOWCASE
+------------------------------------------*/
+.skills-section {
+    padding: 8rem 2rem;
+    background: linear-gradient(135deg, var(--primary) 0%, #2a2a2a 100%);
+    color: var(--white);
+    position: relative;
+    overflow: hidden;
+}
+
+.skills-bg-pattern {
+    position: absolute;
+    inset: 0;
+    background-image: 
+        radial-gradient(circle at 20% 50%, rgba(255, 69, 0, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(255, 69, 0, 0.05) 0%, transparent 50%);
+}
+
+.skills-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+}
+
+.skill-category {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 3rem;
+    border-radius: 20px;
+    transition: all 0.4s ease;
+}
+
+.skill-category:hover {
+    background: rgba(255, 69, 0, 0.1);
+    transform: translateY(-10px);
+}
+
+.skill-icon-wrapper {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--accent), var(--orange-light));
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.skill-icon-wrapper i {
+    font-size: 2.5rem;
+    color: var(--white);
+}
+
+.skill-category-title {
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    color: var(--white);
+}
+
+.skill-items {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.skill-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.skill-name {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.skill-level {
+    display: flex;
+    gap: 0.25rem;
+}
+
+.skill-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    transition: background 0.3s ease;
+}
+
+.skill-dot.filled {
+    background: var(--accent);
+}
+
+/*------------------------------------------
+4. APPROACH/PROCESS SECTION
+------------------------------------------*/
+.process-section {
+    padding: 8rem 2rem;
+    background: var(--bg-gray);
+    position: relative;
+}
+
+.process-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.process-timeline {
+    position: relative;
+    padding: 3rem 0;
+}
+
+.process-line {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent), var(--orange-light));
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+@media (max-width: 768px) {
+    .process-line {
+        display: none;
+    }
+}
+
+.process-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+    position: relative;
+    z-index: 2;
+}
+
+.process-step {
+    background: var(--white);
+    padding: 3rem 2rem;
+    border-radius: 20px;
+    text-align: center;
+    position: relative;
+    transition: all 0.4s ease;
+}
+
+.process-step:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+}
+
+.process-number {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 40px;
+    background: var(--accent);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    font-size: 1.2rem;
+}
+
+.process-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, rgba(255, 69, 0, 0.1), rgba(255, 107, 53, 0.05));
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem auto;
+    font-size: 2.5rem;
+    color: var(--accent);
+}
+
+.process-title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.process-description {
+    color: var(--gray);
+    line-height: 1.7;
+}
+
+/*------------------------------------------
+5. DESIGN PHILOSOPHY SECTION
+------------------------------------------*/
+.philosophy-section {
+    padding: 8rem 2rem;
+    background: var(--white);
+    position: relative;
+}
+
+.philosophy-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.philosophy-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4rem;
+}
+
+@media (min-width: 1024px) {
+    .philosophy-content {
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+    }
+}
+
+.philosophy-text {
+    position: relative;
+}
+
+.philosophy-quote {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800;
+    line-height: 1.3;
+    color: var(--primary);
+    margin-bottom: 2rem;
+    position: relative;
+    padding-left: 3rem;
+}
+
+.philosophy-quote::before {
+    content: '"';
+    position: absolute;
+    left: 0;
+    top: -20px;
+    font-size: 5rem;
+    color: var(--accent);
+    opacity: 0.3;
+}
+
+.philosophy-principles {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.principle-item {
+    display: flex;
+    gap: 1.5rem;
+    align-items: start;
+}
+
+.principle-icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--accent), var(--orange-light));
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.principle-icon i {
+    color: var(--white);
+    font-size: 1.5rem;
+}
+
+.principle-content h4 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+
+.principle-content p {
+    color: var(--gray);
+    line-height: 1.7;
+}
+
+.philosophy-visual {
+    position: relative;
+}
+
+.philosophy-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.philo-card {
+    background: linear-gradient(135deg, var(--bg-gray), var(--white));
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.philo-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.philo-value {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: var(--accent);
+}
+
+/*------------------------------------------
+6. BEYOND DESIGN - PERSONAL SIDE
+------------------------------------------*/
+.personal-section {
+    padding: 8rem 2rem;
+    background: linear-gradient(135deg, #FFF5F0 0%, var(--white) 100%);
+}
+
+.personal-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.personal-intro {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 5rem;
+}
+
+.personal-intro p {
+    font-size: 1.25rem;
+    line-height: 1.8;
+    color: var(--gray);
+}
+
+.interests-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+}
+
+.interest-card {
+    background: var(--white);
+    padding: 2.5rem 2rem;
+    border-radius: 20px;
+    text-align: center;
+    transition: all 0.4s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.interest-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent), var(--orange-light));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+}
+
+.interest-card:hover::after {
+    transform: scaleX(1);
+}
+
+.interest-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 30px 60px rgba(255, 69, 0, 0.1);
+}
+
+.interest-emoji {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.interest-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+
+.interest-desc {
+    font-size: 0.95rem;
+    color: var(--gray);
+    line-height: 1.6;
+}
+
+.fun-facts {
+    margin-top: 5rem;
+    background: var(--primary);
+    color: var(--white);
+    padding: 4rem;
+    border-radius: 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+.fun-facts::before {
+    content: 'FUN FACTS';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 10rem;
+    font-weight: 900;
+    opacity: 0.02;
+    white-space: nowrap;
+}
+
+.fun-facts-title {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.facts-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    position: relative;
+}
+
+.fact-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.fact-icon {
+    color: var(--accent);
+    font-size: 1.5rem;
+}
+
+.fact-text {
+    color: rgba(255, 255, 255, 0.9);
+}
+/* Enhanced Personal Section Styles */
+.interests-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.interest-card.featured {
+  grid-column: span 2;
+  background: linear-gradient(135deg, var(--white), #FFF5F0);
+  border: 2px solid var(--accent);
+}
+
+.interest-detail {
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.interest-tag {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.75rem;
+  background: rgba(255, 69, 0, 0.1);
+  color: var(--accent);
+  border-radius: 20px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.interest-card:hover .interest-tag {
+  background: var(--accent);
+  color: var(--white);
+}
+
+/* Currently Inspired By Section */
+.currently-inspired {
+  margin: 4rem 0;
+  padding: 3rem;
+  background: linear-gradient(135deg, var(--primary), #2a2a2a);
+  border-radius: 30px;
+  color: var(--white);
+  position: relative;
+  overflow: hidden;
+}
+
+.currently-inspired::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(255, 69, 0, 0.2), transparent);
+  border-radius: 50%;
+}
+
+.inspired-title {
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.inspiration-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.inspiration-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  transition: all 0.3s ease;
+}
+
+.inspiration-item:hover {
+  background: rgba(255, 69, 0, 0.2);
+  transform: translateX(10px);
+}
+
+.inspiration-item i {
+  font-size: 1.5rem;
+  color: var(--accent);
+}
+
+.inspiration-item span {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.95rem;
+}
+
+/* Enhanced Fun Facts */
+.fun-facts {
+  margin-top: 4rem;
+  background: linear-gradient(135deg, var(--accent), var(--orange-light));
+  color: var(--white);
+  padding: 4rem;
+  border-radius: 30px;
+  position: relative;
+  overflow: hidden;
+}
+
+.facts-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  position: relative;
+}
+
+.fact-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.fact-item:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-5px);
+}
+
+.fact-icon {
+  color: var(--white);
+  font-size: 1.5rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .interest-card.featured {
+    grid-column: span 1;
+  }
+  
+  .currently-inspired {
+    padding: 2rem;
+  }
+  
+  .inspiration-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/*------------------------------------------
+7. VISION SECTION
+------------------------------------------*/
+.vision-section {
+    padding: 8rem 2rem;
+    background: var(--white);
+    position: relative;
+}
+
+.vision-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.vision-content {
+    position: relative;
+}
+
+.vision-main {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 900;
+    line-height: 1.3;
+    color: var(--primary);
+    margin-bottom: 3rem;
+}
+
+.vision-highlight {
+    background: linear-gradient(90deg, var(--accent), var(--orange-light));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.vision-description {
+    font-size: 1.25rem;
+    line-height: 1.8;
+    color: var(--gray);
+    max-width: 800px;
+    margin: 0 auto 4rem;
+}
+
+.vision-goals {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+}
+
+.goal-card {
+    padding: 3rem 2rem;
+    background: var(--bg-gray);
+    border-radius: 20px;
+    position: relative;
+    transition: all 0.4s ease;
+}
+
+.goal-card:hover {
+    background: linear-gradient(135deg, var(--accent), var(--orange-light));
+    transform: translateY(-10px);
+}
+
+.goal-card:hover .goal-icon,
+.goal-card:hover .goal-title,
+.goal-card:hover .goal-text {
+    color: var(--white);
+}
+
+.goal-icon {
+    font-size: 3rem;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+    transition: color 0.4s ease;
+}
+
+.goal-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 1rem;
+    transition: color 0.4s ease;
+}
+
+.goal-text {
+    color: var(--gray);
+    line-height: 1.7;
+    transition: color 0.4s ease;
+}
+
+/*------------------------------------------
+8. MOODBOARD/INSPIRATION WALL
+------------------------------------------*/
+.moodboard-section {
+    padding: 8rem 2rem;
+    background: var(--primary);
+    position: relative;
+}
+
+.moodboard-container {
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.moodboard-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.moodboard-title {
+    color: var(--white);
+}
+
+.moodboard-subtitle {
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 1rem;
+}
+
+.moodboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+    grid-auto-flow: dense;
+}
+
+.mood-item {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.mood-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+}
+
+.mood-item.large {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.mood-item.wide {
+    grid-column: span 2;
+}
+
+.mood-item.tall {
+    grid-row: span 2;
+}
+
+.mood-content {
+    width: 100%;
+    height: 100%;
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(255, 69, 0, 0.2), rgba(255, 107, 53, 0.1));
+    position: relative;
+}
+
+.mood-quote {
+    padding: 2rem;
+    text-align: center;
+}
+
+.mood-quote-text {
+    color: var(--white);
+    font-size: 1.2rem;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.mood-quote-author {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.9rem;
+    margin-top: 1rem;
+}
+
+.mood-color {
+    aspect-ratio: 1;
+    position: relative;
+}
+
+.color-display {
+    width: 100%;
+    height: 100%;
+    transition: all 0.3s ease;
+}
+
+.color-code {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    background: rgba(0, 0, 0, 0.8);
+    color: var(--white);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-family: monospace;
+    font-size: 0.9rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.mood-item:hover .color-code {
+    opacity: 1;
+}
+
+.mood-icon {
+    font-size: 4rem;
+    color: var(--accent);
+}
+
+.mood-text {
+    color: var(--white);
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-align: center;
+    padding: 2rem;
+}
+
+/*------------------------------------------
+FOOTER - PERFECT (UNCHANGED)
+------------------------------------------*/
+.site-footer {
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    color: var(--primary);
+    padding: 5rem 0 2rem;
+    position: relative;
+    margin-top: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.footer-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.footer-top {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    margin-bottom: 4rem;
+}
+
+@media (min-width: 768px) {
+    .footer-top {
+        grid-template-columns: 1.5fr 1fr;
+        gap: 4rem;
+    }
+}
+
+.footer-brand {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.footer-brand h3 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: var(--primary);
+    font-weight: 800;
+    letter-spacing: -1px;
+    line-height: 1.2;
+    margin: 0;
+}
+
+.footer-cta {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 0.5rem;
+}
+
+.footer-button {
+    background: var(--accent);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    border: 2px solid var(--accent);
+}
+
+.footer-button:hover,
+.footer-button:focus {
+    background: transparent;
+    color: var(--accent);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+
+.footer-links-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+}
+
+.footer-link-group h4 {
+    font-size: 0.85rem;
+    margin-bottom: 1.5rem;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+
+.footer-link-group ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.footer-link-group a {
+    color: var(--primary);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    position: relative;
+}
+
+.footer-link-group a::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 2px;
+    background: var(--accent);
+    transition: width 0.3s ease;
+}
+
+.footer-link-group a:hover,
+.footer-link-group a:focus {
+    color: var(--accent);
+    transform: translateX(5px);
+}
+
+.footer-link-group a:hover::before,
+.footer-link-group a:focus::before {
+    width: 100%;
+}
+
+.footer-bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+@media (min-width: 768px) {
+    .footer-bottom {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+.footer-copyright {
+    color: #666;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.footer-copyright i {
+    color: var(--accent);
+    font-size: 0.9rem;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Reveal animation */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+  </style>
+</head>
+<body>
+  <!-- Header - PERFECT (UNCHANGED) -->
+  <header id="header">
+    <div class="header-content">
+      <a href="Home.html" class="logo" aria-label="Kushang - Home">Kushang</a>
+      
+      <nav class="desktop-nav" aria-label="Main navigation">
+        <a href="Home.html" data-page="home">Home</a>
+        <a href="Aboutme.html" data-page="about">About</a>
+        <a href="Work.html#MyProjects" data-page="projects">Projects</a>
+        <a href="Services.html" data-page="services" aria-current="page">Services</a>
+        <a href="Contact.html" class="cta-btn" data-page="contact">Reach Out →</a>
+      </nav>
+
+      <button 
+        class="menu-toggle" 
+        id="menuToggle" 
+        aria-label="Toggle menu"
+        aria-expanded="false"
+        aria-controls="mobileOverlay"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+  
+  <!-- Mobile Menu - PERFECT (UNCHANGED) -->
+  <div id="mobileOverlay" role="dialog" aria-modal="true" aria-labelledby="mobile-nav-title">
+    <div class="overlay-content">
+      <h2 id="mobile-nav-title" class="visually-hidden">Navigation Menu</h2>
+      <nav class="mobile-nav" aria-label="Mobile navigation">
+        <a href="Home.html" data-page="home">Home</a>
+        <a href="Aboutme.html" data-page="about">About</a>
+        <a href="Work.html#MyProjects" data-page="projects">Projects</a>
+        <a href="Services.html" data-page="services" aria-current="page">Services</a>
+        <a href="Contact.html" data-page="contact">Contact</a>
+      </nav>
+
+      <div class="mobile-footer">
+        <a href="https://www.linkedin.com/in/kushangwadiwala" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="mailto:kushangwadiwala@gmail.com">Email</a>
+        <a href="Contact.html" class="lets-talk-btn">Reach Out →</a>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <!-- 1. HERO SECTION -->
+    <section class="hero-section">
+      <div class="hero-bg-elements">
+        <div class="floating-shape"></div>
+        <div class="floating-shape"></div>
+        <div class="floating-shape"></div>
+      </div>
+      
+      <div class="hero-container">
+        <div class="hero-content">
+          <div class="hero-text">
+            <div class="hero-badge">
+              <span class="badge-icon"></span>
+              <span class="badge-text">Available for Projects</span>
+            </div>
+            
+            <h1 class="hero-title">
+              Hi, I'm<br>
+              <span class="hero-title-gradient">Kushang</span>
+            </h1>
+            
+            <p class="hero-description">
+              A passionate graphic designer from Surat, India. I transform ideas into 
+              compelling visual stories that connect, inspire, and drive results.
+            </p>
+            
+            <div class="hero-stats">
+              <div class="stat-item">
+                <div class="stat-number" data-count="3.5">0</div>
+                <div class="stat-label">Years</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number" data-count="100">0</div>
+                <div class="stat-label">Projects</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number" data-count="50">0</div>
+                <div class="stat-label">Clients</div>
+              </div>
+            </div>
+            
+            <div class="hero-cta-group">
+                <a href="Resume/KW-resume.pdf" download class="hero-btn hero-btn-primary">
+                Download Resume
+                <i class="bi bi-download"></i>
+                </a>
+              <a href="Contact.html" class="hero-btn hero-btn-secondary">
+                Let's Talk
+                <i class="bi bi-chat-dots"></i>
+              </a>
+            </div>
+          </div>
+          
+          <div class="hero-visual">
+            <div class="hero-image-wrapper">
+              <span class="hero-image-text">KW</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. TOOLS SECTION -->
+    <section id="tools" class="tools-section reveal">
+      <div class="tools-container">
+        <div class="section-header">
+          <div class="section-tag">My Arsenal</div>
+          <h2 class="section-title">Tools I Master</h2>
+        </div>
+        
+        <div class="tools-grid">
+
+          
+          <div class="tool-card">
+            <div class="tool-icon">
+              <i class="bi bi-vector-pen"></i>
+            </div>
+            <div class="tool-name">Illustrator</div>
+            <div class="tool-category">Vector</div>
+          </div>
+          
+          <div class="tool-card">
+            <div class="tool-icon">
+              <i class="bi bi-pentagon"></i>
+            </div>
+            <div class="tool-name">Figma</div>
+            <div class="tool-category">UI/UX</div>
+          </div>
+          
+
+      
+          <div class="tool-card">
+            <div class="tool-icon">
+              <i class="bi bi-brush"></i>
+            </div>
+            <div class="tool-name">Canva</div>
+            <div class="tool-category">Quick Design</div>
+          </div>
+
+          <div class="tool-card">
+            <div class="tool-icon">
+              <i class="bi bi-code-slash"></i>
+            </div>
+            <div class="tool-name">VS Code</div>
+            <div class="tool-category">Code</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. SKILLS SECTION -->
+    <section class="skills-section reveal">
+      <div class="skills-bg-pattern"></div>
+      <div class="skills-container">
+        <div class="section-header">
+          <div class="section-tag" style="color: var(--accent);">Expertise</div>
+          <h2 class="section-title" style="color: var(--white);">Skills</h2>
+        </div>
+        
+        <div class="skills-grid">
+          <div class="skill-category">
+            <div class="skill-icon-wrapper">
+              <i class="bi bi-palette"></i>
+            </div>
+            <h3 class="skill-category-title">Visual Design</h3>
+            <div class="skill-items">
+              <div class="skill-item">
+                <span class="skill-name">Brand Identity</span>
+                <div class="skill-level">
+                </div>
+              </div>
+              <div class="skill-item">
+                <span class="skill-name">Logo Design</span>
+                <div class="skill-level">
+                </div>
+              </div>
+              <div class="skill-item">
+                <span class="skill-name">Typography</span>
+                <div class="skill-level">
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="skill-category">
+            <div class="skill-icon-wrapper">
+              <i class="bi bi-window"></i>
+            </div>
+            <h3 class="skill-category-title">Digital Design</h3>
+            <div class="skill-items">
+              <div class="skill-item">
+                <span class="skill-name">UI/UX Design</span>
+                <div class="skill-level">
+                </div>
+              </div>
+              <div class="skill-item">
+                <span class="skill-name">Web Design</span>
+                <div class="skill-level">
+                </div>
+              </div>
+              <div class="skill-item">
+                <span class="skill-name">App Design</span>
+                <div class="skill-level">
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="skill-category">
+            <div class="skill-icon-wrapper">
+              <i class="bi bi-box-seam"></i>
+            </div>
+            <h3 class="skill-category-title">Print & Package</h3>
+            <div class="skill-items">
+              <div class="skill-item">
+                <span class="skill-name">Package Design</span>
+                <div class="skill-level">
+                </div>
+              </div>
+              <div class="skill-item">
+                <span class="skill-name">Publication</span>
+                <div class="skill-level">
+                </div>
+              </div>
+              <div class="skill-item">
+                <span class="skill-name">Marketing Material</span>
+                <div class="skill-level">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. APPROACH/PROCESS SECTION -->
+    <section class="process-section reveal">
+      <div class="process-container">
+        <div class="section-header">
+          <div class="section-tag">How I Work</div>
+          <h2 class="section-title">My Design Process</h2>
+        </div>
+        
+        <div class="process-timeline">
+          <div class="process-line"></div>
+          <div class="process-steps">
+            <div class="process-step">
+              <div class="process-number">1</div>
+              <div class="process-icon">
+                <i class="bi bi-search"></i>
+              </div>
+              <h3 class="process-title">Discover</h3>
+              <p class="process-description">
+                Understanding your needs, goals, and target audience through research and analysis.
+              </p>
+            </div>
+            
+            <div class="process-step">
+              <div class="process-number">2</div>
+              <div class="process-icon">
+                <i class="bi bi-lightbulb"></i>
+              </div>
+              <h3 class="process-title">Ideate</h3>
+              <p class="process-description">
+                Brainstorming creative concepts and exploring multiple design directions.
+              </p>
+            </div>
+            
+            <div class="process-step">
+              <div class="process-number">3</div>
+              <div class="process-icon">
+                <i class="bi bi-pencil-square"></i>
+              </div>
+              <h3 class="process-title">Design</h3>
+              <p class="process-description">
+                Crafting pixel-perfect designs with attention to every detail.
+              </p>
+            </div>
+            
+            <div class="process-step">
+              <div class="process-number">4</div>
+              <div class="process-icon">
+                <i class="bi bi-rocket-takeoff"></i>
+              </div>
+              <h3 class="process-title">Deliver</h3>
+              <p class="process-description">
+                Providing final files, guidelines, and ongoing support for implementation.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. BEYOND DESIGN - PERSONAL SIDE -->
+<!-- 6. BEYOND DESIGN - PERSONAL SIDE -->
+<section class="personal-section reveal">
+  <div class="personal-container">
+    <div class="section-header">
+      <div class="section-tag">Personal Side</div>
+      <h2 class="section-title">Beyond Design</h2>
+    </div>
+    
+    <div class="personal-intro">
+      <p>
+        When I'm not pushing pixels or crafting brands, you'll find me exploring 
+        new experiences that fuel my creativity and keep me inspired. Here's what 
+        shapes my perspective beyond the artboard.
+      </p>
+    </div>
+    
+    <div class="interests-grid">
+      <div class="interest-card featured">
+        <div class="interest-emoji">🎮</div>
+        <h3 class="interest-title">Gaming</h3>
+        <p class="interest-desc">Exploring virtual worlds and appreciating game design</p>
+        <div class="interest-detail">
+          <span class="interest-tag">RPGs</span>
+          <span class="interest-tag">Indie Games</span>
+          <span class="interest-tag">UI/UX Study</span>
+        </div>
+      </div>
+      
+      <div class="interest-card">
+        <div class="interest-emoji">☕</div>
+        <h3 class="interest-title">Coffee Culture</h3>
+        <p class="interest-desc">Fueling creativity one perfectly brewed cup at a time</p>
+        <div class="interest-detail">
+          <span class="interest-tag">Espresso</span>
+          <span class="interest-tag">Café Hopping</span>
+        </div>
+      </div>
+      
+      <div class="interest-card">
+        <div class="interest-emoji">🎵</div>
+        <h3 class="interest-title">Music</h3>
+        <p class="interest-desc">Finding rhythm and flow in diverse soundscapes</p>
+        <div class="interest-detail">
+          <span class="interest-tag">Lo-fi</span>
+          <span class="interest-tag">Electronic</span>
+        </div>
+      </div>
+      
+      <div class="interest-card">
+        <div class="interest-emoji">📚</div>
+        <h3 class="interest-title">Reading</h3>
+        <p class="interest-desc">Diving deep into design theory and creative philosophy</p>
+        <div class="interest-detail">
+          <span class="interest-tag">Design Books</span>
+          <span class="interest-tag">Psychology</span>
+        </div>
+      </div>
+      
+      <div class="interest-card">
+        <div class="interest-emoji">🎬</div>
+        <h3 class="interest-title">Cinema</h3>
+        <p class="interest-desc">Studying visual storytelling and cinematography</p>
+        <div class="interest-detail">
+          <span class="interest-tag">Sci-Fi</span>
+          <span class="interest-tag">Documentaries</span>
+        </div>
+      </div>
+      
+      <div class="interest-card">
+        <div class="interest-emoji">🌏</div>
+        <h3 class="interest-title">Travel</h3>
+        <p class="interest-desc">Collecting inspiration from cultures and places</p>
+        <div class="interest-detail">
+          <span class="interest-tag">Architecture</span>
+          <span class="interest-tag">Street Art</span>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Currently Inspired By Section -->
+    <div class="currently-inspired">
+      <h3 class="inspired-title">Currently Inspired By</h3>
+      <div class="inspiration-grid">
+        <div class="inspiration-item">
+          <i class="bi bi-book"></i>
+          <span>Reading: "The Design of Everyday Things"</span>
+        </div>
+        <div class="inspiration-item">
+          <i class="bi bi-spotify"></i>
+          <span>Listening: ChilledCow Lo-fi Beats</span>
+        </div>
+        <div class="inspiration-item">
+          <i class="bi bi-controller"></i>
+          <span>Playing: Hades II</span>
+        </div>
+        <div class="inspiration-item">
+          <i class="bi bi-palette2"></i>
+          <span>Learning: Motion Design</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="fun-facts">
+      <h3 class="fun-facts-title">Quick Facts About Me</h3>
+      <div class="facts-list">
+        <div class="fact-item">
+          <i class="bi bi-sunrise fact-icon"></i>
+          <span class="fact-text">Early bird - Most productive between 5-11 AM</span>
+        </div>
+        <div class="fact-item">
+          <i class="bi bi-infinity fact-icon"></i>
+          <span class="fact-text">Minimalist at heart, maximalist in creativity</span>
+        </div>
+        <div class="fact-item">
+          <i class="bi bi-music-note-beamed fact-icon"></i>
+          <span class="fact-text">Can't work without my curated playlists</span>
+        </div>
+        <div class="fact-item">
+          <i class="bi bi-arrow-repeat fact-icon"></i>
+          <span class="fact-text">Believe in iterative design and continuous learning</span>
+        </div>
+        <div class="fact-item">
+          <i class="bi bi-cup-hot fact-icon"></i>
+          <span class="fact-text">Average 3 cups of coffee per project</span>
+        </div>
+        <div class="fact-item">
+          <i class="bi bi-chat-quote fact-icon"></i>
+          <span class="fact-text">Collect design quotes and typography specimens</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <!-- 8. MOODBOARD/INSPIRATION WALL -->
+    <section class="moodboard-section reveal">
+      <div class="moodboard-container">
+        <div class="moodboard-header">
+          <div class="section-tag" style="color: var(--accent);">Inspiration</div>
+          <h2 class="section-title moodboard-title">My Moodboard</h2>
+          <p class="moodboard-subtitle">A glimpse into what inspires my creative process</p>
+        </div>
+        
+        <div class="moodboard-grid">
+          <div class="mood-item large">
+            <div class="mood-content mood-quote">
+              <div>
+                <div class="mood-quote-text">"Design is thinking made visual"</div>
+                <div class="mood-quote-author">- Saul Bass</div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="mood-item">
+            <div class="mood-content mood-color">
+              <div class="color-display" style="background: linear-gradient(135deg, #FF4500, #FF6B35);"></div>
+              <span class="color-code">#FF4500</span>
+            </div>
+          </div>
+          
+          <div class="mood-item">
+            <div class="mood-content">
+              <i class="bi bi-brush mood-icon"></i>
+            </div>
+          </div>
+          
+          <div class="mood-item wide">
+            <div class="mood-content mood-text">
+              LESS IS MORE
+            </div>
+          </div>
+          
+          <div class="mood-item">
+            <div class="mood-content mood-color">
+              <div class="color-display" style="background: #1a1a1a;"></div>
+              <span class="color-code">#1A1A1A</span>
+            </div>
+          </div>
+          
+          <div class="mood-item">
+            <div class="mood-content">
+              <i class="bi bi-grid-3x3 mood-icon"></i>
+            </div>
+          </div>
+          
+          <div class="mood-item tall">
+            <div class="mood-content mood-quote">
+              <div>
+                <div class="mood-quote-text">"Simplicity is the ultimate sophistication"</div>
+                <div class="mood-quote-author">- Leonardo da Vinci</div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="mood-item">
+            <div class="mood-content mood-text">
+              CREATE
+            </div>
+          </div>
+          
+          <div class="mood-item">
+            <div class="mood-content mood-color">
+              <div class="color-display" style="background: linear-gradient(45deg, #667eea, #764ba2);"></div>
+              <span class="color-code">GRADIENT</span>
+            </div>
+          </div>
+          
+          <div class="mood-item">
+            <div class="mood-content">
+              <i class="bi bi-lightning-charge mood-icon"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer - PERFECT (UNCHANGED) -->
+  <footer class="site-footer">    
+    <div class="footer-container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <h3>Designs that speak for themselves.</h3>
+          <div class="footer-cta">
+            <a href="Contact.html" class="footer-button">Reach Out →</a>
+          </div>
+        </div>
+        
+        <div class="footer-links-container">
+          <nav class="footer-link-group" aria-labelledby="footer-nav-title">
+            <h4 id="footer-nav-title">Navigate</h4>
+            <ul>
+              <li><a href="Home.html">Home</a></li>
+              <li><a href="Aboutme.html">About</a></li>
+              <li><a href="Work.html#MyProjects">Projects</a></li>
+              <li><a href="Contact.html">Contact</a></li>
+            </ul>
+          </nav>
+          
+          <nav class="footer-link-group" aria-labelledby="footer-connect-title">
+            <h4 id="footer-connect-title">Connect</h4>
+            <ul>
+              <li><a href="https://www.linkedin.com/in/kushangwadiwala" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></li>
+              <li><a href="https://dribbble.com/Kush0806" target="_blank" rel="noopener noreferrer">Dribbble ↗</a></li>
+              <li><a href="mailto:kushangwadiwala@gmail.com">Email ↗</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p class="footer-copyright">
+          Made with <i class="bi bi-heart-fill" aria-label="love"></i> in Surat, India
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Animated counter
+    function animateCounter() {
+      const counters = document.querySelectorAll('[data-count]');
+      
+      counters.forEach(counter => {
+        const target = parseFloat(counter.getAttribute('data-count'));
+        const duration = 2000;
+        const increment = target / (duration / 16);
+        let current = 0;
+        
+        const updateCounter = () => {
+          current += increment;
+          if (current < target) {
+            counter.textContent = Math.floor(current);
+            requestAnimationFrame(updateCounter);
+          } else {
+            counter.textContent = target % 1 !== 0 ? target : Math.floor(target) + '+';
+          }
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              updateCounter();
+              observer.unobserve(entry.target);
+            }
+          });
+        });
+        
+        observer.observe(counter);
+      });
+    }
+    
+    animateCounter();
+
+    // Reveal animation on scroll
+    const reveals = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    reveals.forEach(reveal => {
+      revealObserver.observe(reveal);
+    });
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+
+  <!-- Navbar Script - PERFECT (UNCHANGED) -->
+    <script>
+        (function() {
+            'use strict';
+
+            const header = document.getElementById('header');
+            const menuToggle = document.getElementById('menuToggle');
+            const mobileOverlay = document.getElementById('mobileOverlay');
+            const logo = document.querySelector('.logo');
+            const body = document.body;
+            const mobileNavLinks = document.querySelectorAll('.mobile-nav a');
+            const desktopNavLinks = document.querySelectorAll('.desktop-nav a:not(.cta-btn)');
+            const focusableElements = mobileOverlay.querySelectorAll('a, button');
+
+            let lastScrollY = window.scrollY;
+            let ticking = false;
+            let isMenuOpen = false;
+            let lastFocusedElement = null;
+            let scrollPosition = 0;
+
+            function setActivePage() {
+                const currentPage = window.location.pathname;
+                
+                const pageMap = {
+                    'Home.html': 'home',
+                    'index.html': 'home',
+                    'Aboutme.html': 'about',
+                    'Work.html': 'projects',
+                    'Services.html': 'services',
+                    'Contact.html': 'contact'
+                };
+
+                let currentPageId = null;
+                for (let [filename, pageId] of Object.entries(pageMap)) {
+                    if (currentPage.includes(filename)) {
+                        currentPageId = pageId;
+                        break;
+                    }
+                }
+
+                if (!currentPageId && (currentPage === '/' || currentPage.endsWith('/'))) {
+                    currentPageId = 'home';
+                }
+
+                [...mobileNavLinks, ...desktopNavLinks].forEach(link => {
+                    const linkPage = link.getAttribute('data-page');
+                    if (linkPage === currentPageId) {
+                        link.classList.add('active');
+                        link.setAttribute('aria-current', 'page');
+                    } else {
+                        link.classList.remove('active');
+                        link.removeAttribute('aria-current');
+                    }
+                });
+            }
+
+            setActivePage();
+
+            function updateHeader() {
+                const currentScrollY = window.scrollY;
+                
+                header.classList.toggle('scrolled', currentScrollY > 50);
+                
+                if (!isMenuOpen) {
+                    if (currentScrollY > lastScrollY && currentScrollY > 100) {
+                        header.classList.add('hidden');
+                    } else {
+                        header.classList.remove('hidden');
+                    }
+                }
+                
+                lastScrollY = currentScrollY;
+                ticking = false;
+            }
+
+            window.addEventListener('scroll', () => {
+                if (!ticking) {
+                    window.requestAnimationFrame(updateHeader);
+                    ticking = true;
+                }
+            }, { passive: true });
+
+            function trapFocus(e) {
+                if (!isMenuOpen) return;
+
+                const firstFocusable = focusableElements[0];
+                const lastFocusable = focusableElements[focusableElements.length - 1];
+
+                if (e.key === 'Tab') {
+                    if (e.shiftKey && document.activeElement === firstFocusable) {
+                        e.preventDefault();
+                        lastFocusable.focus();
+                    } else if (!e.shiftKey && document.activeElement === lastFocusable) {
+                        e.preventDefault();
+                        firstFocusable.focus();
+                    }
+                }
+            }
+
+            document.addEventListener('keydown', trapFocus);
+
+            function closeMenu() {
+                mobileOverlay.classList.remove('active');
+                menuToggle.classList.remove('active');
+                header.classList.remove('menu-open');
+                logo.classList.remove('hide');
+                body.classList.remove('menu-open');
+                
+                window.scrollTo(0, scrollPosition);
+                body.style.top = '';
+                
+                menuToggle.setAttribute('aria-expanded', 'false');
+                isMenuOpen = false;
+
+                if (lastFocusedElement) {
+                    setTimeout(() => lastFocusedElement.focus(), 100);
+                }
+            }
+
+            function openMenu() {
+                lastFocusedElement = document.activeElement;
+                scrollPosition = window.scrollY;
+                body.style.top = `-${scrollPosition}px`;
+                
+                mobileOverlay.classList.add('active');
+                menuToggle.classList.add('active');
+                header.classList.add('menu-open');
+                logo.classList.add('hide');
+                body.classList.add('menu-open');
+                
+                menuToggle.setAttribute('aria-expanded', 'true');
+                isMenuOpen = true;
+
+                setTimeout(() => {
+                    const activeLink = document.querySelector('.mobile-nav a[aria-current="page"]');
+                    (activeLink || mobileNavLinks[0]).focus();
+                }, 300);
+            }
+
+            if (menuToggle) {
+                menuToggle.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    isMenuOpen ? closeMenu() : openMenu();
+                }, { passive: false });
+            }
+
+            mobileNavLinks.forEach(link => {
+                link.addEventListener('click', () => setTimeout(closeMenu, 100));
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && isMenuOpen) closeMenu();
+            });
+
+            let resizeTimer;
+            window.addEventListener('resize', () => {
+                clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(() => {
+                    if (window.innerWidth >= 1024 && isMenuOpen) closeMenu();
+                }, 250);
+            });
+
+        })();
+    </script>

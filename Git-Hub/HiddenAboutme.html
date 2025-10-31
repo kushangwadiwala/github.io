@@ -1,0 +1,1717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="About Kushang Wadiwala - Graphic Designer from Surat, India.">
+  <meta name="theme-color" content="#FF4500">
+  
+  <!-- Preconnect to external resources -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+  
+  <!-- Load icons with better performance -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css"></noscript>
+  
+  <title>Hidden About - Kushang Wadiwala</title>
+  
+  <style>
+    /* CSS Variables for consistent theming */
+    :root {
+      --primary: #1a1a1a;
+      --accent: #FF4500;
+      --orange-light: #FF6B35;
+      --white: #FFFFFF;
+      --gray: #6B7280;
+      --transition: cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      color: var(--primary);
+      background: #FAFAFA;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Reveal Animation */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s var(--transition);
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* About Me Section */
+    .hidden-aboutme {
+      padding: 6rem 2rem 4rem;
+      background: linear-gradient(135deg, var(--primary) 0%, #2d2d2d 100%);
+      color: var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hidden-aboutme::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255, 69, 0, 0.1) 0%, transparent 70%);
+      animation: rotate 30s linear infinite;
+    }
+
+    @keyframes rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    .aboutme-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .aboutme-title {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 900;
+      margin-bottom: 1.5rem;
+      background: linear-gradient(135deg, var(--white) 0%, var(--accent) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      animation: shimmer 3s ease-in-out infinite;
+    }
+
+    @keyframes shimmer {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+
+    .aboutme-description {
+      font-size: 1.25rem;
+      line-height: 1.8;
+      max-width: 800px;
+      opacity: 0.9;
+    }
+
+    /* Container */
+    .personal-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* Enhanced Personal Section */
+    .personal-section {
+      padding: 8rem 2rem;
+      background: linear-gradient(180deg, #FAFAFA 0%, #FFFFFF 50%, #FFF9F5 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Animated Background */
+    .personal-section::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: 
+        radial-gradient(circle at 20% 30%, rgba(255, 69, 0, 0.03) 0%, transparent 40%),
+        radial-gradient(circle at 80% 70%, rgba(255, 107, 53, 0.03) 0%, transparent 40%);
+      animation: bgFloat 20s ease-in-out infinite;
+    }
+
+    @keyframes bgFloat {
+      0%, 100% { transform: translate(0, 0); }
+      50% { transform: translate(-20px, -20px); }
+    }
+
+    /* Header Enhancements */
+    .personal-header {
+      text-align: center;
+      margin-bottom: 5rem;
+      position: relative;
+    }
+
+    .section-tag {
+      display: inline-block;
+      padding: 0.75rem 2rem;
+      background: rgba(255, 69, 0, 0.1);
+      color: var(--accent);
+      border-radius: 30px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 0.875rem;
+      margin-bottom: 1.5rem;
+      border: 1px solid rgba(255, 69, 0, 0.2);
+    }
+
+    .section-tag.floating {
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      font-weight: 900;
+      line-height: 1.2;
+      color: var(--primary);
+    }
+
+    .title-line {
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .title-line.accent {
+      color: var(--accent);
+    }
+
+    .title-line.animated {
+      position: relative;
+      height: 1.2em;
+      overflow: hidden;
+    }
+
+    .title-line .word {
+      position: absolute;
+      width: 100%;
+      opacity: 0;
+      animation: wordRotate 9s linear infinite;
+    }
+
+    .title-line .word:nth-child(1) { animation-delay: 0s; }
+    .title-line .word:nth-child(2) { animation-delay: 3s; }
+    .title-line .word:nth-child(3) { animation-delay: 6s; }
+
+    @keyframes wordRotate {
+      0%, 27% { opacity: 0; transform: translateY(100%); }
+      33%, 60% { opacity: 1; transform: translateY(0); }
+      66%, 100% { opacity: 0; transform: translateY(-100%); }
+    }
+
+    /* Enhanced Bento Grid */
+    .bento-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      grid-auto-rows: 200px;
+      gap: 1.5rem;
+      margin-bottom: 5rem;
+    }
+
+    .bento-item {
+      background: var(--white);
+      border-radius: 28px;
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.4s var(--transition);
+      cursor: pointer;
+      box-shadow: 
+        0 4px 6px rgba(0, 0, 0, 0.04),
+        0 10px 20px rgba(0, 0, 0, 0.06);
+      border: 1px solid rgba(0, 0, 0, 0.04);
+      will-change: transform;
+    }
+
+    .bento-item:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.12),
+        0 10px 20px rgba(255, 69, 0, 0.08);
+    }
+
+    /* Grid Sizing */
+    .bento-item.large { grid-column: span 3; grid-row: span 2; }
+    .bento-item.medium { grid-column: span 2; grid-row: span 2; }
+    .bento-item.wide { grid-column: span 3; }
+    .bento-item.small { grid-column: span 2; }
+
+    /* Live Status Card */
+    .status-card {
+      background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+      color: var(--white);
+    }
+
+    .live-indicator {
+      position: absolute;
+      top: 2rem;
+      right: 2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+    }
+
+    .live-dot {
+      width: 8px;
+      height: 8px;
+      background: #00FF00;
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+      box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.5); opacity: 0.5; }
+    }
+
+    .live-text {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 600;
+    }
+
+    .status-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+
+    .status-item {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      transition: transform 0.3s ease;
+    }
+
+    .status-item:hover {
+      transform: translateX(5px);
+    }
+
+    .status-icon {
+      font-size: 2rem;
+      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+    }
+
+    .status-info {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .status-label {
+      font-size: 0.75rem;
+      color: rgba(255, 255, 255, 0.5);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .status-value {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    /* Typing Effect */
+    .typing-effect::after {
+      content: '|';
+      animation: blink 1s infinite;
+      color: var(--accent);
+      font-weight: 300;
+    }
+
+    @keyframes blink {
+      0%, 50% { opacity: 1; }
+      51%, 100% { opacity: 0; }
+    }
+
+    /* Floating Elements */
+    .card-decoration {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+
+    .floating-element {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255, 69, 0, 0.1), transparent);
+      filter: blur(40px);
+    }
+
+    .floating-element:nth-child(1) {
+      top: -50px;
+      right: -50px;
+      animation: float1 15s infinite;
+    }
+
+    .floating-element:nth-child(2) {
+      bottom: -50px;
+      left: -50px;
+      animation: float2 20s infinite;
+    }
+
+    @keyframes float1 {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(-30px, 30px) scale(1.1); }
+    }
+
+    @keyframes float2 {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(30px, -30px) scale(0.9); }
+    }
+
+    /* Spotify Card */
+    .spotify-card {
+      background: linear-gradient(135deg, #1DB954 0%, #1ed760 100%);
+      color: var(--white);
+      position: relative;
+    }
+
+    .spotify-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.1) 100%);
+      pointer-events: none;
+    }
+
+    .spotify-header {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .spotify-header i {
+      font-size: 1.5rem;
+      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+    }
+
+    .now-playing {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      opacity: 0.8;
+      font-weight: 600;
+    }
+
+    .album-art {
+      width: 80px;
+      height: 80px;
+      margin-bottom: 1rem;
+      filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+    }
+
+    .vinyl-record {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #333, #111);
+      border-radius: 50%;
+      position: relative;
+      animation: spin 3s linear infinite;
+      box-shadow: 
+        inset 0 0 10px rgba(0, 0, 0, 0.5),
+        0 0 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .vinyl-label {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 30px;
+      height: 30px;
+      background: var(--accent);
+      border-radius: 50%;
+      box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);
+    }
+
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    .track-info h4 {
+      font-size: 1.2rem;
+      margin-bottom: 0.25rem;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .artist-name {
+      font-size: 0.9rem;
+      opacity: 0.8;
+      margin-bottom: 1rem;
+    }
+
+    .music-progress {
+      margin-top: 1rem;
+    }
+
+    .progress-bar {
+      height: 4px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 2px;
+      overflow: hidden;
+      box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+    }
+
+    .progress-fill {
+      height: 100%;
+      width: 50%;
+      background: var(--white);
+      animation: progress 3s ease-in-out infinite;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    }
+
+    @keyframes progress {
+      0% { width: 20%; }
+      50% { width: 80%; }
+      100% { width: 20%; }
+    }
+
+    .time-stamps {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 0.5rem;
+      font-size: 0.75rem;
+      opacity: 0.7;
+      font-family: 'Monaco', monospace;
+    }
+
+    /* Coffee Tracker */
+    .coffee-tracker {
+      background: linear-gradient(135deg, #6F4E37 0%, #8B5A3C 100%);
+      color: var(--white);
+    }
+
+    .coffee-meter {
+      width: 60px;
+      height: 100px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 30px;
+      position: relative;
+      overflow: hidden;
+      margin: 0 auto 1rem;
+      box-shadow: 
+        inset 0 2px 5px rgba(0, 0, 0, 0.3),
+        0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .meter-fill {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      background: linear-gradient(180deg, #D2691E, #8B4513);
+      border-radius: 30px;
+      transition: height 1s ease;
+    }
+
+    .coffee-bubbles {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .coffee-bubbles span {
+      position: absolute;
+      bottom: 0;
+      width: 4px;
+      height: 4px;
+      background: rgba(255, 255, 255, 0.6);
+      border-radius: 50%;
+      animation: bubble 2s infinite;
+    }
+
+    .coffee-bubbles span:nth-child(1) { left: 20%; animation-delay: 0s; }
+    .coffee-bubbles span:nth-child(2) { left: 50%; animation-delay: 0.5s; }
+    .coffee-bubbles span:nth-child(3) { left: 80%; animation-delay: 1s; }
+
+    @keyframes bubble {
+      0% { transform: translateY(0); opacity: 0; }
+      50% { opacity: 1; }
+      100% { transform: translateY(-100px); opacity: 0; }
+    }
+
+    .coffee-info {
+      text-align: center;
+    }
+
+    .coffee-info h4 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .coffee-status {
+      font-size: 0.9rem;
+      opacity: 0.9;
+      margin-bottom: 0.25rem;
+    }
+
+    .coffee-count {
+      font-size: 0.75rem;
+      opacity: 0.7;
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+    }
+
+    /* Gaming Stats */
+    .gaming-stats {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: var(--white);
+    }
+
+    .game-console {
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    .controller {
+      display: inline-flex;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+    }
+
+    .controller .button {
+      width: 12px;
+      height: 12px;
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 50%;
+      animation: gameButton 2s infinite;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    }
+
+    .controller .button:nth-child(1) { animation-delay: 0s; }
+    .controller .button:nth-child(2) { animation-delay: 0.2s; }
+    .controller .button:nth-child(3) { animation-delay: 0.4s; }
+    .controller .button:nth-child(4) { animation-delay: 0.6s; }
+
+    @keyframes gameButton {
+      0%, 100% { transform: scale(1); opacity: 0.5; }
+      50% { transform: scale(1.2); opacity: 1; }
+    }
+
+    .gaming-stats h4 {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      text-align: center;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .game-tags {
+      display: flex;
+      gap: 0.5rem;
+      margin: 1rem 0;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .game-tag {
+      padding: 0.25rem 0.75rem;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 15px;
+      font-size: 0.8rem;
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+    }
+
+    .game-tag:hover {
+      background: rgba(255, 255, 255, 0.3);
+      transform: translateY(-2px);
+    }
+
+    .game-status {
+      text-align: center;
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+
+    /* Personality Matrix */
+    .personality-matrix {
+      background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
+    }
+
+    .personality-matrix h3 {
+      font-size: 1.5rem;
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+    }
+
+    .dna-grid {
+      display: flex;
+      gap: 1.5rem;
+      align-items: flex-end;
+      height: 100px;
+    }
+
+    .dna-item {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .dna-bar {
+      width: 100%;
+      height: 80px;
+      background: rgba(0, 0, 0, 0.05);
+      border-radius: 10px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .dna-fill {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      background: linear-gradient(180deg, var(--accent), var(--orange-light));
+      border-radius: 10px;
+      animation: growBar 2s ease-out forwards;
+      box-shadow: 0 -2px 10px rgba(255, 69, 0, 0.3);
+    }
+
+    @keyframes growBar {
+      from { height: 0; opacity: 0; }
+      to { height: var(--level); opacity: 1; }
+    }
+
+    .dna-item[data-level="100"] .dna-fill { --level: 100%; }
+    .dna-item[data-level="90"] .dna-fill { --level: 90%; }
+    .dna-item[data-level="85"] .dna-fill { --level: 85%; }
+    .dna-item[data-level="95"] .dna-fill { --level: 95%; }
+    .dna-item[data-level="80"] .dna-fill { --level: 80%; }
+
+    .dna-label {
+      font-size: 0.75rem;
+      color: var(--gray);
+      text-align: center;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* Time Zone Card */
+    .timezone-card {
+      background: linear-gradient(135deg, #2C3E50 0%, #34495E 100%);
+      color: var(--white);
+    }
+
+    .clock-display {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .digital-clock {
+      font-size: 2.5rem;
+      font-weight: 300;
+      font-family: 'Monaco', 'Courier New', monospace;
+      margin-bottom: 0.5rem;
+      text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+      letter-spacing: 2px;
+    }
+
+    .timezone-info {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      margin-bottom: 1rem;
+    }
+
+    .city {
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .timezone {
+      font-size: 0.75rem;
+      opacity: 0.7;
+    }
+
+    .availability-status {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      backdrop-filter: blur(10px);
+      justify-content: center;
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      background: #00FF00;
+      border-radius: 50%;
+      animation: statusPulse 2s infinite;
+      box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+    }
+
+    @keyframes statusPulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(1.2); }
+    }
+
+    /* Inspiration Card */
+    .inspiration-card {
+      background: linear-gradient(135deg, #FF6B6B 0%, #FE8C8C 100%);
+      color: var(--white);
+    }
+
+    .inspiration-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .inspiration-carousel {
+      margin-bottom: 2rem;
+    }
+
+    .inspiration-items {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+    }
+
+    .inspiration-item {
+      text-align: center;
+      opacity: 0.6;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .inspiration-item.active {
+      opacity: 1;
+      transform: scale(1.1);
+    }
+
+    .inspiration-item img {
+      width: 60px;
+      height: 60px;
+      border-radius: 10px;
+      margin-bottom: 0.5rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+    }
+
+    .inspiration-item.active img {
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .inspiration-item span {
+      font-size: 0.75rem;
+      display: block;
+      font-weight: 600;
+    }
+
+    .daily-quote {
+      padding: 1rem;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      text-align: center;
+      backdrop-filter: blur(10px);
+    }
+
+    .daily-quote p {
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+      font-style: italic;
+      line-height: 1.6;
+    }
+
+    .daily-quote cite {
+      font-size: 0.75rem;
+      opacity: 0.8;
+      font-weight: 600;
+    }
+
+    /* Philosophy Card */
+    .philosophy-card {
+      background: linear-gradient(135deg, var(--accent) 0%, var(--orange-light) 100%);
+      color: var(--white);
+    }
+
+    .philosophy-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .philosophy-icon {
+      font-size: 2rem;
+      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+    }
+
+    .philosophy-card h3 {
+      font-size: 1.5rem;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .philosophy-quotes {
+      position: relative;
+      height: 100px;
+      display: flex;
+      align-items: center;
+    }
+
+    .philo-quote {
+      position: absolute;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      width: 100%;
+    }
+
+    .philo-quote.active {
+      opacity: 1;
+    }
+
+    .philo-quote p {
+      font-size: 1.2rem;
+      line-height: 1.5;
+      font-weight: 500;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .quote-navigation {
+      display: flex;
+      gap: 0.5rem;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+
+    .quote-dot {
+      width: 8px;
+      height: 8px;
+      background: rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .quote-dot.active {
+      background: var(--white);
+      transform: scale(1.2);
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    }
+
+    /* Hobby Wheel */
+    .hobby-wheel {
+      background: linear-gradient(135deg, #43E97B 0%, #38F9D7 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .wheel-container {
+      position: relative;
+      width: 150px;
+      height: 150px;
+    }
+
+    .hobby-circle {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      animation: wheelSpin 20s linear infinite;
+    }
+
+    @keyframes wheelSpin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    .hobby-item {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(calc(90deg * var(--i))) translateX(60px) rotate(calc(-90deg * var(--i)));
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+    }
+
+    .hobby-item:hover {
+      transform: translate(-50%, -50%) rotate(calc(90deg * var(--i))) translateX(65px) rotate(calc(-90deg * var(--i))) scale(1.1);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .center-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-weight: 700;
+      color: var(--white);
+      background: rgba(0, 0, 0, 0.2);
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Stats Dashboard */
+    .stats-dashboard {
+      margin-top: 5rem;
+      padding: 3rem;
+      background: var(--white);
+      border-radius: 30px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .stats-dashboard::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255, 69, 0, 0.03) 0%, transparent 50%);
+      animation: rotate 40s linear infinite reverse;
+    }
+
+    .dashboard-title {
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 3rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .stat-card {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      padding: 1.5rem;
+      background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
+      border-radius: 20px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .stat-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .stat-icon {
+      font-size: 2.5rem;
+      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+      transition: transform 0.3s ease;
+    }
+
+    .stat-card:hover .stat-icon {
+      transform: scale(1.1) rotate(5deg);
+    }
+
+    .stat-content {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .stat-number {
+      font-size: 2rem;
+      font-weight: 900;
+      background: linear-gradient(135deg, var(--accent), var(--orange-light));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 0.9rem;
+      color: var(--gray);
+      margin-top: 0.25rem;
+      font-weight: 500;
+    }
+
+    /* Loading Animation */
+    .loading-overlay {
+      position: fixed;
+      inset: 0;
+      background: var(--primary);
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.5s ease;
+    }
+
+    .loading-overlay.hide {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .loader {
+      width: 50px;
+      height: 50px;
+      border: 3px solid transparent;
+      border-top-color: var(--accent);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 1200px) {
+      .bento-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+      
+      .bento-item.large {
+        grid-column: span 4;
+      }
+      
+      .bento-item.medium {
+        grid-column: span 2;
+      }
+      
+      .bento-item.wide {
+        grid-column: span 4;
+      }
+      
+      .bento-item.small {
+        grid-column: span 2;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .bento-grid {
+        grid-template-columns: 1fr;
+        grid-auto-rows: auto;
+      }
+      
+      .bento-item {
+        grid-column: span 1 !important;
+        grid-row: span 1 !important;
+        min-height: 250px;
+      }
+      
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .status-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .dna-grid {
+        flex-wrap: wrap;
+        height: auto;
+      }
+      
+      .dna-item {
+        width: calc(33.333% - 1rem);
+        margin-bottom: 1rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+
+    /* Print Styles */
+    @media print {
+      .bento-item {
+        break-inside: avoid;
+      }
+      
+      .loading-overlay {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Loading Overlay -->
+  <div class="loading-overlay" id="loader">
+    <div class="loader"></div>
+  </div>
+
+  <main>
+    <section class="hidden-aboutme reveal" id="aboutSection">
+      <div class="aboutme-container">
+        <h1 class="aboutme-title">About Me</h1>
+        <p class="aboutme-description">
+          Welcome to my hidden sanctuary! Here, I unveil the layers beyond my professional facade. Dive into my passions, quirks, and the little things that make me, well, me. From my favorite design inspirations to my go-to coffee order, this is where I share the personal side of my journey. Let's get to know each other better!
+        </p>
+      </div>
+    </section>
+
+    <section class="personal-section reveal" id="personalSection">
+      <div class="personal-container">
+        <!-- Animated Header -->
+        <header class="personal-header">
+          <div class="section-tag floating">The Human Side</div>
+          <h2 class="section-title">
+            <span class="title-line">Designer by profession.</span>
+            <span class="title-line accent animated">
+              <span class="word">Dreamer.</span>
+              <span class="word">Creator.</span>
+              <span class="word">Human.</span>
+            </span>
+          </h2>
+        </header>
+
+        <!-- Enhanced Bento Grid -->
+        <div class="bento-grid">
+          <!-- Live Status Card -->
+          <article class="bento-item large status-card" data-live="true" aria-label="Live Status">
+            <div class="live-indicator">
+              <span class="live-dot"></span>
+              <span class="live-text">Live Status</span>
+            </div>
+            <div class="bento-content">
+              <div class="status-grid">
+                <div class="status-item">
+                  <div class="status-icon" role="img" aria-label="Current Project">🎨</div>
+                  <div class="status-info">
+                    <span class="status-label">Working on</span>
+                    <span class="status-value typing-effect" data-text="E-commerce Redesign">E-commerce Redesign</span>
+                  </div>
+                </div>
+                <div class="status-item">
+                  <div class="status-icon" role="img" aria-label="Reading">📚</div>
+                  <div class="status-info">
+                    <span class="status-label">Currently Reading</span>
+                    <span class="status-value">Don't Make Me Think</span>
+                  </div>
+                </div>
+                <div class="status-item">
+                  <div class="status-icon" role="img" aria-label="Goal">🎯</div>
+                  <div class="status-info">
+                    <span class="status-label">2025 Goal</span>
+                    <span class="status-value">Master 3D Design</span>
+                  </div>
+                </div>
+                <div class="status-item">
+                  <div class="status-icon" role="img" aria-label="Mood">💭</div>
+                  <div class="status-info">
+                    <span class="status-label">Mood</span>
+                    <span class="status-value">Creatively Charged ⚡</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card-decoration">
+              <div class="floating-element"></div>
+              <div class="floating-element"></div>
+            </div>
+          </article>
+
+          <!-- Spotify Music Card -->
+          <article class="bento-item medium spotify-card" aria-label="Currently Playing Music">
+            <div class="spotify-header">
+              <i class="bi bi-spotify" aria-hidden="true"></i>
+              <span class="now-playing">Now Playing</span>
+            </div>
+            <div class="bento-content">
+              <div class="album-art">
+                <div class="vinyl-record">
+                  <div class="vinyl-label"></div>
+                </div>
+              </div>
+              <div class="track-info">
+                <h4 class="track-name">Lofi Study Beats</h4>
+                <p class="artist-name">ChillHop Music</p>
+                <div class="music-progress">
+                  <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                  </div>
+                  <div class="time-stamps">
+                    <span>1:42</span>
+                    <span>3:21</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Interactive Coffee Tracker -->
+          <article class="bento-item small coffee-tracker" aria-label="Coffee Consumption">
+            <div class="bento-content">
+              <div class="coffee-meter">
+                <div class="meter-fill" style="height: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                  <div class="coffee-bubbles">
+                    <span></span><span></span><span></span>
+                  </div>
+                </div>
+              </div>
+              <div class="coffee-info">
+                <h4>Caffeine Level</h4>
+                <p class="coffee-status">Highly Caffeinated ☕</p>
+                <span class="coffee-count">Cup #3 Today</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Gaming Stats Card -->
+          <article class="bento-item small gaming-stats" aria-label="Gaming Statistics">
+            <div class="bento-content">
+              <div class="game-console">
+                <div class="controller">
+                  <span class="button"></span>
+                  <span class="button"></span>
+                  <span class="button"></span>
+                  <span class="button"></span>
+                </div>
+              </div>
+              <h4>Gaming Mode</h4>
+              <div class="game-tags">
+                <span class="game-tag">Valorant</span>
+                <span class="game-tag">FIFA 24</span>
+              </div>
+              <p class="game-status">Weekend Warrior 🎮</p>
+            </div>
+          </article>
+
+          <!-- Personality Matrix -->
+          <article class="bento-item wide personality-matrix" aria-label="Personality Traits">
+            <div class="bento-content">
+              <h3>My DNA</h3>
+              <div class="dna-grid">
+                <div class="dna-item" data-level="100">
+                  <div class="dna-bar">
+                    <div class="dna-fill"></div>
+                  </div>
+                  <span class="dna-label">Creative</span>
+                </div>
+                <div class="dna-item" data-level="90">
+                  <div class="dna-bar">
+                    <div class="dna-fill"></div>
+                  </div>
+                  <span class="dna-label">Curious</span>
+                </div>
+                <div class="dna-item" data-level="85">
+                  <div class="dna-bar">
+                    <div class="dna-fill"></div>
+                  </div>
+                  <span class="dna-label">Perfectionist</span>
+                </div>
+                <div class="dna-item" data-level="95">
+                  <div class="dna-bar">
+                    <div class="dna-fill"></div>
+                  </div>
+                  <span class="dna-label">Team Player</span>
+                </div>
+                <div class="dna-item" data-level="80">
+                  <div class="dna-bar">
+                    <div class="dna-fill"></div>
+                  </div>
+                  <span class="dna-label">Problem Solver</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Time Zone Card -->
+          <article class="bento-item small timezone-card" aria-label="Time Zone Information">
+            <div class="bento-content">
+              <div class="clock-display">
+                <time class="digital-clock" id="liveTime">14:32</time>
+                <div class="timezone-info">
+                  <span class="city">Surat, India</span>
+                  <span class="timezone">GMT+5:30</span>
+                </div>
+              </div>
+              <div class="availability-status">
+                <span class="status-dot active"></span>
+                <span>Available for projects</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Inspiration Sources -->
+          <article class="bento-item medium inspiration-card" aria-label="Inspiration Sources">
+            <div class="bento-content">
+              <h3>Inspired By</h3>
+              <div class="inspiration-carousel">
+                <div class="inspiration-items">
+                  <div class="inspiration-item active">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' fill='%23FF4500'%3E%3Crect width='60' height='60' rx='10'/%3E%3C/svg%3E" alt="Behance">
+                    <span>Behance</span>
+                  </div>
+                  <div class="inspiration-item">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' fill='%23EA4C89'%3E%3Crect width='60' height='60' rx='10'/%3E%3C/svg%3E" alt="Dribbble">
+                    <span>Dribbble</span>
+                  </div>
+                  <div class="inspiration-item">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' fill='%23000000'%3E%3Crect width='60' height='60' rx='10'/%3E%3C/svg%3E" alt="Awwwards">
+                    <span>Awwwards</span>
+                  </div>
+                </div>
+              </div>
+              <div class="daily-quote">
+                <p>"Good design is good business"</p>
+                <cite>- Thomas Watson Jr.</cite>
+              </div>
+            </div>
+          </article>
+
+          <!-- Life Philosophy -->
+          <article class="bento-item large philosophy-card" aria-label="Life Philosophy">
+            <div class="bento-content">
+              <div class="philosophy-header">
+                <span class="philosophy-icon" role="img" aria-label="Philosophy">💡</span>
+                <h3>Life Philosophy</h3>
+              </div>
+              <div class="philosophy-quotes">
+                <div class="philo-quote active">
+                  <p>Design with purpose, create with passion, deliver with pride.</p>
+                </div>
+                <div class="philo-quote">
+                  <p>Every pixel matters, every interaction counts.</p>
+                </div>
+                <div class="philo-quote">
+                  <p>Learn something new every day, teach something valuable.</p>
+                </div>
+              </div>
+              <nav class="quote-navigation" aria-label="Quote navigation">
+                <span class="quote-dot active" data-quote="0" role="button" aria-label="Quote 1"></span>
+                <span class="quote-dot" data-quote="1" role="button" aria-label="Quote 2"></span>
+                <span class="quote-dot" data-quote="2" role="button" aria-label="Quote 3"></span>
+              </nav>
+            </div>
+          </article>
+
+          <!-- Hobby Wheel -->
+          <article class="bento-item small hobby-wheel" aria-label="Hobbies">
+            <div class="bento-content">
+              <div class="wheel-container">
+                <div class="hobby-circle">
+                  <div class="hobby-item" style="--i: 1" role="img" aria-label="Photography">📷</div>
+                  <div class="hobby-item" style="--i: 2" role="img" aria-label="Cricket">🏏</div>
+                  <div class="hobby-item" style="--i: 3" role="img" aria-label="Movies">🎬</div>
+                  <div class="hobby-item" style="--i: 4" role="img" aria-label="Travel">✈️</div>
+                </div>
+                <div class="center-text">
+                  <span>Hobbies</span>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Interactive Stats Dashboard -->
+        <section class="stats-dashboard" aria-label="Life Statistics">
+          <h3 class="dashboard-title">Life in Numbers</h3>
+          <div class="stats-grid">
+            <div class="stat-card">
+              <div class="stat-icon" role="img" aria-label="Early Mornings">☀️</div>
+              <div class="stat-content">
+                <span class="stat-number" data-count="1277">0</span>
+                <span class="stat-label">Early Mornings</span>
+              </div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon" role="img" aria-label="Creating Hours">🎨</div>
+              <div class="stat-content">
+                <span class="stat-number" data-count="50000">0</span>
+                <span class="stat-label">Hours Creating</span>
+              </div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon" role="img" aria-label="Ideas">💡</div>
+              <div class="stat-content">
+                <span class="stat-number">∞</span>
+                <span class="stat-label">Ideas Generated</span>
+              </div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon" role="img" aria-label="Happy Clients">😊</div>
+              <div class="stat-content">
+                <span class="stat-number" data-count="100">0</span>
+                <span class="stat-label">Happy Clients</span>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // Page Load Animation
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        document.getElementById('loader').classList.add('hide');
+      }, 500);
+    });
+
+    // Reveal Animation on Scroll
+    const revealElements = document.querySelectorAll('.reveal');
+    const revealOnScroll = () => {
+      revealElements.forEach(element => {
+        const elementTop = element.getBoundingClientRect().top;
+        const elementVisible = 150;
+        
+        if (elementTop < window.innerHeight - elementVisible) {
+          element.classList.add('active');
+        }
+      });
+    };
+
+    window.addEventListener('scroll', revealOnScroll);
+    revealOnScroll(); // Check on load
+
+    // Live Clock with proper timezone
+    function updateClock() {
+      const now = new Date();
+      const istTime = new Date(now.toLocaleString("en-US", {timeZone: "Asia/Kolkata"}));
+      const hours = String(istTime.getHours()).padStart(2, '0');
+      const minutes = String(istTime.getMinutes()).padStart(2, '0');
+      const seconds = String(istTime.getSeconds()).padStart(2, '0');
+      document.getElementById('liveTime').textContent = `${hours}:${minutes}:${seconds}`;
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+
+    // Enhanced Quote Rotation with click support
+    const quotes = document.querySelectorAll('.philo-quote');
+    const quoteDots = document.querySelectorAll('.quote-dot');
+    let currentQuote = 0;
+    let quoteInterval;
+
+    function showQuote(index) {
+      quotes[currentQuote].classList.remove('active');
+      quoteDots[currentQuote].classList.remove('active');
+      
+      currentQuote = index;
+      
+      quotes[currentQuote].classList.add('active');
+      quoteDots[currentQuote].classList.add('active');
+    }
+
+    function rotateQuotes() {
+      const nextQuote = (currentQuote + 1) % quotes.length;
+      showQuote(nextQuote);
+    }
+
+    // Auto-rotate quotes
+    function startQuoteRotation() {
+      quoteInterval = setInterval(rotateQuotes, 4000);
+    }
+
+    // Manual quote selection
+    quoteDots.forEach((dot, index) => {
+      dot.addEventListener('click', () => {
+        clearInterval(quoteInterval);
+        showQuote(index);
+        startQuoteRotation();
+      });
+      
+      // Keyboard accessibility
+      dot.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          clearInterval(quoteInterval);
+          showQuote(index);
+          startQuoteRotation();
+        }
+      });
+    });
+
+    startQuoteRotation();
+
+    // Inspiration Carousel with pause on hover
+    const inspirationItems = document.querySelectorAll('.inspiration-item');
+    let currentInspiration = 0;
+    let inspirationInterval;
+
+    function rotateInspiration() {
+      inspirationItems[currentInspiration].classList.remove('active');
+      currentInspiration = (currentInspiration + 1) % inspirationItems.length;
+      inspirationItems[currentInspiration].classList.add('active');
+    }
+
+    function startInspirationRotation() {
+      inspirationInterval = setInterval(rotateInspiration, 3000);
+    }
+
+    // Pause rotation on hover
+    const inspirationCarousel = document.querySelector('.inspiration-carousel');
+    inspirationCarousel.addEventListener('mouseenter', () => clearInterval(inspirationInterval));
+    inspirationCarousel.addEventListener('mouseleave', startInspirationRotation);
+
+    startInspirationRotation();
+
+    // Enhanced Animated Counters with Easing
+    const animateCounters = () => {
+      const counters = document.querySelectorAll('[data-count]');
+      
+      counters.forEach(counter => {
+        const target = parseInt(counter.getAttribute('data-count'));
+        const duration = 2000;
+        let start = null;
+        let hasAnimated = false;
+        
+        const easeOutQuart = (t) => 1 - Math.pow(1 - t, 4);
+        
+        const updateCounter = (timestamp) => {
+          if (!start) start = timestamp;
+          const progress = Math.min((timestamp - start) / duration, 1);
+          const easedProgress = easeOutQuart(progress);
+          const current = Math.floor(easedProgress * target);
+          
+          counter.textContent = current.toLocaleString();
+          
+          if (progress < 1) {
+            requestAnimationFrame(updateCounter);
+          } else {
+            counter.textContent = target.toLocaleString();
+          }
+        };
+        
+        // Start animation when in viewport
+        const observer = new IntersectionObserver((entries) => {
+          if (entries[0].isIntersecting && !hasAnimated) {
+            hasAnimated = true;
+            requestAnimationFrame(updateCounter);
+            observer.disconnect();
+          }
+        }, { threshold: 0.5 });
+        
+        observer.observe(counter);
+      });
+    };
+
+    animateCounters();
+
+    // Typing Effect Enhancement
+    const typingElements = document.querySelectorAll('.typing-effect');
+    typingElements.forEach(element => {
+      const text = element.getAttribute('data-text');
+      let index = 0;
+      let isDeleting = false;
+      
+      function type() {
+        const current = text.substring(0, index);
+        element.textContent = current;
+        
+        if (!isDeleting && index === text.length) {
+          setTimeout(() => { isDeleting = true; }, 2000);
+        } else if (isDeleting && index === 0) {
+          isDeleting = false;
+        }
+        
+        if (isDeleting) {
+          index--;
+        } else {
+          index++;
+        }
+        
+        const speed = isDeleting ? 50 : 100;
+        setTimeout(type, speed);
+      }
+      
+      type();
+    });
+
+    // Interactive Hover Effects for Bento Items
+    const bentoItems = document.querySelectorAll('.bento-item');
+    bentoItems.forEach(item => {
+      item.addEventListener('mouseenter', function(e) {
+        const rect = this.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        
+        this.style.setProperty('--mouse-x', `${x}px`);
+        this.style.setProperty('--mouse-y', `${y}px`);
+      });
+    });
+
+    // Performance: Throttle scroll events
+    let scrollTimeout;
+    window.addEventListener('scroll', () => {
+      if (scrollTimeout) {
+        window.cancelAnimationFrame(scrollTimeout);
+      }
+      scrollTimeout = window.requestAnimationFrame(() => {
+        revealOnScroll();
+      });
+    });
+
+    // Add Coffee Level Interaction
+    const coffeeMeter = document.querySelector('.meter-fill');
+    const coffeeStatus = document.querySelector('.coffee-status');
+    const coffeeCount = document.querySelector('.coffee-count');
+    let coffeeLevel = 75;
+    let cups = 3;
+
+    document.querySelector('.coffee-tracker').addEventListener('click', () => {
+      coffeeLevel = Math.min(coffeeLevel + 25, 100);
+      cups++;
+      
+      coffeeMeter.style.height = `${coffeeLevel}%`;
+      coffeeCount.textContent = `Cup #${cups} Today`;
+      
+      if (coffeeLevel === 100) {
+        coffeeStatus.textContent = 'Maximum Caffeine! 🚀';
+      }
+      
+      // Reset after animation
+      if (coffeeLevel === 100) {
+        setTimeout(() => {
+          coffeeLevel = 25;
+          cups = 1;
+          coffeeMeter.style.height = `${coffeeLevel}%`;
+          coffeeStatus.textContent = 'Just Started ☕';
+          coffeeCount.textContent = `Cup #${cups} Today`;
+        }, 2000);
+      }
+    });
+  </script>
+</body>
+</html>
