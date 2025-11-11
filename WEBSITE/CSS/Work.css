@@ -1,0 +1,194 @@
+ * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+}
+ :root {
+     --primary: #1a1a1a;
+     --orange: #FF4500;
+     --orange-light: #FF4500;
+     --dark: #1a1a1a;
+     --light: #fff;
+     --accent: #FF4500;
+     --white: #ffffff;
+     --gray: #666666;
+     --light-gray: #999999;
+     --bg-gray: #F5F5F5;
+     --border: #E5E5E5;
+     --transition: .4s cubic-bezier(.4,0,.2,1);
+     --transition-base: 0.3s ease;
+}
+ body {
+     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+     background: var(--light);
+     color: var(--dark);
+     overflow-x: hidden;
+     line-height: 1.6;
+}
+ html {
+     scroll-behavior: smooth;
+}
+ ::selection {
+     background: var(--accent);
+     color: var(--white);
+}
+ :focus-visible {
+     outline: 2px solid var(--accent);
+     outline-offset: 2px;
+}
+/*------------------------------------------ HERO SECTION ------------------------------------------*/
+ .hero {
+     margin-top: 6rem;
+     padding: 4rem 1.5rem 3rem;
+     display: flex;
+     flex-direction: column;
+     gap: 2rem;
+     border-bottom: 1px solid #E5E5E5;
+}
+ @media (min-width: 768px) {
+     .hero {
+         padding: 6rem 3rem 4rem;
+         flex-direction: row;
+         align-items: flex-end;
+         justify-content: space-between;
+    }
+}
+ .hero-title {
+     font-size: clamp(4rem, 12vw, 10rem);
+     font-weight: 700;
+     line-height: 0.85;
+     letter-spacing: -0.04em;
+     color: var(--primary);
+}
+ .hero-content {
+     display: flex;
+     align-items: flex-end;
+     justify-content: space-between;
+     gap: 1rem;
+}
+ .hero-text {
+     max-width: 360px;
+     font-size: clamp(0.95rem, 2vw, 1.1rem);
+     line-height: 1.6;
+     color: var(--gray-700);
+}
+ .hero-star {
+     font-size: 2rem;
+     color: var(--accent);
+     animation: rotate 20s linear infinite;
+}
+ @keyframes rotate {
+     from {
+         transform: rotate(0deg);
+    }
+     to {
+         transform: rotate(360deg);
+    }
+}
+/*------------------------------------------ PROJECTS GRID ------------------------------------------*/
+ .projects-grid {
+     padding: 3rem 1.5rem 6rem;
+     display: grid;
+     grid-template-columns: 1fr;
+     gap: 4rem 2rem;
+}
+ @media (min-width: 768px) {
+     .projects-grid {
+         grid-template-columns: repeat(2, 1fr);
+         padding: 4rem 3rem 8rem;
+    }
+}
+ @media (min-width: 1024px) {
+     .projects-grid {
+         grid-template-columns: repeat(3, 1fr);
+         gap: 4rem 2.5rem;
+    }
+}
+/*------------------------------------------ PROJECT CARD ------------------------------------------*/
+ .project-card {
+     text-decoration: none;
+     color: inherit;
+     display: block;
+     position: relative;
+     opacity: 0;
+     transform: translateY(30px);
+     transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+ .project-card.in-view {
+     opacity: 1;
+     transform: translateY(0);
+}
+ .project-image-wrapper {
+     position: relative;
+     overflow: hidden;
+     border-radius: 12px;
+     background: var(--gray-100);
+     aspect-ratio: 4/3;
+}
+ .project-image {
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+     transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+ .project-card:hover .project-image {
+     transform: scale(1.08);
+}
+ .project-overlay {
+     position: absolute;
+     inset: 0;
+     background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 50%);
+     opacity: 0;
+     transition: opacity 0.4s ease;
+}
+ .project-card:hover .project-overlay {
+     opacity: 1;
+}
+ .project-info {
+     display: flex;
+     justify-content: space-between;
+     align-items: flex-start;
+     gap: 1rem;
+     margin-top: 1.25rem;
+}
+ .project-details {
+     flex: 1;
+}
+ .project-title {
+     font-size: 1.35rem;
+     font-weight: 700;
+     letter-spacing: -0.02em;
+     margin-bottom: 0.35rem;
+     color: var(--primary);
+     transition: color 0.3s ease;
+}
+ .project-card:hover .project-title {
+     color: var(--accent);
+}
+ .project-services {
+     font-size: 0.9rem;
+     color: var(--gray-500);
+     font-weight: 500;
+}
+ .project-icon {
+     width: 40px;
+     height: 40px;
+     background: var(--gray-100);
+     border-radius: 50%;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     flex-shrink: 0;
+}
+ .project-icon i {
+     font-size: 1rem;
+     color: var(--primary);
+     transition: color 0.3s ease;
+}
+ .project-card:hover .project-icon {
+     transform: rotate(0deg);
+     background: var(--accent);
+}
+ .project-card:hover .project-icon i {
+     color: var(--white);
+}
