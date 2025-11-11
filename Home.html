@@ -3,617 +3,84 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portfolio of Kushang Wadiwala, a graphic designer specializing in storytelling through visual design.">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+  <meta name="description" content="Kushang Wadiwala - Graphic Designer with 3.5+ years experience in brand identity, logo design, and visual storytelling. View my portfolio of 100+ projects.">
+  <meta name="author" content="Kushang Wadiwala">
+  <meta name="theme-color" content="#FF4500">
+  <link rel="canonical" href="https://kushangwadiwala.com/">
+  
+  <!-- Open Graph / Social Media -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kushangwadiwala.com/">
+  <meta property="og:title" content="Kushang Wadiwala - Graphic Designer">
+  <meta property="og:description" content="Design is the first conversation your brand has with the world — Make it Meaningful.">
+  <meta property="og:image" content="https://yoursite.com/og-image.jpg">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Kushang Wadiwala - Graphic Designer">
+  <meta name="twitter:description" content="Design is the first conversation your brand has with the world — Make it Meaningful.">
+  <meta name="twitter:image" content="https://yoursite.com/og-image.jpg">
+  
+  <!-- Performance -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <title>OpticMorph</title>
-  <style>
-    :root {
-      --dark: #1a1a1a;
-      --light: #fff;
-      --accent: #FF4500;
-      --transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
-      background: var(--light);
-      color: var(--dark);
-      overflow-x: hidden;
-    }
-
-    /*------------------------------------------
-    NAVBAR
-    ------------------------------------------*/
-
-    header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      background: rgba(255, 255, 255, 0.8);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-      z-index: 3000;
-      transition: var(--transition);
-    }
-
-    header.menu-open {
-      background: var(--accent);
-      border-bottom: none;
-    }
-
-    header.scrolled {
-      background: rgba(255, 255, 255, 0.95);
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-    }
-
-    .header-content {
-      max-width: 1400px;
-      margin: 0 auto;
-      padding: 1.2rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .logo {
-      font-size: 1.5rem;
-      font-weight: 800;
-      letter-spacing: -0.5px;
-      text-decoration: none;
-      color: var(--dark);
-      transition: var(--transition);
-      position: relative;
-    }
-
-    .logo.hide {
-      opacity: 0;
-      pointer-events: none;
-    }
-
-    .logo::after {
-      content: '';
-      position: absolute;
-      bottom: -4px;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: var(--accent);
-      transition: var(--transition);
-    }
-
-    .logo:hover::after {
-      width: 100%;
-    }
-
-    /* Desktop Navigation */
-    .desktop-nav {
-      display: none;
-      gap: 2.5rem;
-      align-items: center;
-    }
-
-    .desktop-nav a {
-      text-decoration: none;
-      color: var(--dark);
-      font-weight: 500;
-      font-size: 0.95rem;
-      position: relative;
-      transition: var(--transition);
-    }
-
-    .desktop-nav a::after {
-      content: '';
-      position: absolute;
-      bottom: -4px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 0;
-      height: 2px;
-      background: var(--accent);
-      transition: var(--transition);
-    }
-
-    .desktop-nav a:hover {
-      color: var(--accent);
-    }
-
-    .desktop-nav a:hover::after {
-      width: 100%;
-    }
-
-    .desktop-nav .cta-btn {
-      background: var(--accent);
-      color: white;
-      padding: 0.7rem 1.8rem;
-      border-radius: 50px;
-      font-weight: 600;
-      transition: var(--transition);
-    }
-
-    .desktop-nav .cta-btn::after {
-      display: none;
-    }
-
-    .desktop-nav .cta-btn:hover {
-      background: #E63E00;
-      transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(255, 69, 0, 0.3);
-    }
-
-    @media (min-width: 1024px) {
-      .desktop-nav {
-        display: flex;
-      }
-    }
-
-    /* Hamburger */
-    .menu-toggle {
-      width: 30px;
-      height: 24px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 0;
-      z-index: 3000;
-      position: relative;
-    }
-
-    .menu-toggle span {
-      display: block;
-      height: 3px;
-      background: var(--dark);
-      border-radius: 3px;
-      transition: var(--transition);
-      transform-origin: center;
-    }
-
-    .menu-toggle.active span {
-      background: var(--dark);
-    }
-
-    .menu-toggle.active span:nth-child(1) {
-      transform: rotate(45deg) translate(8px, 8px);
-    }
-
-    .menu-toggle.active span:nth-child(2) {
-      opacity: 0;
-      transform: translateX(20px);
-    }
-
-    .menu-toggle.active span:nth-child(3) {
-      transform: rotate(-45deg) translate(8px, -8px);
-    }
-
-    @media (min-width: 1024px) {
-      .menu-toggle {
-        display: none;
-      }
-    }
-
-    /* Mobile Overlay */
-    #mobileOverlay {
-      position: fixed;
-      inset: 0;
-      background: var(--accent);
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity var(--transition), visibility var(--transition);
-      z-index: 2000;
-      overflow-y: auto;
-    }
-
-    #mobileOverlay.active {
-      opacity: 1;
-      visibility: visible;
-    }
-
-    .overlay-content {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      padding: 8rem 2rem 2rem;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    .mobile-nav {
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-      margin-bottom: 3rem;
-    }
-
-    .mobile-nav a {
-      font-size: clamp(3rem, 12vw, 5rem);
-      font-weight: 900;
-      text-decoration: none;
-      color: var(--dark);
-      transition: var(--transition);
-      line-height: 1;
-      padding: 0.3rem 0;
-      display: inline-block;
-      opacity: 0;
-      transform: translateY(30px);
-      position: relative;
-      text-transform: uppercase;
-      letter-spacing: -2px;
-    }
-
-    #mobileOverlay.active .mobile-nav a {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .mobile-nav a:nth-child(1) { 
-      transition-delay: 0.1s;
-      opacity: 1;
-    }
-    .mobile-nav a:nth-child(2) { 
-      transition-delay: 0.15s;
-      opacity: 0.5;
-    }
-    .mobile-nav a:nth-child(3) { 
-      transition-delay: 0.2s;
-      opacity: 0.5;
-    }
-    .mobile-nav a:nth-child(4) { 
-      transition-delay: 0.25s;
-      opacity: 0.5;
-    }
-
-    #mobileOverlay.active .mobile-nav a:nth-child(1) {
-      opacity: 1;
-    }
-
-    #mobileOverlay.active .mobile-nav a:nth-child(2),
-    #mobileOverlay.active .mobile-nav a:nth-child(3),
-    #mobileOverlay.active .mobile-nav a:nth-child(4) {
-      opacity: 0.5;
-    }
-
-    .mobile-nav a:hover {
-      opacity: 1 !important;
-      transform: translateX(20px);
-    }
-
-    .mobile-footer {
-      margin-top: auto;
-      padding-top: 2rem;
-      opacity: 0;
-      transform: translateY(20px);
-      transition: var(--transition);
-      transition-delay: 0.3s;
-      display: flex;
-      gap: 2rem;
-      align-items: center;
-    }
-
-    #mobileOverlay.active .mobile-footer {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .mobile-footer a {
-      text-decoration: none;
-      color: var(--dark);
-      font-weight: 600;
-      font-size: 0.9rem;
-      transition: var(--transition);
-      opacity: 0.7;
-    }
-
-    .mobile-footer a:hover {
-      opacity: 1;
-      transform: translateY(-2px);
-    }
-
-    .mobile-footer .lets-talk-btn {
-      background: var(--dark);
-      color: var(--accent);
-      padding: 0.6rem 1.5rem;
-      border-radius: 50px;
-      opacity: 1;
-      font-weight: 700;
-    }
-
-    .mobile-footer .lets-talk-btn:hover {
-      background: #000;
-      transform: translateY(-3px);
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    }
-
-    /* Demo Content */
-    main {
-      padding-top: 80px;
-      min-height: 100vh;
-    }
-
-
-
-    /*------------------------------------------
-    HERO
-    ------------------------------------------*/
-
-    .hero {
-    min-height: 80vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 0 1rem;
-    }
-
-    .hero h1 {
-      font-size: clamp(2rem, 5vw, 3rem);
-      padding: 0 1rem;
-      padding-bottom: 1rem;
-    }
-
-    .hero p {
-      font-size: 1.25rem;
-      color: #888;
-      margin: 0 auto;
-    }
-
-    @media (min-width: 1024px) {
-      #mobileOverlay {
-        display: none !important;
-      }
-    }
-
-    .hero p  { font-size: clamp(1rem, 3vw, 1.5rem); }
-
-
-    /*------------------------------------------
-    FOOTER
-    ------------------------------------------*/
-
-    .site-footer {
-      background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
-      color: var(--dark);
-      padding: 5rem 0 2rem;
-      position: relative;
-      margin-top: 6rem;
-      border-top: 1px solid rgba(0, 0, 0, 0.05);
-    }
-
-    .footer-container {
-      max-width: 1400px;
-      margin: 0 auto;
-      padding: 0 2rem;
-    }
-
-    .footer-top {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 3rem;
-      margin-bottom: 4rem;
-    }
-
-    @media (min-width: 768px) {
-      .footer-top {
-        grid-template-columns: 1.5fr 1fr;
-        gap: 4rem;
-      }
-    }
-
-    .footer-brand {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-    }
-
-    .footer-brand h3 {
-      font-size: clamp(2rem, 4vw, 3rem);
-      color: var(--dark);
-      font-weight: 800;
-      letter-spacing: -1px;
-      line-height: 1.2;
-      margin: 0;
-    }
-
-    .footer-brand p {
-      color: #666;
-      font-size: 1.1rem;
-      line-height: 1.7;
-      max-width: 500px;
-      margin: 0;
-    }
-
-    .footer-cta {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-      margin-top: 0.5rem;
-    }
-
-    .footer-button {
-      background: var(--accent);
-      color: white;
-      padding: 1rem 2rem;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: 600;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      transition: var(--transition);
-      font-size: 1rem;
-      border: 2px solid var(--accent);
-    }
-
-    .footer-button:hover {
-      background: transparent;
-      color: var(--accent);
-      transform: translateY(-3px);
-      box-shadow: 0 10px 30px rgba(255, 69, 0, 0.2);
-    }
-
-    .footer-button-secondary {
-      background: transparent;
-      color: var(--dark);
-      border: 2px solid var(--dark);
-    }
-
-    .footer-button-secondary:hover {
-      background: var(--dark);
-      color: white;
-      transform: translateY(-3px);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-    }
-
-    .footer-links-container {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 2.5rem;
-    }
-
-    @media (min-width: 480px) {
-      .footer-links-container {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    .footer-link-group h4 {
-      font-size: 0.85rem;
-      margin-bottom: 1.5rem;
-      color: #666;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      font-weight: 700;
-    }
-
-    .footer-link-group ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 0.8rem;
-    }
-
-    .footer-link-group a {
-      color: var(--dark);
-      text-decoration: none;
-      font-size: 1rem;
-      font-weight: 500;
-      transition: var(--transition);
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      position: relative;
-    }
-
-    .footer-link-group a::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      bottom: -2px;
-      width: 0;
-      height: 2px;
-      background: var(--accent);
-      transition: var(--transition);
-    }
-
-    .footer-link-group a:hover {
-      color: var(--accent);
-      transform: translateX(5px);
-    }
-
-    .footer-link-group a:hover::before {
-      width: 100%;
-    }
-
-    .footer-bottom {
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-      padding-top: 2rem;
-      border-top: 1px solid rgba(0, 0, 0, 0.08);
-    }
-
-    @media (min-width: 768px) {
-      .footer-bottom {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-      }
-    }
-
-    .footer-copyright {
-      color: #666;
-      font-size: 0.95rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .footer-copyright i {
-      color: var(--accent);
-      font-size: 0.9rem;
-    }
-
-    .footer-social {
-      display: flex;
-      gap: 1rem;
-    }
-
-    .footer-social a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      background: white;
-      color: var(--dark);
-      text-decoration: none;
-      transition: var(--transition);
-      border: 2px solid rgba(0, 0, 0, 0.1);
-    }
-
-    .footer-social a:hover {
-      background: var(--accent);
-      color: white;
-      border-color: var(--accent);
-      transform: translateY(-5px);
-      box-shadow: 0 10px 25px rgba(255, 69, 0, 0.3);
-    }
-
-    .footer-social i {
-      font-size: 1.2rem;
-    }
-  </style>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="dns-prefetch" href="https://images.unsplash.com">
+  
+  <!-- Preload critical resources -->
+  <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" as="style">
+  <link rel="preload" href="Project/Suvanya/Images/Test.jpg" as="image">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="CSS/Home.css">
+  <title>Kushang Wadiwala - Graphic Designer | Brand Identity & Visual Design</title>
+  
+  <!-- Structured Data for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Kushang Wadiwala",
+    "jobTitle": "Graphic Designer",
+    "url": "https://kushangwadiwala.com",
+    "sameAs": [
+      "https://www.linkedin.com/in/kushangwadiwala",
+      "https://dribbble.com/Kush0806"
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Surat",
+      "addressRegion": "Gujarat",
+      "addressCountry": "IN"
+    },
+    "knowsAbout": ["Graphic Design", "Brand Identity", "Logo Design", "Web Design", "Packaging Design"],
+  }
+  </script>
 </head>
 <body>
+
   <!-- Header -->
   <header id="header">
     <div class="header-content">
-      <a href="#hero" class="logo">Kushang</a>
+      <a href="#hero" class="logo" aria-label="Kushang - Home">KW<span class="logo-dot" aria-hidden="true" style="color:#FF7A30">.</span></a>
       
       <!-- Desktop Navigation -->
-      <nav class="desktop-nav">
-        <a href="#hero">Home</a>
-        <a href="#about">About</a>
+      <nav class="desktop-nav" aria-label="Main navigation">
+        <a href="Home.html">Home</a>
+        <a href="Aboutme.html">About</a>
         <a href="Work.html#MyProjects">Projects</a>
-        <a href="CONT.html" class="cta-btn">Contact</a>
+        <a href="Services.html">Services</a>
+        <a href="Contact.html" class="cta-btn">Reach Out →</a>
       </nav>
 
       <!-- Mobile Menu Toggle -->
-      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+      <button 
+        class="menu-toggle" 
+        id="menuToggle" 
+        aria-label="Toggle menu"
+        aria-expanded="false"
+        aria-controls="mobileOverlay"
+      >
         <span></span>
         <span></span>
         <span></span>
@@ -621,160 +88,534 @@
     </div>
   </header>
   
-    <!-- Mobile Menu Overlay -->
-  <div id="mobileOverlay">
+  <!-- Mobile Menu Overlay -->
+  <div id="mobileOverlay" role="dialog" aria-modal="true" aria-labelledby="mobile-nav-title">
     <div class="overlay-content">
-      <nav class="mobile-nav">
-        <a href="#hero">Home</a>
-        <a href="#about">About</a>
+      <h2 id="mobile-nav-title" class="visually-hidden">Navigation Menu</h2>
+      <nav class="mobile-nav" aria-label="Mobile navigation">
+        <a href="Home.html">Home</a>
+        <a href="Aboutme.html">About</a>
         <a href="Work.html#MyProjects">Projects</a>
-        <a href="CONT.html">Contact</a>
+        <a href="Services.html">Services</a>
+        <a href="Contact.html">Contact</a>
       </nav>
 
       <div class="mobile-footer">
-        <a href="https://www.linkedin.com/in/kushangwadiwala" target="_blank">LinkedIn</a>
+        <a href="https://www.linkedin.com/in/kushangwadiwala" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         <a href="mailto:kushangwadiwala@gmail.com">Email</a>
         <a href="mailto:kushangwadiwala@gmail.com" class="lets-talk-btn">Reach Out →</a>
       </div>
     </div>
   </div>
 
-    <main>
-
+  <main id="main-content">
     <!-- HERO SECTION -->
-    <section id="hero" class="hero bg-light d-flex align-items-center justify-content-center text-center position-relative" style="overflow:hidden;">
-        <div class="container-fluid position-relative z-2 px-0">
+    <section id="hero" class="hero" aria-labelledby="hero-title">
+      <div class="container-fluid position-relative z-2 px-0">
         <div class="row justify-content-center gx-0">
-            <div class="col-lg-10 col-xl-9">
-            <h1
-                class="display-4 fw-bold mb-3"
-                style="letter-spacing:-1px; font-family:'Space Mono', monospace;"
-            >
-                Design is the first conversation your brand has with the world —
-                <span
-                class="text-primary"
-                style="background:linear-gradient(90deg,#FF7A30,#FF7A30,#465C88);
-                        -webkit-background-clip:text;
-                        -webkit-text-fill-color:transparent;"
-                >
+          <div class="col-lg-10 col-xl-9">
+            <h1 id="hero-title" class="display-4 fw-bold mb-3" style="letter-spacing:-1px; font-family:'Space Mono', monospace;">
+              Design is the first conversation your brand has with the world —
+              <span class="text-primary" style="background:linear-gradient(90deg,#FF7A30,#FF7A30,#465C88); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;">
                 Make it Meaningful.
-                </span>
+              </span>
             </h1>
-            <p
-                class="lead text-muted mb-4"
-                style="font-size:1.35rem; font-family:'Space Mono', monospace;"
-            >
-                I design brand identities that inspire confidence and create
-                lasting connections.
+            <p class="lead text-muted mb-4" style="font-size:1.35rem; font-family:'Space Mono', monospace;">
+              I design brand identities that inspire confidence and create lasting connections.
             </p>
-            </div>
-        </div>
-        </div>
-    </section>
-    </main>
-
-  <!-- Enhanced Footer -->
-  <footer class="site-footer">    
-    <div class="footer-container">
-      <div class="footer-top">
-        <div class="footer-brand">
-          <h3>Designs that speak for themselves.</h3>
-          <div class="footer-cta">
-            <a href="CONT.html" class="footer-button">Reach Out →</a>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- REFINED ABOUT SECTION -->
+    <section id="about" class="about-section-redesigned" aria-labelledby="about-title">
+      <div class="about-container-redesigned">
         
-        <div class="footer-links-container">
-          <div class="footer-link-group">
-            <h4>Navigate</h4>
-            <ul>
-              <li><a href="#hero">Home</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="Work.html#MyProjects">Projects</a></li>
-              <li><a href="CONT.html">Contact</a></li>
-            </ul>
+        <!-- Hero Introduction -->
+        <div class="about-hero">
+          <div class="about-hero-content">
+            <div class="intro-badge">
+              <span class="pulse-dot"></span>
+              <span>About Me</span>
+            </div>
+            <h2 id="about-title" class="about-hero-title">
+              Hi, I'm <span class="gradient-text-animated">Kushang</span><br>
+              <span class="typing-text" id="typingText">I turn ideas into visual stories</span>
+            </h2>
+            <p class="about-hero-subtitle">
+              A passionate graphic designer from Surat, India, with a mission to create designs that don't just look good—they <strong>communicate, connect, and convert</strong>.
+            </p>
+            <div class="about-hero-stats">
+              <div class="stat-item" data-stat="3.5">
+                <span class="stat-number">0</span>
+                <span class="stat-label">Years Experience</span>
+              </div>
+              <div class="stat-item" data-stat="50">
+                <span class="stat-number">0</span>
+                <span class="stat-label">Happy Clients</span>
+              </div>
+              <div class="stat-item" data-stat="100">
+                <span class="stat-number">0</span>
+                <span class="stat-label">Projects Completed</span>
+              </div>
+            </div>
           </div>
           
-          <div class="footer-link-group">
-            <h4>Connect</h4>
-            <ul>
-              <li><a href="https://www.linkedin.com/in/kushangwadiwala" target="_blank">LinkedIn ↗</a></li>
-              <li><a href="https://dribbble.com/Kush0806" target="_blank">Dribbble ↗</a></li>
-              <li><a href="mailto:kushangwadiwala@gmail.com">Email ↗</a></li>
-            </ul>
+          <div class="about-hero-image">
+            <div class="profile-circle" style="display: none;">
+              <div class="profile-photo">
+              <img 
+                src="assets/profile-photo.jpg" 
+                alt="Kushang Wadiwala - Graphic Designer" 
+                width="300" 
+                height="300"
+                loading="lazy"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+              >
+              <div class="profile-placeholder" style="display: none;">
+                <span>K</span>
+              </div>
+              </div>
+              <div class="circle-decoration circle-1"></div>
+              <div class="circle-decoration circle-2"></div>
+              <div class="circle-decoration circle-3"></div>
+            </div>
+
+            <!-- Show profile circle for desktop only -->
+            <div class="floating-badge badge-1">
+              <i class="bi bi-trophy-fill"></i>
+              <span>Award Winner</span>
+            </div>
+            <div class="floating-badge badge-2">
+              <i class="bi bi-heart-fill"></i>
+              <span>Client Favorite</span>
+            </div>
+            <div class="floating-badge badge-3">
+              <i class="bi bi-star-fill"></i>
+              <span>Top Rated</span>
+            </div>
           </div>
+        </div>
+
+        <!-- CTA Section -->
+    <!-- SIMPLE CTA - TWO COLUMN -->
+    <div class="cta-simple">
+      <div class="cta-actions">
+        <h3>Let's Work Together</h3>
+        <p>Ready to bring your vision to life?</p>
+        <div class="cta-buttons">
+          <a href="Contact.html" class="btn-primary">
+            Start a Project
+            <i class="bi bi-arrow-right"></i>
+          </a>
+          <a href="assets/Kushang_Wadiwala_Resume.pdf" class="btn-secondary" download>
+            <i class="bi bi-download"></i>
+            Resume
+          </a>
         </div>
       </div>
       
-      <div class="footer-bottom">
-        <p class="footer-copyright">
-          Made with <i class="bi bi-heart-fill"></i> in Surat, India
-        </p>
+      <div class="cta-social">
+        <span class="social-text">Find me on</span>
+        <div class="social-icons">
+          <a href="https://www.linkedin.com/in/kushangwadiwala" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <i class="bi bi-linkedin"></i>
+          </a>
+          <a href="https://dribbble.com/Kush0806" target="_blank" rel="noopener noreferrer" aria-label="Dribbble">
+            <i class="bi bi-dribbble"></i>
+          </a>
+          <a href="mailto:kushangwadiwala@gmail.com" aria-label="Email">
+            <i class="bi bi-envelope-fill"></i>
+          </a>
+        </div>
       </div>
     </div>
-  </footer>
 
-  <script>
-    const header = document.getElementById('header');
-    const menuToggle = document.getElementById('menuToggle');
-    const mobileOverlay = document.getElementById('mobileOverlay');
-    const logo = document.querySelector('.logo');
-    const body = document.body;
+        <!-- Tools Card -->
+        <article class="info-card tools-card">
+          <div class="card-icon">
+            <i class="bi bi-tools"></i>
+          </div>
+          <h3>My Creative Arsenal</h3>
+          <p class="card-description">
+            The tools that help me craft, refine, and bring every design idea to life.
+          </p>
+          <div class="tools-showcase">
+            <div class="tool-badge">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma Icon" width="40" height="40">
+              <span>Figma</span>
+            </div>
+            <div class="tool-badge">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/illustrator/illustrator-line.svg" alt="Adobe Illustrator Icon" width="40" height="40">
+              <span>Illustrator</span>
+            </div>
+            <div class="tool-badge">
+              <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/canva-icon.svg" alt="Canva Icon" width="40" height="40">
+              <span>Canva</span>
+            </div>
+          </div>
+        </article>
 
-    // Header scroll effect
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 50) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
-      }
-    });
+        <!-- My Approach with Quote Slideshow -->
+        <div class="approach-section-clean">
+          <div class="section-header-approach">
+            <h3>My Design Philosophy</h3>
+            <p>Words that inspire my creative journey</p>
+          </div>
 
-    // Function to close menu
-    function closeMenu() {
-      mobileOverlay.classList.remove('active');
-      menuToggle.classList.remove('active');
-      header.classList.remove('menu-open');
-      logo.classList.remove('hide');
-      body.style.overflow = '';
-    }
+          <div class="approach-grid">
+            
+            <!-- Quote Slideshow -->
+            <div class="approach-quote-wrapper">
+              <div class="quotes-slideshow">
+                
+                <div class="quote-slide active">
+                  <i class="bi bi-quote"></i>
+                  <p>"Design is not just what it looks like. Design is how it works."</p>
+                  <span>— Steve Jobs</span>
+                </div>
 
-    // Function to open menu
-    function openMenu() {
-      mobileOverlay.classList.add('active');
-      menuToggle.classList.add('active');
-      header.classList.add('menu-open');
-      logo.classList.add('hide');
-      body.style.overflow = 'hidden';
-    }
+                <div class="quote-slide">
+                  <i class="bi bi-quote"></i>
+                  <p>"Good design is obvious. Great design is transparent."</p>
+                  <span>— Joe Sparano</span>
+                </div>
 
-    // Toggle mobile menu
-    menuToggle.addEventListener('click', () => {
-      if (mobileOverlay.classList.contains('active')) {
-        closeMenu();
-      } else {
-        openMenu();
-      }
-    });
+                <div class="quote-slide">
+                  <i class="bi bi-quote"></i>
+                  <p>"Simplicity is the ultimate sophistication."</p>
+                  <span>— Leonardo da Vinci</span>
+                </div>
 
-    // Close menu when clicking links
-    document.querySelectorAll('.mobile-nav a').forEach(link => {
-      link.addEventListener('click', closeMenu);
-    });
+                <div class="quote-slide">
+                  <i class="bi bi-quote"></i>
+                  <p>"Design creates culture. Culture shapes values. Values determine the future."</p>
+                  <span>— Robert L. Peters</span>
+                </div>
 
-    // Close menu on escape key
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && mobileOverlay.classList.contains('active')) {
-        closeMenu();
-      }
-    });
+                <div class="quote-slide">
+                  <i class="bi bi-quote"></i>
+                  <p>"The details are not the details. They make the design."</p>
+                  <span>— Charles Eames</span>
+                </div>
 
-    // Prevent body scroll when overlay is open
-    mobileOverlay.addEventListener('touchmove', (e) => {
-      if (e.target === mobileOverlay) {
-        e.preventDefault();
-      }
-    }, { passive: false });
-  </script>
-</body>
+              </div>
+
+              <!-- Navigation Dots -->
+              <div class="quote-dots">
+                <button class="quote-dot active" data-slide="0" aria-label="Quote 1"></button>
+                <button class="quote-dot" data-slide="1" aria-label="Quote 2"></button>
+                <button class="quote-dot" data-slide="2" aria-label="Quote 3"></button>
+                <button class="quote-dot" data-slide="3" aria-label="Quote 4"></button>
+                <button class="quote-dot" data-slide="4" aria-label="Quote 5"></button>
+              </div>
+
+              <!-- Manual Controls -->
+              <button class="quote-nav prev" aria-label="Previous quote">
+                <i class="bi bi-chevron-left"></i>
+              </button>
+              <button class="quote-nav next" aria-label="Next quote">
+                <i class="bi bi-chevron-right"></i>
+              </button>
+            </div>
+            <div class="approach-content">
+              <h4><i class="bi bi-hearts"></i> My Approach</h4>
+              <p>I believe great design is invisible. It doesn't scream for attention—it solves problems and creates connections.</p>
+              
+              <div class="approach-values">
+              <div class="value-badge">
+                <i class="bi bi-heart-fill"></i>
+                <span>Passionate</span>
+              </div>
+              <div class="value-badge">
+                <i class="bi bi-people-fill"></i>
+                <span>Client-Focused</span>
+              </div>
+              <div class="value-badge">
+                <i class="bi bi-lightbulb-fill"></i>
+                <span>Innovative</span>
+              </div>
+              <div class="value-badge">
+                <i class="bi bi-check-circle-fill"></i>
+                <span>Quality First</span>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section aria-labelledby="projects-title">
+      <div class="projects-header-v2">
+        <div class="projects-title-group">
+          <div class="projects-overtitle">
+            <i class="bi bi-layers"></i>
+            <span>Portfolio</span>
+          </div>
+          <h2 id="projects-title" class="projects-main-title">
+            A glimpse into my <span class="text-outline">Work</span>
+          </h2>
+          <p class="projects-description">
+            Crafting visual stories that connect brands with their audience
+          </p>
+        </div>
+      </div>
+    <div class="projects-section">
+      <div class="projects-wrapper">
+        <div class="projects-track">
+          <!-- Project 1 -->
+          <article class="project-card">
+            <div class="project-wrapper">
+              <div class="project-image">
+                <img 
+                  src="Project/Suvanya/Images/Test.jpg"
+                  srcset="Project/Suvanya/Images/Test-400.jpg 400w,
+                          Project/Suvanya/Images/Test-800.jpg 800w,
+                          Project/Suvanya/Images/Test.jpg 1200w"
+                  sizes="(max-width: 640px) 400px,
+                        (max-width: 1024px) 800px,
+                        1200px"
+                  alt="Suvanya - Brand Identity Project"
+                  loading="lazy"
+                  width="1200"
+                  height="800"
+                >
+                <div class="image-overlay"></div>
+              </div>
+              <div class="project-content">
+                <div class="project-meta">
+                  <span class="project-number">01</span>
+                  <span class="project-divider">—</span>
+                  <span class="project-type">Brand Identity</span>
+                </div>
+                <h3 class="project-name">Suvanya</h3>
+                <a href="Project/Suvanya/Suvanya.html" class="project-btn">
+                  <span>View Project</span>
+                  <i class="bi bi-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2 -->
+          <article class="project-card">
+            <div class="project-wrapper">
+              <div class="project-image">
+                <img 
+                  src="https://images.unsplash.com/photo-1529101091764-c3526daf38fe?q=80&w=2000&auto=format&fit=crop" 
+                  alt="NovaTech Platform - Web Design Project"
+                  loading="lazy"
+                  width="2000"
+                  height="1333"
+                >
+                <div class="image-overlay"></div>
+              </div>
+              <div class="project-content">
+                <div class="project-meta">
+                  <span class="project-number">02</span>
+                  <span class="project-divider">—</span>
+                  <span class="project-type">Web Design</span>
+                </div>
+                <h3 class="project-name">NovaTech</h3>
+                <a href="project-novatech.html" class="project-btn">
+                  <span>View Project</span>
+                  <i class="bi bi-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3 -->
+          <article class="project-card">
+            <div class="project-wrapper">
+              <div class="project-image">
+                <img 
+                  src="https://images.unsplash.com/photo-1549289524-06cf8837aceb?q=80&w=2000&auto=format&fit=crop" 
+                  alt="Verdant Skincare - Brand Identity Project"
+                  loading="lazy"
+                  width="2000"
+                  height="1333"
+                >
+                <div class="image-overlay"></div>
+              </div>
+              <div class="project-content">
+                <div class="project-meta">
+                  <span class="project-number">03</span>
+                  <span class="project-divider">—</span>
+                  <span class="project-type">Packaging Design</span>
+                </div>
+                <h3 class="project-name">Verdant Skincare</h3>
+                <a href="project-verdant.html" class="project-btn">
+                  <span>View Project</span>
+                  <i class="bi bi-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 4 -->
+          <article class="project-card">
+            <div class="project-wrapper">
+              <div class="project-image">
+                <img 
+                  src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=2000&auto=format&fit=crop" 
+                  alt="Urban Coffee - Brand Identity Project"
+                  loading="lazy"
+                  width="2000"
+                  height="1333"
+                >
+                <div class="image-overlay"></div>
+              </div>
+              <div class="project-content">
+                <div class="project-meta">
+                  <span class="project-number">04</span>
+                  <span class="project-divider">—</span>
+                  <span class="project-type">Brand Identity</span>
+                </div>
+                <h3 class="project-name">Urban Coffee</h3>
+                <a href="project-urban-coffee.html" class="project-btn">
+                  <span>View Project</span>
+                  <i class="bi bi-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+      <!-- CTA Button properly placed -->
+      <div class="projects-cta">
+        <a href="Work.html#MyProjects" class="view-more-btn">
+          <span>See More Projects</span>
+          <i class="bi bi-arrow-right"></i>
+        </a>
+      </div>
+    </section>
+
+    <!-- SERVICES SECTION - UPDATED -->
+    <section class="services-section" aria-labelledby="services-title">
+      
+      <!-- Header without button -->
+      <div class="services-header-v2">
+        <div class="services-title-group">
+          <div class="services-overtitle">
+            <i class="bi bi-stars"></i>
+            <span>Services</span>
+          </div>
+          <h2 id="services-title" class="services-main-title">
+            Turning your vision into <span class="text-outline">Reality</span>
+          </h2>
+          <p class="services-description">
+            From concept to creation, I bring your ideas to life with purposeful design
+          </p>
+        </div>
+      </div>
+
+      <!-- Service Cards - Now clickable -->
+      <div class="services-wrapper">
+        <div class="services-grid">
+          
+          <a href="Services.html#brand-identity" class="service-card" aria-label="Brand Identity Service">
+            <div class="service-number">01</div>
+            <div class="service-icon">
+              <i class="bi bi-pen-fill"></i>
+            </div>
+            <h3>Brand Identity</h3>
+            <p>Complete brand systems including logos, guidelines, and visual assets that create lasting impressions.</p>
+            <span class="service-arrow">→</span>
+          </a>
+
+          <a href="Services.html#web-design" class="service-card" aria-label="Web Design Service">
+            <div class="service-number">02</div>
+            <div class="service-icon">
+              <i class="bi bi-window-stack"></i>
+            </div>
+            <h3>Web Design</h3>
+            <p>Clean, functional websites that look great and help your business grow online.</p>
+            <span class="service-arrow">→</span>
+          </a>
+
+          <a href="Services.html#packaging-design" class="service-card" aria-label="Packaging Design Service">
+            <div class="service-number">03</div>
+            <div class="service-icon">
+              <i class="bi bi-box-seam-fill"></i>
+            </div>
+            <h3>Packaging Design</h3>
+            <p>Eye-catching packaging that tells your product's story and stands out on the shelf.</p>
+            <span class="service-arrow">→</span>
+          </a>
+
+          <a href="Services.html#marketing-design" class="service-card" aria-label="Marketing Design Service">
+            <div class="service-number">04</div>
+            <div class="service-icon">
+              <i class="bi bi-megaphone-fill"></i>
+            </div>
+            <h3>Marketing Design</h3>
+            <p>Social media graphics, ads, and marketing materials that connect with your audience.</p>
+            <span class="service-arrow">→</span>
+          </a>
+
+        </div>
+
+        <!-- All Services Button at the end -->
+        <div class="services-cta">
+          <a href="Services.html" class="all-services-btn">
+            <span>View All Services</span>
+            <i class="bi bi-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">    
+      <div class="footer-container">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <h3>Designs that speak for themselves.</h3>
+            <div class="footer-cta">
+              <a href="Contact.html" class="footer-button">Reach Out →</a>
+            </div>
+          </div>
+          
+          <div class="footer-links-container">
+            <nav class="footer-link-group" aria-labelledby="footer-nav-title">
+              <h4 id="footer-nav-title">Navigate</h4>
+              <ul>
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="Work.html#MyProjects">Projects</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+              </ul>
+            </nav>
+            
+            <nav class="footer-link-group" aria-labelledby="footer-connect-title">
+              <h4 id="footer-connect-title">Connect</h4>
+              <ul>
+                <li><a href="https://www.linkedin.com/in/kushangwadiwala" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></li>
+                <li><a href="https://dribbble.com/Kush0806" target="_blank" rel="noopener noreferrer">Dribbble ↗</a></li>
+                <li><a href="mailto:kushangwadiwala@gmail.com">Email ↗</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+        
+        <div class="footer-bottom">
+          <p class="footer-copyright">
+            Made with <i class="bi bi-heart-fill" aria-label="love"></i> in Surat, India
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- GSAP -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="JS/Home.js"></script>
+ </body>
 </html>
