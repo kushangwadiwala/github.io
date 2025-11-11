@@ -60,7 +60,7 @@
 }
  .hero p {
      font-size: clamp(0.5rem, 2vw, 1rem);
-     color: #666;
+     color: var(--gray);
     /* Improved contrast from #888 */
      margin: 0 auto;
 }
@@ -175,7 +175,6 @@
 }
 
 .stat-item:hover {
-    transform: translateY(-5px);
     border-color: var(--accent);
     background: rgba(255, 69, 0, 0.08);
 }
@@ -2111,3 +2110,4 @@
          display: none;
     }
 }
+
