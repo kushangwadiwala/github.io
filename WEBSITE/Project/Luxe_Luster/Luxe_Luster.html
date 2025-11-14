@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio of Kushang Wadiwala, a graphic designer specializing in storytelling through visual design.">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+  <link rel="stylesheet" href="../../CSS/ProjectPage.css">
+  <link rel="stylesheet" href="../../CSS/NavFoot.css">
+  <title>Luxe Luster</title>
+  <style>
+    /* Hero Section */
+    .hero {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        padding: 0 25px;
+        position: relative;
+        background-image: linear-gradient(rgba(111, 107, 107, 0.205), rgba(111, 107, 107, 0.205)), url('Images/Main_page-0002.jpg');
+        background-size: cover;   /* fits the whole image inside */
+        background-position: center;
+        background-repeat: no-repeat;  /* important for contain */
+    }
+  </style>
+</head>
+<body>
+
+<!-- Header -->
+<header id="header">
+  <div class="header-content">
+    <!-- Back Button (visible at top of page) -->
+    <button onclick="goBack()" class="back-button" id="backButton" aria-label="Go back to previous page">
+      <i class="bi bi-arrow-left"></i>
+      <span> Go Back </span>
+    </button>
+    
+    <!-- Logo (hidden initially, shows on scroll) -->
+    <a href="../../Home.html" class="logo hidden-initially" id="logo" aria-label="Kushang - Home">KW<span class="logo-dot" aria-hidden="true" style="color:#FF7A30">.</span></a>
+    
+    <!-- Desktop Navigation (hidden initially, shows on scroll) -->
+    <nav class="desktop-nav hidden-initially" id="desktopNav" aria-label="Main navigation">
+      <a href="../../Home.html">Home</a>
+      <a href="../../Aboutme.html">About</a>
+      <a href="../../Work.html#MyProjects">Projects</a>
+      <a href="../../Services.html">Services</a>
+      <a href="../../Contact.html" class="cta-btn">Reach Out →</a>
+    </nav>
+
+    <!-- Mobile Menu Toggle (always visible) -->
+    <button 
+      class="menu-toggle" 
+      id="menuToggle" 
+      aria-label="Toggle menu"
+      aria-expanded="false"
+      aria-controls="mobileOverlay"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
+  
+  <!-- Mobile Menu Overlay -->
+  <div id="mobileOverlay" role="dialog" aria-modal="true" aria-labelledby="mobile-nav-title">
+    <div class="overlay-content">
+      <h2 id="mobile-nav-title" class="visually-hidden">Navigation Menu</h2>
+      <nav class="mobile-nav" aria-label="Mobile navigation">
+        <a href="../../Home.html">Home</a>
+        <a href="../../Aboutme.html">About</a>
+        <a href="../../Work.html">Projects</a>
+        <a href="../../Services.html">Services</a>
+        <a href="../../Contact.html">Contact</a>
+      </nav>
+
+      <div class="mobile-footer">
+        <a href="https://www.linkedin.com/in/kushangwadiwala" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="mailto:kushangwadiwala@gmail.com">Email</a>
+        <a href="mailto:kushangwadiwala@gmail.com" class="lets-talk-btn">Reach Out →</a>
+      </div>
+    </div>
+  </div>
+
+     <!-- Hero Section -->
+<!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Luxe Luster</h1>
+    </div>
+  </section>
+
+  <!-- Project Overview -->
+  <section class="project-overview reveal">
+    <div class="overview-container">
+      <div class="overview-text">
+        <P><span style="color: #a8a4a4">PROJECT SUMMARY:</span></P>
+        <p>Luxe Lustre is more than a makeup studio — it’s a space where beauty feels effortless and confidence comes naturally. Every brushstroke is about celebrating individuality, bringing out each person’s unique glow with care and creativity.</p>
+        <p>The brand identity was designed to reflect that same feeling of warmth and sophistication. Soft tones, elegant details, and modern simplicity come together to capture the heart of Luxe Lustre — a brand that helps people see the beauty that’s already theirs.</p>    
+     </div>
+      <div class="overview-details">
+        <div class="detail-item">
+          <h4>Client</h4>
+          <p>Luxe Luster</p>
+        </div>
+        <div class="detail-item">
+          <h4>Year</h4>
+          <p>2025</p>
+        </div>
+        <div class="detail-item">
+          <h4>Services</h4>
+          <p>Logo Design, Branding</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Full Width Image -->
+  <section class="image-frame-large">
+    <div class="image-placeholder">
+      <img src="Images/Test_page-0006.jpg" alt="Luxe Luster">
+    </div>
+  </section>
+
+
+<section class="image-grid">
+  <div class="grid-container">
+    <!-- Wordmark -->
+    <div class="grid-item reveal">
+      <img src="Images/1.jpg" alt="Left Image Example">
+    </div>
+    <div class="grid-item reveal">
+      <img src="Images/2.jpg" alt="Right Image Example">
+    </div>
+  </div>
+</section>
+
+<section class="image-grid">
+  <div class="grid-container">
+    <!-- LOGO -->
+    <div class="grid-item reveal">
+      <img src="Images/3.jpg" alt="Left Image Example">
+    </div>
+    <div class="grid-item reveal">
+      <img src="Images/4.jpg" alt="Right Image Example">
+    </div>
+  </div>
+</section>
+
+ <section class="image-frame-large">
+    <div class="image-placeholder">
+      <img src="Images/5.jpg" alt="Luxe Luster">
+    </div>
+  </section>
+
+   <section class="image-frame-large">
+    <div class="image-placeholder">
+      <img src="Images/6.jpg" alt="Luxe Luster">
+    </div>
+  </section>
+
+     <section class="image-frame-large">
+    <div class="image-placeholder">
+      <img src="Images/App Icon Mockup.jpg" alt="Luxe Luster">
+    </div>
+  </section>
+  <!-- Next Project -->
+  <section class="next-project reveal">
+    <h3>Next Project</h3>
+    <a href="../../Work.html">Comoing Soon →</a>
+  </section>
+
+    
+    <!-- Footer -->
+  <footer class="site-footer">    
+    <div class="footer-container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <h3>Designs that speak for themselves.</h3>
+          <div class="footer-cta">
+            <a href="Contact.html" class="footer-button">Reach Out →</a>
+          </div>
+        </div>
+        
+        <div class="footer-links-container">
+          <nav class="footer-link-group" aria-labelledby="footer-nav-title">
+            <h4 id="footer-nav-title">Navigate</h4>
+            <ul>
+              <li><a href="#hero">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="Work.html#MyProjects">Projects</a></li>
+              <li><a href="Contact.html">Contact</a></li>
+            </ul>
+          </nav>
+          
+          <nav class="footer-link-group" aria-labelledby="footer-connect-title">
+            <h4 id="footer-connect-title">Connect</h4>
+            <ul>
+              <li><a href="https://www.linkedin.com/in/kushangwadiwala" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></li>
+              <li><a href="https://dribbble.com/Kush0806" target="_blank" rel="noopener noreferrer">Dribbble ↗</a></li>
+              <li><a href="mailto:kushangwadiwala@gmail.com">Email ↗</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p class="footer-copyright">
+          Made with <i class="bi bi-heart-fill" aria-label="love"></i> in Surat, India
+        </p>
+      </div>
+    </div>
+  </footer>
+
+   <script>
+    // ============================================
+    // NAVBAR BEHAVIOR
+    // ============================================
+    (function() {
+      'use strict';
+
+      const header = document.getElementById('header');
+      const menuToggle = document.getElementById('menuToggle');
+      const mobileOverlay = document.getElementById('mobileOverlay');
+      const logo = document.querySelector('.logo');
+      const body = document.body;
+      const mobileNavLinks = document.querySelectorAll('.mobile-nav a');
+      const focusableElements = mobileOverlay.querySelectorAll('a, button');
+
+      let lastScrollY = window.scrollY;
+      let ticking = false;
+      let isMenuOpen = false;
+      let lastFocusedElement = null;
+
+      function updateHeader() {
+        const currentScrollY = window.scrollY;
+        
+        header.classList.toggle('scrolled', currentScrollY > 50);
+        
+        if (!isMenuOpen) {
+          if (currentScrollY > lastScrollY && currentScrollY > 100) {
+            header.classList.add('hidden');
+          } else {
+            header.classList.remove('hidden');
+          }
+        }
+        
+        lastScrollY = currentScrollY;
+        ticking = false;
+      }
+
+      window.addEventListener('scroll', () => {
+        if (!ticking) {
+          window.requestAnimationFrame(updateHeader);
+          ticking = true;
+        }
+      }, { passive: true });
+
+      function trapFocus(e) {
+        if (!isMenuOpen) return;
+
+        const firstFocusable = focusableElements[0];
+        const lastFocusable = focusableElements[focusableElements.length - 1];
+
+        if (e.key === 'Tab') {
+          if (e.shiftKey) {
+            if (document.activeElement === firstFocusable) {
+              e.preventDefault();
+              lastFocusable.focus();
+            }
+          } else {
+            if (document.activeElement === lastFocusable) {
+              e.preventDefault();
+              firstFocusable.focus();
+            }
+          }
+        }
+      }
+
+      document.addEventListener('keydown', trapFocus);
+
+      function closeMenu() {
+        mobileOverlay.classList.remove('active');
+        menuToggle.classList.remove('active');
+        header.classList.remove('menu-open');
+        logo.classList.remove('hide');
+        body.style.overflow = '';
+        menuToggle.setAttribute('aria-expanded', 'false');
+        isMenuOpen = false;
+
+        if (lastFocusedElement) {
+          lastFocusedElement.focus();
+        }
+      }
+
+      function openMenu() {
+        lastFocusedElement = document.activeElement;
+        mobileOverlay.classList.add('active');
+        menuToggle.classList.add('active');
+        header.classList.add('menu-open');
+        logo.classList.add('hide');
+        body.style.overflow = 'hidden';
+        menuToggle.setAttribute('aria-expanded', 'true');
+        isMenuOpen = true;
+
+        setTimeout(() => {
+          mobileNavLinks[0].focus();
+        }, 100);
+      }
+
+      if (menuToggle) {
+        menuToggle.addEventListener('click', () => {
+          if (isMenuOpen) {
+            closeMenu();
+          } else {
+            openMenu();
+          }
+        });
+      }
+
+      mobileNavLinks.forEach(link => {
+        link.addEventListener('click', closeMenu);
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && isMenuOpen) {
+          closeMenu();
+        }
+      });
+
+      mobileOverlay.addEventListener('touchmove', (e) => {
+        if (e.target === mobileOverlay) {
+          e.preventDefault();
+        }
+      }, { passive: false });
+
+      let hoverTimeout;
+      let mouseMoveTimeout;
+      document.addEventListener('mousemove', (e) => {
+        clearTimeout(mouseMoveTimeout);
+        mouseMoveTimeout = setTimeout(() => {
+          if (e.clientY < 100) {
+            header.classList.remove('hidden');
+            clearTimeout(hoverTimeout);
+            hoverTimeout = setTimeout(() => {
+              if (window.scrollY > 100 && e.clientY > 100) {
+                header.classList.add('hidden');
+              }
+            }, 2000);
+          }
+        }, 100);
+      }, { passive: true });
+    })();
+    // Back button functionality
+function goBack() {
+  // Check if there's a referrer from your own site
+  if (document.referrer && document.referrer.includes(window.location.hostname)) {
+    window.history.back();
+  } else {
+    // Fallback to projects page if no referrer
+    window.location.href = 'Work.html#MyProjects';
+  }
+}
+
+// Update the scroll behavior to show/hide elements
+(function() {
+  'use strict';
+
+  const header = document.getElementById('header');
+  const backButton = document.getElementById('backButton');
+  const logo = document.getElementById('logo');
+  const desktopNav = document.getElementById('desktopNav');
+  // ... rest of your existing variables
+
+  function updateHeader() {
+    const currentScrollY = window.scrollY;
+    
+    // Show navbar and hide back button after scrolling 50px
+    if (currentScrollY > 50) {
+      header.classList.add('scrolled');
+      // Elements will show/hide based on CSS
+    } else {
+      header.classList.remove('scrolled');
+    }
+    
+    // Rest of your existing scroll logic
+    if (!isMenuOpen) {
+      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        header.classList.add('hidden');
+      } else {
+        header.classList.remove('hidden');
+      }
+    }
+    
+    lastScrollY = currentScrollY;
+    ticking = false;
+  }
+
+  // ... rest of your existing code
+})();
+  </script>
+</body>
+</html>

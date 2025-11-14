@@ -1,0 +1,297 @@
+ :root {
+     --dark: #1a1a1a;
+     --light: #fff;
+     --accent: #FF4500;
+     --transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+ * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+}
+ body {
+     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+     background: var(--light);
+     color: var(--dark);
+     overflow-x: hidden;
+}
+/*-------------------------- hero Section ---------------------------*/
+ .hero-content {
+     max-width: 1200px;
+     margin: 0 ;
+     width: 100%;
+}
+ .hero h1 {
+     font-size: 64px;
+     font-weight: 500;
+     line-height: 1.1;
+     margin-bottom: 24px;
+     max-width: 800px;
+     color: #ffffff;
+     font-family: 'Roboto', sans-serif;
+}
+ @media (min-width: 1024px) {
+     .hero h1 {
+         font-size: 120px;
+         padding-left: 1rem;
+    }
+}
+ .hero-subtitle {
+     font-size: 20px;
+     color: #666;
+     max-width: 600px;
+     margin-bottom: 40px;
+}
+/* Back Button Styles */
+ .back-button {
+     display: flex;
+     align-items: center;
+     gap: 0.5rem;
+     background: none;
+     border: none;
+     font-size: 1rem;
+     font-weight: 100;
+     color: var(--dark);
+     cursor: pointer;
+     padding: 0.5rem;
+     margin-left: -3rem;
+     transition: var(--transition);
+     position: relative;
+}
+ header:not(.scrolled) .back-button {
+     color: white;
+}
+ .back-button i {
+     font-size: 1.2rem;
+     transition: var(--transition);
+}
+ .back-button:hover {
+     color: var(--accent);
+     transform: translateX(-5px);
+}
+ .back-button:hover i {
+     transform: translateX(-3px);
+}
+ .back-button::after {
+     content: '';
+     position: absolute;
+     bottom: 0;
+     left: 1rem;
+     right: 1rem;
+     height: 2px;
+     background: var(--accent);
+     transform: scaleX(0);
+     transition: var(--transition);
+}
+ .back-button:hover::after {
+     transform: scaleX(1);
+}
+/* Hide elements initially */
+ .hidden-initially {
+     opacity: 0;
+     visibility: hidden;
+     transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+/* Show elements when scrolled */
+ header.scrolled .hidden-initially {
+     opacity: 1;
+     visibility: visible;
+}
+/* Hide back button when scrolled */
+ header.scrolled .back-button {
+     opacity: 0;
+     visibility: hidden;
+     pointer-events: none;
+     position: absolute;
+}
+/* Adjust header layout */
+ header:not(.scrolled) .header-content {
+     justify-content: space-between;
+}
+ header.scrolled .header-content {
+     justify-content: space-between;
+}
+/* Mobile adjustments */
+ @media (max-width: 1023px) {
+     .back-button {
+         margin-left: 0;
+         padding-left: -10px;
+    }
+}
+ @media (max-width: 768px) {
+     .back-button {
+         padding-left: 0;
+    }
+}
+/*-------------------------- Hero Section ---------------------------*/
+ .project-overview {
+     padding: clamp(80px, 10vw, 120px) clamp(1.5rem, 5vw, 2rem);
+     background: var(--light);
+}
+ .overview-container {
+     margin: 0 auto;
+     display: grid;
+     grid-template-columns: 1fr;
+     gap: clamp(40px, 6vw, 70px);
+     align-items: start;
+}
+ @media (min-width: 900px) {
+     .overview-container {
+         grid-template-columns: 1.5fr 1fr;
+         gap: 70px;
+    }
+}
+/* Text Styles */
+ .overview-text h2 {
+     font-size: clamp(2rem, 3.5vw, 2.75rem);
+     font-weight: 800;
+     margin-bottom: 1.5rem;
+     letter-spacing: -0.8px;
+     line-height: 1.25;
+     color: var(--dark);
+}
+ .overview-text p {
+     font-size: clamp(1rem, 2vw, 1.125rem);
+     color: #444;
+     margin-bottom: 1.5rem;
+     line-height: 1.75;
+     max-width: 65ch;
+}
+/* Overview Details Box */
+ .overview-details {
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+     gap: 2rem;
+     padding: 2rem 2.5rem;
+     background: #fafafa;
+     border-radius: 16px;
+     border: 1px solid #e5e5e5;
+     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+/* Detail Items */
+ .detail-item h4 {
+     font-size: 0.7rem;
+     font-weight: 700;
+     margin-bottom: 0.5rem;
+     color: #888;
+     text-transform: uppercase;
+     letter-spacing: 1.2px;
+}
+ .detail-item p {
+     font-size: 1rem;
+     color: var(--dark);
+     font-weight: 600;
+     line-height: 1.4;
+}
+/* Image Placeholder */
+ .image-placeholder {
+     width: 100%;
+     height: 100%;
+     background: linear-gradient(135deg, var(--gray-100) 0%, var(--gray-200) 100%);
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     color: var(--gray-400);
+     font-size: 1rem;
+     font-weight: 600;
+     min-height: 10vh;
+}
+/* Image Grid */
+ .image-grid {
+     margin: 1rem 1rem;
+}
+ .grid-container {
+     display: grid;
+     grid-template-columns: 1fr;
+     gap: 1rem;
+}
+ @media (min-width: 768px) {
+     .grid-container {
+         grid-template-columns: repeat(2, 1fr);
+         gap: 1.2rem;
+    }
+}
+ .grid-item {
+     position: relative;
+     overflow: hidden;
+     border-radius: 10px;
+     background: var(--gray-100);
+     aspect-ratio: auto;
+     transition: var(--transition-smooth);
+}
+ .grid-item img {
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+     display: block;
+     transition: var(--transition-smooth);
+}
+/* Grid Placeholder */
+ .grid-placeholder {
+     width: 100%;
+     height: 100%;
+     background: linear-gradient(135deg, var(--gray-100) 0%, var(--gray-200) 100%);
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     color: var(--gray-400);
+     font-size: 0.95rem;
+     font-weight: 600;
+}
+/* Large Featured Image (Full Width in Grid) */
+ .image-frame-large {
+     grid-column: 1 / -1;
+     aspect-ratio: auto;
+     border-radius: 10px;
+     overflow: hidden;
+     margin: 1rem 1rem;
+}
+ .image-frame-large img {
+     width: 100%;
+     height: auto;
+    /* keeps correct proportions */
+     object-fit: contain;
+     display: block;
+}
+/* Next Project */
+ .next-project {
+     padding: clamp(60px, 10vw, 100px) 2rem;
+     background: var(--gray-50);
+     text-align: center;
+     border-top: 1px solid var(--gray-200);
+}
+ .next-project h3 {
+     font-size: 0.85rem;
+     font-weight: 700;
+     margin-bottom: 1rem;
+     color: var(--gray-600);
+     text-transform: uppercase;
+     letter-spacing: 2px;
+}
+ .next-project a {
+     font-size: clamp(2.5rem, 6vw, 4rem);
+     font-weight: 800;
+     color: var(--dark);
+     text-decoration: none;
+     transition: var(--transition);
+     display: inline-block;
+     position: relative;
+     letter-spacing: -0.02em;
+}
+ .next-project a::after {
+     content: '';
+     position: absolute;
+     bottom: 0;
+     left: 0;
+     width: 0;
+     height: 4px;
+     background: var(--accent);
+     transition: var(--transition);
+}
+ .next-project a:hover {
+     color: var(--accent);
+     transform: translateX(10px);
+}
+ .next-project a:hover::after {
+     width: 100%;
+}
