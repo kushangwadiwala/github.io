@@ -23,6 +23,12 @@
         background-size: cover;   /* fits the whole image inside */
         background-position: center;
         background-repeat: no-repeat;  /* important for contain */
+      
+    @media (max-width: 768px) {
+      .hero {
+        height: 94vh;
+      }
+    }
     }
   </style>
 </head>
@@ -402,4 +408,5 @@ function goBack() {
 })();
   </script>
 </body>
+
 </html>
