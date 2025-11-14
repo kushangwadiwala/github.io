@@ -123,6 +123,11 @@
          padding-left: 0;
     }
 }
+ @media (max-width: 768px) {
+  .hero {
+    height: 94vh;
+  }
+}
 /*-------------------------- Hero Section ---------------------------*/
  .project-overview {
      padding: clamp(80px, 10vw, 120px) clamp(1.5rem, 5vw, 2rem);
@@ -294,4 +299,5 @@
 }
  .next-project a:hover::after {
      width: 100%;
+
 }
