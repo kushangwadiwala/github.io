@@ -1885,6 +1885,7 @@
      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
      position: relative;
      display: inline-block;
+     letter-spacing: 2.5px;
 }
  .services-header-v2:hover .text-outline {
      -webkit-text-fill-color: #FF4500;
@@ -2112,3 +2113,4 @@
          display: none;
     }
 }
+
