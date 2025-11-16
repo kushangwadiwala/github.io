@@ -192,3 +192,212 @@
  .project-card:hover .project-icon i {
      color: var(--white);
 }
+/* ============================================
+   COMING SOON BANNER STYLES
+   ============================================ */
+
+.coming-soon-banner {
+  max-width: 1400px;
+  margin: 4rem auto 4rem;
+  padding: 3rem 2rem;
+  text-align: center;
+  background: linear-gradient(135deg, rgba(255, 122, 48, 0.1) 0%, rgba(255, 122, 48, 0.05) 100%);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 122, 48, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.coming-soon-banner::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 122, 48, 0.1) 0%, transparent 70%);
+  animation: rotate 20s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.banner-content {
+  position: relative;
+  z-index: 1;
+}
+
+.banner-content i {
+  font-size: 2.5rem;
+  color: var(--orange);
+  margin-bottom: 1rem;
+  display: block;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.banner-content h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: #000000;
+  font-family: 'Space Grotesk', sans-serif;
+  line-height: 1.3;
+}
+
+.banner-content p {
+  font-size: 1.1rem;
+  opacity: 0.8;
+  max-width: 600px;
+  margin: 0 auto;
+  color: rgba(0, 0, 0, 0.5);
+  line-height: 1.6;
+}
+
+/* ============================================
+   MOBILE OPTIMIZATION - TABLET
+   ============================================ */
+
+@media (max-width: 1024px) {
+  .coming-soon-banner {
+    margin: 3.5rem 1.5rem;
+    padding: 2.5rem 1.75rem;
+  }
+
+  .banner-content h3 {
+    font-size: 1.75rem;
+  }
+
+  .banner-content p {
+    font-size: 1.05rem;
+    max-width: 500px;
+  }
+}
+
+/* ============================================
+   MOBILE OPTIMIZATION - LARGE PHONES
+   ============================================ */
+
+@media (max-width: 768px) {
+  .coming-soon-banner {
+    margin: 3rem 1.25rem 3rem;
+    padding: 2rem 1.5rem;
+    border-radius: 12px;
+  }
+
+  .banner-content i {
+    font-size: 2rem;
+    margin-bottom: 0.875rem;
+  }
+
+  .banner-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.625rem;
+    line-height: 1.4;
+  }
+
+  .banner-content p {
+    font-size: 1rem;
+    line-height: 1.6;
+    max-width: 100%;
+    padding: 0 0.5rem;
+  }
+
+  /* Reduce animation intensity on mobile */
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-5px);
+    }
+  }
+}
+
+/* ============================================
+   MOBILE OPTIMIZATION - SMALL PHONES
+   ============================================ */
+
+@media (max-width: 480px) {
+  .coming-soon-banner {
+    margin: 2.5rem 1rem 2.5rem;
+    padding: 1.75rem 1.25rem;
+    border-radius: 10px;
+  }
+
+  .banner-content i {
+    font-size: 1.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .banner-content h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+  }
+
+  .banner-content p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    padding: 0;
+  }
+}
+
+/* ============================================
+   MOBILE OPTIMIZATION - EXTRA SMALL
+   ============================================ */
+
+@media (max-width: 360px) {
+  .coming-soon-banner {
+    margin: 2rem 0.75rem 2rem;
+    padding: 1.5rem 1rem;
+  }
+
+  .banner-content i {
+    font-size: 1.5rem;
+  }
+
+  .banner-content h3 {
+    font-size: 1.15rem;
+  }
+
+  .banner-content p {
+    font-size: 0.85rem;
+  }
+}
+
+/* ============================================
+   PERFORMANCE OPTIMIZATION FOR MOBILE
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .coming-soon-banner::before {
+    animation: none;
+  }
+  
+  .banner-content i {
+    animation: none;
+  }
+}
+
+/* Touch device optimization */
+@media (hover: none) and (pointer: coarse) {
+  .coming-soon-banner {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
