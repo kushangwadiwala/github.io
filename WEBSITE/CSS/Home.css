@@ -139,6 +139,7 @@
      color: #666;
      font-size: clamp(1.5rem, 4vw, 2.5rem);
      font-weight: 700;
+     letter-spacing: 0px;
 }
  .about-hero-subtitle {
      font-size: clamp(1.1rem, 2vw, 1.35rem);
@@ -2113,4 +2114,5 @@
          display: none;
     }
 }
+
 
