@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Luxe Lustre Brand Identity — Premium logo and visual identity for a luxury makeup studio. By Kushang Wadiwala.">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../CSS/ProjectPage.css">
+  <link rel="stylesheet" href="../../CSS/NavFoot.css">
+  <title>Luxe Lustre — Brand Identity | Kushang Wadiwala</title>
+  <style>
+    .hero {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 0 25px;
+      position: relative;
+      background-image: linear-gradient(rgba(111, 107, 107, 0.205), rgba(111, 107, 107, 0.205)), url('Images/Main_page-0002.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    @media (max-width: 768px) {
+      .hero { height: 94vh; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header id="header">
+    <div class="header-content">
+      <button onclick="goBack()" class="back-button" id="backButton" aria-label="Go back to previous page">
+        <i class="bi bi-arrow-left"></i>
+        <span> Go Back </span>
+      </button>
+      <a href="../../Home.html" class="logo hidden-initially" id="logo" aria-label="Kushang - Home">KW<span class="logo-dot" aria-hidden="true" style="color:#FF7A30">.</span></a>
+      <nav class="desktop-nav hidden-initially" id="desktopNav" aria-label="Main navigation">
+        <a href="../../Home.html">Home</a>
+        <a href="../../Aboutme.html">About</a>
+        <a href="../../Work.html#MyProjects">Projects</a>
+        <a href="../../Services.html">Services</a>
+        <a href="../../Contact.html" class="cta-btn">Reach Out →</a>
+      </nav>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileOverlay">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Overlay -->
+  <div id="mobileOverlay" role="dialog" aria-modal="true" aria-labelledby="mobile-nav-title">
+    <div class="overlay-content">
+      <h2 id="mobile-nav-title" class="visually-hidden">Navigation Menu</h2>
+      <nav class="mobile-nav" aria-label="Mobile navigation">
+        <a href="../../Home.html">Home</a>
+        <a href="../../Aboutme.html">About</a>
+        <a href="../../Work.html">Projects</a>
+        <a href="../../Services.html">Services</a>
+        <a href="../../Contact.html">Contact</a>
+      </nav>
+      <div class="mobile-footer">
+        <a href="https://www.linkedin.com/in/kushangwadiwala" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="mailto:kushangwadiwala@gmail.com">Email</a>
+        <a href="mailto:kushangwadiwala@gmail.com" class="lets-talk-btn">Reach Out →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Luxe Lustre</h1>
+    </div>
+  </section>
+
+  <!-- Project Overview -->
+  <section class="project-overview reveal">
+    <div class="overview-container">
+      <div class="overview-text">
+        <p><span style="color: #a8a4a4; font-size: 0.75rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;">PROJECT SUMMARY</span></p>
+        <br>
+        <p>Luxe Lustre is more than a makeup studio — it's a space where beauty feels effortless and confidence comes naturally. Every brushstroke is about celebrating individuality, bringing out each person's unique glow with care and creativity.</p>
+        <p>The brand identity was designed to reflect that same feeling of warmth and sophistication. Soft tones, elegant details, and modern simplicity come together to capture the heart of Luxe Lustre — a brand that helps people see the beauty that's already theirs.</p>
+      </div>
+      <div class="overview-details">
+        <div class="detail-item">
+          <h4>Client</h4>
+          <p>Luxe Lustre</p>
+        </div>
+        <div class="detail-item">
+          <h4>Year</h4>
+          <p>2025</p>
+        </div>
+        <div class="detail-item">
+          <h4>Services</h4>
+          <p>Logo Design, Brand Identity</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Case Study Blocks -->
+  <section class="case-study-blocks reveal">
+    <div class="case-block">
+      <span class="case-block-label">The Challenge</span>
+      <h3>Luxury that feels personal, not intimidating</h3>
+      <p>Makeup studios in the premium segment often lean on cold, minimal aesthetics that feel aspirational but distant. Luxe Lustre needed to communicate high-end quality while still feeling warm and welcoming — a space where clients feel celebrated, not judged.</p>
+    </div>
+    <div class="case-block">
+      <span class="case-block-label">The Approach</span>
+      <h3>Warmth within elegance</h3>
+      <p>The identity was built around soft, warm tones paired with refined typography — avoiding the stark black-and-white of typical luxury brands. Every design decision was made to feel approachable and feminine while maintaining a premium, polished quality throughout.</p>
+    </div>
+    <div class="case-block">
+      <span class="case-block-label">The Outcome</span>
+      <h3>A premium identity system clients connect with</h3>
+      <p>Delivered a complete brand system: logo suite, colour palette, typography hierarchy, illustrations, and brand guidelines. The identity works across studio signage, digital platforms, and marketing collateral — cohesive at every touchpoint.</p>
+    </div>
+  </section>
+
+  <!-- Full Width Image -->
+  <section class="image-frame-large">
+    <div class="image-placeholder">
+      <img src="Images/Test_page-0006.jpg" alt="Luxe Lustre brand identity overview">
+    </div>
+  </section>
+
+  <!-- Image Grid -->
+  <section class="image-grid">
+    <div class="grid-container">
+      <div class="grid-item reveal">
+        <img src="Images/1.jpg" alt="Luxe Lustre wordmark design">
+      </div>
+      <div class="grid-item reveal">
+        <img src="Images/2.jpg" alt="Luxe Lustre logo mark">
+      </div>
+    </div>
+  </section>
+
+  <section class="image-grid">
+    <div class="grid-container">
+      <div class="grid-item reveal">
+        <img src="Images/3.jpg" alt="Luxe Lustre colour palette">
+      </div>
+      <div class="grid-item reveal">
+        <img src="Images/4.jpg" alt="Luxe Lustre typography system">
+      </div>
+    </div>
+  </section>
+
+  <section class="image-frame-large">
+    <div class="image-placeholder">
+      <img src="Images/5.jpg" alt="Luxe Lustre brand guidelines">
+    </div>
+  </section>
+
+  <section class="image-frame-large">
+    <div class="image-placeholder">
+      <img src="Images/6.jpg" alt="Luxe Lustre marketing collateral">
+    </div>
+  </section>
+
+  <section class="image-frame-large">
+    <div class="image-placeholder">
+      <img src="Images/App Icon Mockup.jpg" alt="Luxe Lustre app icon mockup">
+    </div>
+  </section>
+
+  <!-- Next Project -->
+  <section class="next-project reveal">
+    <h3>Next Project</h3>
+    <a href="../Fitness 2000/Fitness2000.html">Fitness 2000 →</a>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <h3>Designs that speak for themselves.</h3>
+          <div class="footer-cta">
+            <a href="../../Contact.html" class="footer-button">Reach Out →</a>
+          </div>
+        </div>
+        <div class="footer-links-container">
+          <nav class="footer-link-group" aria-labelledby="footer-nav-title">
+            <h4 id="footer-nav-title">Navigate</h4>
+            <ul>
+              <li><a href="../../Home.html">Home</a></li>
+              <li><a href="../../Aboutme.html">About</a></li>
+              <li><a href="../../Work.html#MyProjects">Projects</a></li>
+              <li><a href="../../Contact.html">Contact</a></li>
+            </ul>
+          </nav>
+          <nav class="footer-link-group" aria-labelledby="footer-connect-title">
+            <h4 id="footer-connect-title">Connect</h4>
+            <ul>
+              <li><a href="https://www.linkedin.com/in/kushangwadiwala" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></li>
+              <li><a href="https://dribbble.com/Kush0806" target="_blank" rel="noopener noreferrer">Dribbble ↗</a></li>
+              <li><a href="mailto:kushangwadiwala@gmail.com">Email ↗</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copyright">Made with <i class="bi bi-heart-fill" aria-label="love"></i> in Surat, India</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.reveal').forEach(el => {
+      const obs = new IntersectionObserver(entries => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in-view'); obs.unobserve(e.target); } });
+      }, { threshold: 0.1 });
+      obs.observe(el);
+    });
+
+    function goBack() {
+      if (document.referrer && document.referrer.includes(window.location.hostname)) {
+        window.history.back();
+      } else {
+        window.location.href = '../../Work.html#MyProjects';
+      }
+    }
+
+    (function() {
+      const header = document.getElementById('header');
+      const menuToggle = document.getElementById('menuToggle');
+      const mobileOverlay = document.getElementById('mobileOverlay');
+      const logo = document.querySelector('.logo');
+      const body = document.body;
+      const mobileNavLinks = document.querySelectorAll('.mobile-nav a');
+      let lastScrollY = window.scrollY, ticking = false, isMenuOpen = false, lastFocusedElement = null;
+
+      function updateHeader() {
+        const y = window.scrollY;
+        header.classList.toggle('scrolled', y > 50);
+        if (!isMenuOpen) {
+          if (y > lastScrollY && y > 100) { header.classList.add('hidden'); }
+          else { header.classList.remove('hidden'); }
+        }
+        lastScrollY = y; ticking = false;
+      }
+
+      window.addEventListener('scroll', () => { if (!ticking) { window.requestAnimationFrame(updateHeader); ticking = true; } }, { passive: true });
+
+      function closeMenu() {
+        mobileOverlay.classList.remove('active'); menuToggle.classList.remove('active');
+        header.classList.remove('menu-open'); logo.classList.remove('hide');
+        body.style.overflow = ''; menuToggle.setAttribute('aria-expanded', 'false');
+        isMenuOpen = false; if (lastFocusedElement) lastFocusedElement.focus();
+      }
+
+      function openMenu() {
+        lastFocusedElement = document.activeElement;
+        mobileOverlay.classList.add('active'); menuToggle.classList.add('active');
+        header.classList.add('menu-open'); logo.classList.add('hide');
+        body.style.overflow = 'hidden'; menuToggle.setAttribute('aria-expanded', 'true');
+        isMenuOpen = true; setTimeout(() => { mobileNavLinks[0].focus(); }, 100);
+      }
+
+      menuToggle.addEventListener('click', () => { if (isMenuOpen) closeMenu(); else openMenu(); });
+      mobileNavLinks.forEach(l => l.addEventListener('click', closeMenu));
+      document.addEventListener('keydown', e => { if (e.key === 'Escape' && isMenuOpen) closeMenu(); });
+      mobileOverlay.addEventListener('touchmove', e => { if (e.target === mobileOverlay) e.preventDefault(); }, { passive: false });
+    })();
+  </script>
+</body>
+</html>
